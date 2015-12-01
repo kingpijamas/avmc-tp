@@ -1,0 +1,6 @@
+sig pldi_nodecachinglinkedlist_LinkedListNode extends java_lang_Object {}
+{}
+
+
+
+

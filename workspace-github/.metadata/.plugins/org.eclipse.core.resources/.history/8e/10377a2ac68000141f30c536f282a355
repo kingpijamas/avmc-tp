@@ -1,0 +1,26 @@
+package pldi.treeset;
+
+//@ model import org.jmlspecs.lang.*;
+
+
+public class TreeSetEntry extends java.lang.Object {
+
+  public int pldi_treeset_TreeSetEntry_key;
+  public /*@ nullable @*/ pldi.treeset.TreeSetEntry pldi_treeset_TreeSetEntry_parent;
+  public boolean pldi_treeset_TreeSetEntry_color;
+  public /*@ nullable @*/ pldi.treeset.TreeSetEntry pldi_treeset_TreeSetEntry_left;
+  public /*@ nullable @*/ pldi.treeset.TreeSetEntry pldi_treeset_TreeSetEntry_right;
+  public int pldi_treeset_TreeSetEntry_blackHeight;
+
+  public TreeSetEntry() {
+    this.pldi_treeset_TreeSetEntry_key = (byte)0;
+    this.pldi_treeset_TreeSetEntry_parent = ((pldi.treeset.TreeSetEntry)(null));
+    this.pldi_treeset_TreeSetEntry_color = false;
+    this.pldi_treeset_TreeSetEntry_left = ((pldi.treeset.TreeSetEntry)(null));
+    this.pldi_treeset_TreeSetEntry_right = ((pldi.treeset.TreeSetEntry)(null));
+    this.pldi_treeset_TreeSetEntry_blackHeight = (byte)0;
+    {
+    }
+  }
+
+}

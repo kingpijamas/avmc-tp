@@ -1,0 +1,199 @@
+package pldi.binomialheap;
+
+
+import pldi.binomialheap.BinomialHeapNode;
+
+
+public class BinomialHeapExtractMinBug76 {
+
+    /*@
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); n.parent != null ==> n.key >= n.parent.key );
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); n.sibling != null ==> \reach(n.sibling, BinomialHeapNode, sibling + child).has(n) == false );
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); n.child != null ==> \reach(n.child, BinomialHeapNode, sibling + child).has(n) == false );
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); ( n.child != null && n.sibling != null ) ==>
+    @                                                  (\forall BinomialHeapNode m; \reach(n.child, BinomialHeapNode, child + sibling).has(m); \reach(n.sibling, BinomialHeapNode, child + sibling).has(m) == false) );
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); ( n.child != null && n.sibling != null ) ==>
+    @                                                  (\forall BinomialHeapNode m; \reach(n.sibling, BinomialHeapNode, child + sibling).has(m); \reach(n.child, BinomialHeapNode, child + sibling).has(m) == false) );
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); n.degree >= 0 );
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); n.child == null ==> n.degree == 0 );
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); n.child != null ==> n.degree == \reach(n.child, BinomialHeapNode, sibling).int_size() );
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); n.child != null ==> \reach(n.child.child, BinomialHeapNode, child + sibling).int_size() == \reach(n.child.sibling, BinomialHeapNode, child + sibling).int_size() );
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); n.child != null ==>
+    @                                                  ( \forall BinomialHeapNode m; \reach(n.child, BinomialHeapNode, sibling).has(m); m.parent == n ) );
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling + child).has(n); ( n.sibling != null && n.parent != null ) ==> n.degree > n.sibling.degree );
+    @
+    @ invariant (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, sibling).has(n); (n.sibling != null ==> n.degree < n.sibling.degree) && (n.parent == null) );
+    @
+    @*/
+    public /*@ nullable @*/pldi.binomialheap.BinomialHeapNode nodes;
+
+    public int heapSize;
+
+    public BinomialHeapExtractMinBug76() {
+    }
+
+    /*@ requires heapSize == \reach(nodes, BinomialHeapNode, child+sibling).int_size();
+    @ ensures \old(nodes) != null ==> \old(\reach(nodes, BinomialHeapNode, child + sibling)).has(\result);
+    @ ensures (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, child + sibling).has(n); \result.key <= n.key);
+    @ ensures (\forall BinomialHeapNode n; \reach(nodes, BinomialHeapNode, child + sibling).has(n); \old(n.key) == n.key);
+    @ ensures \old(nodes) != null ==> heapSize == \old(heapSize) - 1;
+    @ ensures \old(nodes) == null ==> heapSize == 0;
+    @ signals (Exception e) false;
+    @*/
+    public /*@nullable@*/pldi.binomialheap.BinomialHeapNode extractMin() {
+        if (nodes == null) {
+            return null;
+        }
+        pldi.binomialheap.BinomialHeapNode temp = nodes;
+        pldi.binomialheap.BinomialHeapNode prevTemp = null;
+        pldi.binomialheap.BinomialHeapNode minNode = null;
+        minNode = nodes.findMinNode();
+        //@decreasing \reach(temp, BinomialHeapNode, sibling).int_size();
+        while (temp.key != minNode.key) {
+            prevTemp = temp;
+            temp = temp.sibling;
+        }
+        if (prevTemp == null) {
+            nodes = temp.sibling;
+        } else {
+            prevTemp.sibling = temp.sibling;
+        }
+        temp = temp.child;
+        pldi.binomialheap.BinomialHeapNode fakeNode = temp;
+        //@decreasing \reach(temp, BinomialHeapNode, sibling).int_size();
+        while (temp != null) {
+            temp.parent = null;
+            temp = temp.sibling;
+        }
+        if (nodes == null && fakeNode == null) {
+            heapSize = 0;
+        } else {
+            if (nodes == null && fakeNode != null) {
+                nodes = fakeNode.reverse( null );
+                heapSize--;
+            } else {
+                if (nodes != null && fakeNode == null) {
+                    heapSize--;
+                } else {
+                    pldi.binomialheap.BinomialHeapNode binHeap = fakeNode.reverse( null );
+                    pldi.binomialheap.BinomialHeapNode temp1 = nodes;
+                    pldi.binomialheap.BinomialHeapNode temp2 = binHeap;
+                    //@decreasing temp1.degree < temp2.degree && temp1.sibling != null && temp1.sibling.degree <= temp2.degree ? \reach(temp1, BinomialHeapNode, sibling).int_size() : \reach(temp2, BinomialHeapNode, sibling).int_size();
+                    while (temp1 != null && temp2 != null) {
+                        if (temp1.degree == temp2.degree) {
+                            pldi.binomialheap.BinomialHeapNode tmp = temp2;
+                            temp2 = temp2.sibling;
+                            tmp.sibling = temp1.sibling;
+                            temp1.sibling = tmp;
+                            temp1 = tmp.sibling;
+                        } else {
+                            if (temp1.degree < temp2.degree) {
+                                if (temp1.sibling == null || temp1.sibling.degree > temp2.degree) {
+                                    pldi.binomialheap.BinomialHeapNode tmp = temp2;
+                                    temp2 = temp2.sibling;
+                                    tmp.sibling = temp1.sibling;
+                                    temp1.sibling = tmp;
+                                    temp1 = tmp.sibling;
+                                } else {
+                                    temp1 = temp1.sibling;
+                                }
+                            } else {
+                                pldi.binomialheap.BinomialHeapNode tmp = temp1;
+                                temp1 = temp2;
+                                temp2 = temp2.sibling;
+                                temp1.sibling = tmp;
+                                if (tmp == nodes) {
+                                    nodes = temp1;
+                                }
+                            }
+                        }
+                    }
+                    if (temp1 == null) {
+                        temp1 = nodes;
+                        //@decreasing \reach(temp1, BinomialHeapNode, sibling).int_size();
+                        while (temp1.sibling != null) {
+                            temp1 = temp1.sibling;
+                        }
+                        temp1.sibling = temp2;
+                    }
+                    pldi.binomialheap.BinomialHeapNode prevTempUnionNodes = null;
+                    pldi.binomialheap.BinomialHeapNode tempUnionNodes = nodes;
+                    pldi.binomialheap.BinomialHeapNode nextTemp = nodes.sibling;
+                    //@decreasing \reach(nextTemp, BinomialHeapNode, sibling).int_size();
+                    while (nextTemp != null) {
+                        if (tempUnionNodes.degree != nextTemp.degree || nextTemp.sibling != null && prevTemp.degree == tempUnionNodes.degree) { //mutGenLimit 0
+                            prevTempUnionNodes = tempUnionNodes;
+                            tempUnionNodes = nextTemp;
+                        } else {
+                            if (tempUnionNodes.key <= nextTemp.key) {
+                                tempUnionNodes.sibling = nextTemp.sibling;
+                                nextTemp.parent = tempUnionNodes;
+                                nextTemp.sibling = tempUnionNodes.child;
+                                tempUnionNodes.child = nextTemp;
+                                tempUnionNodes.degree++;
+                            } else {
+                                if (prevTempUnionNodes == null) {
+                                    nodes = nextTemp;
+                                } else {
+                                    prevTempUnionNodes.sibling = nextTemp;
+                                }
+                                tempUnionNodes.parent = nextTemp;
+                                tempUnionNodes.sibling = nextTemp.child;
+                                nextTemp.child = tempUnionNodes;
+                                nextTemp.degree++;
+                                tempUnionNodes = nextTemp;
+                            }
+                        }
+                        nextTemp = tempUnionNodes.sibling;
+                    }
+                    heapSize--;
+                }
+            }
+        }
+        return minNode;
+    }
+
+    public static void main( java.lang.String[] args ) {
+        pldi.binomialheap.BinomialHeapExtractMinBug76 instance = new pldi.binomialheap.BinomialHeapExtractMinBug76();
+        pldi.binomialheap.BinomialHeapNode _BinomialHeapNode_1 = new pldi.binomialheap.BinomialHeapNode();
+        pldi.binomialheap.BinomialHeapNode _BinomialHeapNode_2 = new pldi.binomialheap.BinomialHeapNode();
+        pldi.binomialheap.BinomialHeapNode _BinomialHeapNode_3 = new pldi.binomialheap.BinomialHeapNode();
+        pldi.binomialheap.BinomialHeapNode _BinomialHeapNode_4 = new pldi.binomialheap.BinomialHeapNode();
+        pldi.binomialheap.BinomialHeapNode _BinomialHeapNode_5 = new pldi.binomialheap.BinomialHeapNode();
+        pldi.binomialheap.BinomialHeapNode _BinomialHeapNode_6 = new pldi.binomialheap.BinomialHeapNode();
+        _BinomialHeapNode_1.key = 6;
+        _BinomialHeapNode_1.degree = 1;
+        _BinomialHeapNode_1.parent = null;
+        _BinomialHeapNode_2.key = 3;
+        _BinomialHeapNode_2.degree = 2;
+        _BinomialHeapNode_2.parent = null;
+        _BinomialHeapNode_2.sibling = null;
+        _BinomialHeapNode_3.key = 3;
+        _BinomialHeapNode_3.degree = 1;
+        _BinomialHeapNode_3.parent = _BinomialHeapNode_2;
+        _BinomialHeapNode_4.key = 4;
+        _BinomialHeapNode_4.degree = 0;
+        _BinomialHeapNode_4.parent = _BinomialHeapNode_2;
+        _BinomialHeapNode_4.sibling = null;
+        _BinomialHeapNode_4.child = null;
+        _BinomialHeapNode_3.sibling = _BinomialHeapNode_4;
+        _BinomialHeapNode_5.key = 3;
+        _BinomialHeapNode_5.degree = 0;
+        _BinomialHeapNode_5.parent = _BinomialHeapNode_3;
+        _BinomialHeapNode_5.sibling = null;
+        _BinomialHeapNode_5.child = null;
+        _BinomialHeapNode_3.child = _BinomialHeapNode_5;
+        _BinomialHeapNode_2.child = _BinomialHeapNode_3;
+        _BinomialHeapNode_1.sibling = _BinomialHeapNode_2;
+        _BinomialHeapNode_6.key = 6;
+        _BinomialHeapNode_6.degree = 0;
+        _BinomialHeapNode_6.parent = _BinomialHeapNode_1;
+        _BinomialHeapNode_6.sibling = null;
+        _BinomialHeapNode_6.child = null;
+        _BinomialHeapNode_1.child = _BinomialHeapNode_6;
+        instance.nodes = _BinomialHeapNode_1;
+        instance.heapSize = 6;
+        pldi.binomialheap.BinomialHeapNode result = instance.extractMin();
+    }
+
+}

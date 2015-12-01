@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;prevTemp&apos; in &apos;pldi.binomialheap.BinomialHeap.extractMin()&apos; to &apos;prevTempUnionNodes&apos;&#x0A;- Original project: &apos;taco&apos;&#x0A;- Original element: &apos;pldi.binomialheap.BinomialHeap.extractMin().prevTemp&apos;&#x0A;- Renamed element: &apos;prevTemp&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;prevTemp&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/tests&lt;pldi.binomialheap{BinomialHeap.java[BinomialHeap~extractMin@prevTemp!10354!10426!10371!10378!QBinomialHeapNode;!0!false" name="prevTempUnionNodes" references="true" stamp="1420327928860" version="1.0"/>
+</session>

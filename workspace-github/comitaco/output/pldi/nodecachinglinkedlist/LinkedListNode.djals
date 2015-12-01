@@ -1,0 +1,69 @@
+//-------------- pldi_nodecachinglinkedlist_LinkedListNode --------------//
+module pldi_nodecachinglinkedlist_LinkedListNode
+sig pldi_nodecachinglinkedlist_LinkedListNode extends java_lang_Object {}
+{}
+field pldi_nodecachinglinkedlist_LinkedListNode_previous:(pldi_nodecachinglinkedlist_LinkedListNode)->one(null+pldi_nodecachinglinkedlist_LinkedListNode) {}
+field pldi_nodecachinglinkedlist_LinkedListNode_next:(pldi_nodecachinglinkedlist_LinkedListNode)->one(null+pldi_nodecachinglinkedlist_LinkedListNode) {}
+field pldi_nodecachinglinkedlist_LinkedListNode_value:(pldi_nodecachinglinkedlist_LinkedListNode)->one(java_lang_Object+null) {}
+
+program pldi_nodecachinglinkedlist_LinkedListNode::Constructor[
+  var thiz:pldi_nodecachinglinkedlist_LinkedListNode,
+  var throw:java_lang_Throwable+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]{
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  thiz.pldi_nodecachinglinkedlist_LinkedListNode_previous:=((null+pldi_nodecachinglinkedlist_LinkedListNode) & (null));
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]{
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  thiz.pldi_nodecachinglinkedlist_LinkedListNode_next:=((null+pldi_nodecachinglinkedlist_LinkedListNode) & (null));
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]{
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  thiz.pldi_nodecachinglinkedlist_LinkedListNode_value:=((java_lang_Object+null) & (null));
+               };
+            } else {
+               skip;
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+

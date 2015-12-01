@@ -1,0 +1,1080 @@
+13:53:39,201  WARN MuJavaController:847 - MJC: Generating a batch from father index: 0 starting from indexes: [ 0 0 0 ]...
+13:53:39,821  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:53:46,087  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 0
+13:53:46,090  WARN MuJavaController:1154 - MJC: About to generate case Father index 0 - [ 1 0 0 ]
+13:53:46,090  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOR_REFINED, freshNode, current.next) ]
+13:53:46,262  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857619822-0/a14288576198220/aOpenJMLInWrap1/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:53:46,262  WARN OpenJMLController:275 - Mutants consumed by RAC: 1
+13:53:46,262  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857618771-0/SinglyLinkedList/insertBack/MULTI/156/SinglyLinkedList.java for method: insertBack
+13:53:46,710  WARN MuJavaController:847 - MJC: Generating a batch from father index: 1 starting from indexes: [ 0 0 ]...
+13:53:47,501  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:53:47,566  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:53:49,013  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:53:49,225  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:53:50,501  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:53:50,763  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:53:50,935  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:53:52,299  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:53:57,445  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 16
+13:53:57,448  WARN MuJavaController:1154 - MJC: About to generate case Father index 1 - [ 1 0 ]
+13:53:57,448  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:53:57,595  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857630507-0/a14288576305070/aOpenJMLInWrap3/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:53:57,596  WARN OpenJMLController:275 - Mutants consumed by RAC: 2
+13:53:57,596  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857626097-0/SinglyLinkedList/insertBack/MULTI/336/SinglyLinkedList.java for method: insertBack
+13:53:57,794  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:53:57,940  WARN MuJavaController:847 - MJC: Generating a batch from father index: 2 starting from indexes: [ 0 0 ]...
+13:53:58,720  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:53:58,790  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:53:59,056  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:53:59,949  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:00,062  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:01,068  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:01,742  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:54:07,191  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 16
+13:54:07,194  WARN MuJavaController:1154 - MJC: About to generate case Father index 2 - [ 1 0 ]
+13:54:07,194  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:54:07,343  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857641749-0/a14288576417490/aOpenJMLInWrap5/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:54:07,343  WARN OpenJMLController:275 - Mutants consumed by RAC: 3
+13:54:07,343  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857637453-0/SinglyLinkedList/insertBack/MULTI/517/SinglyLinkedList.java for method: insertBack
+13:54:07,517  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:07,625  WARN MuJavaController:847 - MJC: Generating a batch from father index: 3 starting from indexes: [ 0 0 ]...
+13:54:08,408  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:08,457  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:54:08,541  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:09,477  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:09,582  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:10,425  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:11,181  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:54:16,704  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 16
+13:54:16,707  WARN MuJavaController:1154 - MJC: About to generate case Father index 3 - [ 1 0 ]
+13:54:16,707  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:54:16,851  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857651187-0/a14288576511870/aOpenJMLInWrap7/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:54:16,851  WARN OpenJMLController:275 - Mutants consumed by RAC: 4
+13:54:16,851  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857647200-0/SinglyLinkedList/insertBack/MULTI/698/SinglyLinkedList.java for method: insertBack
+13:54:17,020  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:17,157  WARN MuJavaController:847 - MJC: Generating a batch from father index: 4 starting from indexes: [ 0 0 ]...
+13:54:17,733  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:18,084  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:18,205  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:54:18,825  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:18,928  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:19,611  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:20,470  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:54:26,138  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 16
+13:54:26,140  WARN MuJavaController:1154 - MJC: About to generate case Father index 4 - [ 1 0 ]
+13:54:26,141  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:54:26,283  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857660474-0/a14288576604740/aOpenJMLInWrap9/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:54:26,284  WARN OpenJMLController:275 - Mutants consumed by RAC: 5
+13:54:26,284  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857656714-0/SinglyLinkedList/insertBack/MULTI/879/SinglyLinkedList.java for method: insertBack
+13:54:26,442  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:26,535  WARN MuJavaController:847 - MJC: Generating a batch from father index: 5 starting from indexes: [ 0 0 ]...
+13:54:27,217  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:27,275  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:54:27,353  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:28,138  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:28,249  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:29,161  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:30,105  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:54:36,056  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 16
+13:54:36,058  WARN MuJavaController:1154 - MJC: About to generate case Father index 5 - [ 1 0 ]
+13:54:36,059  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:54:36,190  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857670108-0/a14288576701080/aOpenJMLInWrap11/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:54:36,190  WARN OpenJMLController:275 - Mutants consumed by RAC: 6
+13:54:36,191  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857666146-0/SinglyLinkedList/insertBack/MULTI/1060/SinglyLinkedList.java for method: insertBack
+13:54:36,346  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:36,538  WARN MuJavaController:847 - MJC: Generating a batch from father index: 6 starting from indexes: [ 0 0 ]...
+13:54:37,005  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:37,127  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:37,331  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:54:37,982  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:38,089  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:39,157  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:39,784  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:54:45,428  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 16
+13:54:45,433  WARN MuJavaController:1154 - MJC: About to generate case Father index 6 - [ 1 0 ]
+13:54:45,434  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:54:45,578  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857679788-0/a14288576797880/aOpenJMLInWrap13/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:54:45,578  WARN OpenJMLController:275 - Mutants consumed by RAC: 7
+13:54:45,578  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857676064-0/SinglyLinkedList/insertBack/MULTI/1241/SinglyLinkedList.java for method: insertBack
+13:54:45,725  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:45,788  WARN MuJavaController:847 - MJC: Generating a batch from father index: 7 starting from indexes: [ 0 0 ]...
+13:54:46,428  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:46,508  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:46,545  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:54:47,271  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:47,386  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:48,111  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:54,081  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 0
+13:54:54,083  WARN MuJavaController:1154 - MJC: About to generate case Father index 7 - [ 1 0 ]
+13:54:54,083  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOR_REFINED, freshNode, current.next) ]
+13:54:54,252  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857686545-0/a14288576865450/aOpenJMLInWrap14/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:54:54,252  WARN OpenJMLController:275 - Mutants consumed by RAC: 8
+13:54:54,252  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857685466-0/SinglyLinkedList/insertBack/MULTI/1422/SinglyLinkedList.java for method: insertBack
+13:54:54,333  WARN MuJavaController:847 - MJC: Generating a batch from father index: 8 starting from indexes: [ 0 ]...
+13:54:54,409  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:54,452  WARN MuJavaController:907 - MJC: No more children for father index 8
+13:54:54,452  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:54:55,108  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:54:55,851  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:54:58,148  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:54:58,152  WARN MuJavaController:1154 - MJC: About to generate case Father index 8 - [ 1 ]
+13:54:58,152  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:54:58,206  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857695852-0/a14288576958520/aOpenJMLInWrap16/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:54:58,206  WARN OpenJMLController:275 - Mutants consumed by RAC: 9
+13:54:58,206  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857694093-0/SinglyLinkedList/insertBack/MULTI/1602/SinglyLinkedList.java for method: insertBack
+13:54:58,377  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:54:58,434  WARN MuJavaController:847 - MJC: Generating a batch from father index: 9 starting from indexes: [ 0 ]...
+13:54:58,539  WARN MuJavaController:907 - MJC: No more children for father index 9
+13:54:58,539  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:54:59,315  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:00,067  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:02,252  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:02,255  WARN MuJavaController:1154 - MJC: About to generate case Father index 9 - [ 1 ]
+13:55:02,255  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:02,308  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857700067-0/a14288577000670/aOpenJMLInWrap18/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:02,308  WARN OpenJMLController:275 - Mutants consumed by RAC: 10
+13:55:02,308  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857698165-0/SinglyLinkedList/insertBack/MULTI/1613/SinglyLinkedList.java for method: insertBack
+13:55:02,489  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:02,515  WARN MuJavaController:847 - MJC: Generating a batch from father index: 10 starting from indexes: [ 0 ]...
+13:55:02,590  WARN MuJavaController:907 - MJC: No more children for father index 10
+13:55:02,591  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:03,083  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:03,782  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:06,073  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:06,076  WARN MuJavaController:1154 - MJC: About to generate case Father index 10 - [ 1 ]
+13:55:06,076  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:06,120  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857703782-0/a14288577037820/aOpenJMLInWrap20/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:06,120  WARN OpenJMLController:275 - Mutants consumed by RAC: 11
+13:55:06,121  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857702263-0/SinglyLinkedList/insertBack/MULTI/1624/SinglyLinkedList.java for method: insertBack
+13:55:06,300  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:06,345  WARN MuJavaController:847 - MJC: Generating a batch from father index: 11 starting from indexes: [ 0 ]...
+13:55:06,636  WARN MuJavaController:907 - MJC: No more children for father index 11
+13:55:06,637  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:07,283  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:08,233  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:10,256  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:10,258  WARN MuJavaController:1154 - MJC: About to generate case Father index 11 - [ 1 ]
+13:55:10,259  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:10,293  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857708233-0/a14288577082330/aOpenJMLInWrap22/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:10,293  WARN OpenJMLController:275 - Mutants consumed by RAC: 12
+13:55:10,293  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857706083-0/SinglyLinkedList/insertBack/MULTI/1635/SinglyLinkedList.java for method: insertBack
+13:55:10,458  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:10,490  WARN MuJavaController:847 - MJC: Generating a batch from father index: 12 starting from indexes: [ 0 ]...
+13:55:10,569  WARN MuJavaController:907 - MJC: No more children for father index 12
+13:55:10,569  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:11,128  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:11,923  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:14,518  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:14,521  WARN MuJavaController:1154 - MJC: About to generate case Father index 12 - [ 1 ]
+13:55:14,521  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:14,567  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857711923-0/a14288577119230/aOpenJMLInWrap24/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:14,567  WARN OpenJMLController:275 - Mutants consumed by RAC: 13
+13:55:14,567  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857710264-0/SinglyLinkedList/insertBack/MULTI/1646/SinglyLinkedList.java for method: insertBack
+13:55:14,802  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:14,903  WARN MuJavaController:847 - MJC: Generating a batch from father index: 13 starting from indexes: [ 0 ]...
+13:55:14,975  WARN MuJavaController:907 - MJC: No more children for father index 13
+13:55:14,976  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:15,735  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:16,399  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:18,680  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:18,682  WARN MuJavaController:1154 - MJC: About to generate case Father index 13 - [ 1 ]
+13:55:18,682  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:18,720  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857716399-0/a14288577163990/aOpenJMLInWrap26/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:18,721  WARN OpenJMLController:275 - Mutants consumed by RAC: 14
+13:55:18,721  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857714528-0/SinglyLinkedList/insertBack/MULTI/1657/SinglyLinkedList.java for method: insertBack
+13:55:18,871  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:19,031  WARN MuJavaController:847 - MJC: Generating a batch from father index: 14 starting from indexes: [ 0 0 ]...
+13:55:19,472  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:19,600  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:55:25,981  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 0
+13:55:25,983  WARN MuJavaController:1154 - MJC: About to generate case Father index 14 - [ 1 0 ]
+13:55:25,983  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOR_REFINED, freshNode, current.next) ]
+13:55:26,149  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857719600-0/a14288577196000/aOpenJMLInWrap27/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:26,149  WARN OpenJMLController:275 - Mutants consumed by RAC: 15
+13:55:26,149  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857718690-0/SinglyLinkedList/insertBack/MULTI/1668/SinglyLinkedList.java for method: insertBack
+13:55:26,179  WARN MuJavaController:847 - MJC: Generating a batch from father index: 15 starting from indexes: [ 0 ]...
+13:55:26,248  WARN MuJavaController:907 - MJC: No more children for father index 15
+13:55:26,248  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:26,324  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:26,961  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:27,544  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:29,699  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:29,702  WARN MuJavaController:1154 - MJC: About to generate case Father index 15 - [ 1 ]
+13:55:29,702  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:29,738  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857727544-0/a14288577275440/aOpenJMLInWrap29/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:29,738  WARN OpenJMLController:275 - Mutants consumed by RAC: 16
+13:55:29,739  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857725988-0/SinglyLinkedList/insertBack/MULTI/1848/SinglyLinkedList.java for method: insertBack
+13:55:29,899  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:29,907  WARN MuJavaController:847 - MJC: Generating a batch from father index: 16 starting from indexes: [ 0 ]...
+13:55:30,002  WARN MuJavaController:907 - MJC: No more children for father index 16
+13:55:30,003  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:30,895  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:31,783  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:33,886  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:33,888  WARN MuJavaController:1154 - MJC: About to generate case Father index 16 - [ 1 ]
+13:55:33,888  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:33,921  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857731784-0/a14288577317840/aOpenJMLInWrap31/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:33,921  WARN OpenJMLController:275 - Mutants consumed by RAC: 17
+13:55:33,921  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857729707-0/SinglyLinkedList/insertBack/MULTI/1859/SinglyLinkedList.java for method: insertBack
+13:55:34,081  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:34,110  WARN MuJavaController:847 - MJC: Generating a batch from father index: 17 starting from indexes: [ 0 ]...
+13:55:34,185  WARN MuJavaController:907 - MJC: No more children for father index 17
+13:55:34,186  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:34,733  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:35,525  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:37,560  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:37,562  WARN MuJavaController:1154 - MJC: About to generate case Father index 17 - [ 1 ]
+13:55:37,562  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:37,603  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857735525-0/a14288577355250/aOpenJMLInWrap33/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:37,603  WARN OpenJMLController:275 - Mutants consumed by RAC: 18
+13:55:37,603  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857733893-0/SinglyLinkedList/insertBack/MULTI/1870/SinglyLinkedList.java for method: insertBack
+13:55:37,763  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:37,795  WARN MuJavaController:847 - MJC: Generating a batch from father index: 18 starting from indexes: [ 0 ]...
+13:55:37,864  WARN MuJavaController:907 - MJC: No more children for father index 18
+13:55:37,864  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:38,405  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:39,159  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:41,478  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:41,480  WARN MuJavaController:1154 - MJC: About to generate case Father index 18 - [ 1 ]
+13:55:41,481  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:41,524  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857739160-0/a14288577391600/aOpenJMLInWrap35/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:41,525  WARN OpenJMLController:275 - Mutants consumed by RAC: 19
+13:55:41,525  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857737568-0/SinglyLinkedList/insertBack/MULTI/1881/SinglyLinkedList.java for method: insertBack
+13:55:41,693  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:41,751  WARN MuJavaController:847 - MJC: Generating a batch from father index: 19 starting from indexes: [ 0 ]...
+13:55:42,045  WARN MuJavaController:907 - MJC: No more children for father index 19
+13:55:42,047  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:42,419  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:43,186  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:45,144  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:45,147  WARN MuJavaController:1154 - MJC: About to generate case Father index 19 - [ 1 ]
+13:55:45,147  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:45,190  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857743186-0/a14288577431860/aOpenJMLInWrap37/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:45,191  WARN OpenJMLController:275 - Mutants consumed by RAC: 20
+13:55:45,191  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857741486-0/SinglyLinkedList/insertBack/MULTI/1892/SinglyLinkedList.java for method: insertBack
+13:55:45,331  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:45,386  WARN MuJavaController:847 - MJC: Generating a batch from father index: 20 starting from indexes: [ 0 ]...
+13:55:45,460  WARN MuJavaController:907 - MJC: No more children for father index 20
+13:55:45,461  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:45,876  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:46,650  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:48,738  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:48,741  WARN MuJavaController:1154 - MJC: About to generate case Father index 20 - [ 1 ]
+13:55:48,741  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:48,783  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857746650-0/a14288577466500/aOpenJMLInWrap39/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:48,784  WARN OpenJMLController:275 - Mutants consumed by RAC: 21
+13:55:48,784  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857745154-0/SinglyLinkedList/insertBack/MULTI/1903/SinglyLinkedList.java for method: insertBack
+13:55:48,921  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:49,115  WARN MuJavaController:847 - MJC: Generating a batch from father index: 21 starting from indexes: [ 0 0 ]...
+13:55:49,422  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:49,694  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:55:55,597  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 0
+13:55:55,600  WARN MuJavaController:1154 - MJC: About to generate case Father index 21 - [ 1 0 ]
+13:55:55,600  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOR_REFINED, freshNode, current.next) ]
+13:55:55,776  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857749694-0/a14288577496940/aOpenJMLInWrap40/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:55,776  WARN OpenJMLController:275 - Mutants consumed by RAC: 22
+13:55:55,776  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857748749-0/SinglyLinkedList/insertBack/MULTI/1914/SinglyLinkedList.java for method: insertBack
+13:55:55,791  WARN MuJavaController:847 - MJC: Generating a batch from father index: 22 starting from indexes: [ 0 ]...
+13:55:55,851  WARN MuJavaController:907 - MJC: No more children for father index 22
+13:55:55,851  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:55:55,929  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:56,458  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:55:57,051  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:55:59,083  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:55:59,085  WARN MuJavaController:1154 - MJC: About to generate case Father index 22 - [ 1 ]
+13:55:59,085  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:55:59,123  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857757051-0/a14288577570510/aOpenJMLInWrap42/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:55:59,123  WARN OpenJMLController:275 - Mutants consumed by RAC: 23
+13:55:59,124  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857755606-0/SinglyLinkedList/insertBack/MULTI/2094/SinglyLinkedList.java for method: insertBack
+13:55:59,283  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:55:59,300  WARN MuJavaController:847 - MJC: Generating a batch from father index: 23 starting from indexes: [ 0 ]...
+13:55:59,381  WARN MuJavaController:907 - MJC: No more children for father index 23
+13:55:59,381  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:00,051  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:00,810  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:03,272  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:03,274  WARN MuJavaController:1154 - MJC: About to generate case Father index 23 - [ 1 ]
+13:56:03,274  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:03,317  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857760810-0/a14288577608100/aOpenJMLInWrap44/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:03,317  WARN OpenJMLController:275 - Mutants consumed by RAC: 24
+13:56:03,317  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857759091-0/SinglyLinkedList/insertBack/MULTI/2105/SinglyLinkedList.java for method: insertBack
+13:56:03,464  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:03,493  WARN MuJavaController:847 - MJC: Generating a batch from father index: 24 starting from indexes: [ 0 ]...
+13:56:03,551  WARN MuJavaController:907 - MJC: No more children for father index 24
+13:56:03,551  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:04,001  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:04,791  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:06,871  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:06,874  WARN MuJavaController:1154 - MJC: About to generate case Father index 24 - [ 1 ]
+13:56:06,874  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:06,907  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857764792-0/a14288577647920/aOpenJMLInWrap46/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:06,908  WARN OpenJMLController:275 - Mutants consumed by RAC: 25
+13:56:06,908  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857763280-0/SinglyLinkedList/insertBack/MULTI/2116/SinglyLinkedList.java for method: insertBack
+13:56:07,063  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:07,087  WARN MuJavaController:847 - MJC: Generating a batch from father index: 25 starting from indexes: [ 0 ]...
+13:56:07,158  WARN MuJavaController:907 - MJC: No more children for father index 25
+13:56:07,160  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:07,615  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:08,482  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:10,663  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:10,666  WARN MuJavaController:1154 - MJC: About to generate case Father index 25 - [ 1 ]
+13:56:10,666  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:10,706  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857768483-0/a14288577684830/aOpenJMLInWrap48/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:10,706  WARN OpenJMLController:275 - Mutants consumed by RAC: 26
+13:56:10,706  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857766880-0/SinglyLinkedList/insertBack/MULTI/2127/SinglyLinkedList.java for method: insertBack
+13:56:10,902  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:10,917  WARN MuJavaController:847 - MJC: Generating a batch from father index: 26 starting from indexes: [ 0 ]...
+13:56:11,007  WARN MuJavaController:907 - MJC: No more children for father index 26
+13:56:11,007  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:11,473  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:12,231  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:14,312  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:14,315  WARN MuJavaController:1154 - MJC: About to generate case Father index 26 - [ 1 ]
+13:56:14,315  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:14,358  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857772231-0/a14288577722310/aOpenJMLInWrap50/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:14,358  WARN OpenJMLController:275 - Mutants consumed by RAC: 27
+13:56:14,358  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857770671-0/SinglyLinkedList/insertBack/MULTI/2138/SinglyLinkedList.java for method: insertBack
+13:56:14,514  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:14,526  WARN MuJavaController:847 - MJC: Generating a batch from father index: 27 starting from indexes: [ 0 ]...
+13:56:14,588  WARN MuJavaController:907 - MJC: No more children for father index 27
+13:56:14,588  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:15,074  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:15,806  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:17,863  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:17,865  WARN MuJavaController:1154 - MJC: About to generate case Father index 27 - [ 1 ]
+13:56:17,865  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:17,906  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857775806-0/a14288577758060/aOpenJMLInWrap52/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:17,907  WARN OpenJMLController:275 - Mutants consumed by RAC: 28
+13:56:17,907  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857774322-0/SinglyLinkedList/insertBack/MULTI/2149/SinglyLinkedList.java for method: insertBack
+13:56:18,063  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:18,227  WARN MuJavaController:847 - MJC: Generating a batch from father index: 28 starting from indexes: [ 0 0 ]...
+13:56:18,918  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:19,042  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:56:26,916  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 0
+13:56:26,918  WARN MuJavaController:1154 - MJC: About to generate case Father index 28 - [ 1 0 ]
+13:56:26,919  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOR_REFINED, freshNode, current.next) ]
+13:56:27,105  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857779042-0/a14288577790420/aOpenJMLInWrap53/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:27,105  WARN OpenJMLController:275 - Mutants consumed by RAC: 29
+13:56:27,105  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857777871-0/SinglyLinkedList/insertBack/MULTI/2160/SinglyLinkedList.java for method: insertBack
+13:56:27,205  WARN MuJavaController:847 - MJC: Generating a batch from father index: 29 starting from indexes: [ 0 ]...
+13:56:27,271  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:27,383  WARN MuJavaController:907 - MJC: No more children for father index 29
+13:56:27,384  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:27,956  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:28,746  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:30,942  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:30,946  WARN MuJavaController:1154 - MJC: About to generate case Father index 29 - [ 1 ]
+13:56:30,946  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:31,004  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857788747-0/a14288577887470/aOpenJMLInWrap55/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:31,004  WARN OpenJMLController:275 - Mutants consumed by RAC: 30
+13:56:31,005  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857786927-0/SinglyLinkedList/insertBack/MULTI/2340/SinglyLinkedList.java for method: insertBack
+13:56:31,176  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:31,281  WARN MuJavaController:847 - MJC: Generating a batch from father index: 30 starting from indexes: [ 0 ]...
+13:56:31,373  WARN MuJavaController:907 - MJC: No more children for father index 30
+13:56:31,373  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:31,748  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:32,537  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:34,872  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:34,874  WARN MuJavaController:1154 - MJC: About to generate case Father index 30 - [ 1 ]
+13:56:34,874  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:34,918  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857792537-0/a14288577925370/aOpenJMLInWrap57/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:34,919  WARN OpenJMLController:275 - Mutants consumed by RAC: 31
+13:56:34,919  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857790954-0/SinglyLinkedList/insertBack/MULTI/2351/SinglyLinkedList.java for method: insertBack
+13:56:35,079  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:35,114  WARN MuJavaController:847 - MJC: Generating a batch from father index: 31 starting from indexes: [ 0 ]...
+13:56:35,222  WARN MuJavaController:907 - MJC: No more children for father index 31
+13:56:35,222  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:35,805  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:36,807  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:39,055  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:39,057  WARN MuJavaController:1154 - MJC: About to generate case Father index 31 - [ 1 ]
+13:56:39,057  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:39,092  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857796807-0/a14288577968070/aOpenJMLInWrap59/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:39,092  WARN OpenJMLController:275 - Mutants consumed by RAC: 32
+13:56:39,092  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857794880-0/SinglyLinkedList/insertBack/MULTI/2362/SinglyLinkedList.java for method: insertBack
+13:56:39,237  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:39,266  WARN MuJavaController:847 - MJC: Generating a batch from father index: 32 starting from indexes: [ 0 ]...
+13:56:39,615  WARN MuJavaController:907 - MJC: No more children for father index 32
+13:56:39,616  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:40,046  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:40,915  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:42,954  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:42,956  WARN MuJavaController:1154 - MJC: About to generate case Father index 32 - [ 1 ]
+13:56:42,956  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:43,003  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857800915-0/a14288578009150/aOpenJMLInWrap61/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:43,004  WARN OpenJMLController:275 - Mutants consumed by RAC: 33
+13:56:43,004  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857799062-0/SinglyLinkedList/insertBack/MULTI/2373/SinglyLinkedList.java for method: insertBack
+13:56:43,152  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:43,176  WARN MuJavaController:847 - MJC: Generating a batch from father index: 33 starting from indexes: [ 0 ]...
+13:56:43,237  WARN MuJavaController:907 - MJC: No more children for father index 33
+13:56:43,238  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:43,760  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:44,459  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:46,436  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:46,438  WARN MuJavaController:1154 - MJC: About to generate case Father index 33 - [ 1 ]
+13:56:46,439  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:46,477  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857804459-0/a14288578044590/aOpenJMLInWrap63/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:46,477  WARN OpenJMLController:275 - Mutants consumed by RAC: 34
+13:56:46,477  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857802962-0/SinglyLinkedList/insertBack/MULTI/2384/SinglyLinkedList.java for method: insertBack
+13:56:46,623  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:46,663  WARN MuJavaController:847 - MJC: Generating a batch from father index: 34 starting from indexes: [ 0 ]...
+13:56:46,723  WARN MuJavaController:907 - MJC: No more children for father index 34
+13:56:46,723  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:47,141  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:47,934  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:56:49,909  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:56:49,912  WARN MuJavaController:1154 - MJC: About to generate case Father index 34 - [ 1 ]
+13:56:49,913  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:56:49,952  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857807935-0/a14288578079350/aOpenJMLInWrap65/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:49,952  WARN OpenJMLController:275 - Mutants consumed by RAC: 35
+13:56:49,952  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857806444-0/SinglyLinkedList/insertBack/MULTI/2395/SinglyLinkedList.java for method: insertBack
+13:56:50,096  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:50,221  WARN MuJavaController:847 - MJC: Generating a batch from father index: 35 starting from indexes: [ 0 0 ]...
+13:56:50,604  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:50,780  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:56:57,059  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 0
+13:56:57,061  WARN MuJavaController:1154 - MJC: About to generate case Father index 35 - [ 1 0 ]
+13:56:57,061  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOR_REFINED, freshNode, current.next) ]
+13:56:57,236  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857810781-0/a14288578107810/aOpenJMLInWrap66/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:56:57,236  WARN OpenJMLController:275 - Mutants consumed by RAC: 36
+13:56:57,237  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857809919-0/SinglyLinkedList/insertBack/MULTI/2406/SinglyLinkedList.java for method: insertBack
+13:56:57,285  WARN MuJavaController:847 - MJC: Generating a batch from father index: 36 starting from indexes: [ 0 ]...
+13:56:57,348  WARN MuJavaController:907 - MJC: No more children for father index 36
+13:56:57,348  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:56:57,367  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:56:57,994  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:56:58,714  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:00,835  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:00,838  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 1 ]
+13:57:00,838  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:00,880  WARN OpenJMLController:248 - TEST PASSED: :) for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857818714-0/a14288578187140/aOpenJMLInWrap68/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:00,889  WARN OpenJMLController:275 - Mutants consumed by RAC: 37
+13:57:00,889  WARN OpenJMLController:280 - Candidate Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857817067-0/SinglyLinkedList/insertBack/MULTI/2586/SinglyLinkedList.java for method: insertBack
+13:57:01,075  WARN MuJavaController:847 - MJC: Generating a batch from father index: 37 starting from indexes: [ 0 ]...
+13:57:01,151  WARN MuJavaController:907 - MJC: No more children for father index 37
+13:57:01,152  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:02,144  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:02,759  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:02,838  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:04,884  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:04,886  WARN MuJavaController:1154 - MJC: About to generate case Father index 37 - [ 1 ]
+13:57:04,886  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:04,936  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857822838-0/a14288578228380/aOpenJMLInWrap70/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:04,936  WARN OpenJMLController:275 - Mutants consumed by RAC: 38
+13:57:04,936  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857820843-0/SinglyLinkedList/insertBack/MULTI/2597/SinglyLinkedList.java for method: insertBack
+13:57:05,083  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:05,102  WARN MuJavaController:847 - MJC: Generating a batch from father index: 38 starting from indexes: [ 0 ]...
+13:57:05,162  WARN MuJavaController:907 - MJC: No more children for father index 38
+13:57:05,162  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:05,649  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:06,467  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:08,541  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:08,543  WARN MuJavaController:1154 - MJC: About to generate case Father index 38 - [ 1 ]
+13:57:08,543  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:08,590  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857826467-0/a14288578264670/aOpenJMLInWrap72/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:08,590  WARN OpenJMLController:275 - Mutants consumed by RAC: 39
+13:57:08,590  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857824892-0/SinglyLinkedList/insertBack/MULTI/2608/SinglyLinkedList.java for method: insertBack
+13:57:08,727  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:08,747  WARN MuJavaController:847 - MJC: Generating a batch from father index: 39 starting from indexes: [ 0 ]...
+13:57:08,806  WARN MuJavaController:907 - MJC: No more children for father index 39
+13:57:08,806  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:09,344  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:10,117  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:12,378  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:12,382  WARN MuJavaController:1154 - MJC: About to generate case Father index 39 - [ 1 ]
+13:57:12,382  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:12,443  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857830117-0/a14288578301170/aOpenJMLInWrap74/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:12,443  WARN OpenJMLController:275 - Mutants consumed by RAC: 40
+13:57:12,444  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857828548-0/SinglyLinkedList/insertBack/MULTI/2619/SinglyLinkedList.java for method: insertBack
+13:57:12,598  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:12,682  WARN MuJavaController:847 - MJC: Generating a batch from father index: 40 starting from indexes: [ 0 ]...
+13:57:12,794  WARN MuJavaController:907 - MJC: No more children for father index 40
+13:57:12,795  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:13,288  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:14,192  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:16,334  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:16,336  WARN MuJavaController:1154 - MJC: About to generate case Father index 40 - [ 1 ]
+13:57:16,336  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:16,374  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857834192-0/a14288578341920/aOpenJMLInWrap76/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:16,374  WARN OpenJMLController:275 - Mutants consumed by RAC: 41
+13:57:16,375  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857832390-0/SinglyLinkedList/insertBack/MULTI/2630/SinglyLinkedList.java for method: insertBack
+13:57:16,530  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:16,542  WARN MuJavaController:847 - MJC: Generating a batch from father index: 41 starting from indexes: [ 0 ]...
+13:57:16,609  WARN MuJavaController:907 - MJC: No more children for father index 41
+13:57:16,609  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:17,084  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:17,820  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:19,909  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:19,913  WARN MuJavaController:1154 - MJC: About to generate case Father index 41 - [ 1 ]
+13:57:19,913  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:19,952  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857837821-0/a14288578378210/aOpenJMLInWrap78/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:19,952  WARN OpenJMLController:275 - Mutants consumed by RAC: 42
+13:57:19,952  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857836342-0/SinglyLinkedList/insertBack/MULTI/2641/SinglyLinkedList.java for method: insertBack
+13:57:20,091  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:20,243  WARN MuJavaController:847 - MJC: Generating a batch from father index: 42 starting from indexes: [ 0 0 ]...
+13:57:20,790  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:20,890  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+13:57:26,981  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 0
+13:57:26,983  WARN MuJavaController:1154 - MJC: About to generate case Father index 42 - [ 1 0 ]
+13:57:26,983  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOR_REFINED, freshNode, current.next) ]
+13:57:27,146  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857840890-0/a14288578408900/aOpenJMLInWrap79/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:27,147  WARN OpenJMLController:275 - Mutants consumed by RAC: 43
+13:57:27,147  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857839922-0/SinglyLinkedList/insertBack/MULTI/2652/SinglyLinkedList.java for method: insertBack
+13:57:27,188  WARN MuJavaController:847 - MJC: Generating a batch from father index: 43 starting from indexes: [ 0 ]...
+13:57:27,253  WARN MuJavaController:907 - MJC: No more children for father index 43
+13:57:27,253  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:27,580  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:28,113  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:28,758  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:30,888  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:30,890  WARN MuJavaController:1154 - MJC: About to generate case Father index 43 - [ 1 ]
+13:57:30,890  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:30,928  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857848759-0/a14288578487590/aOpenJMLInWrap81/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:30,928  WARN OpenJMLController:275 - Mutants consumed by RAC: 44
+13:57:30,928  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857846989-0/SinglyLinkedList/insertBack/MULTI/2832/SinglyLinkedList.java for method: insertBack
+13:57:31,087  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:31,098  WARN MuJavaController:847 - MJC: Generating a batch from father index: 44 starting from indexes: [ 0 ]...
+13:57:31,180  WARN MuJavaController:907 - MJC: No more children for father index 44
+13:57:31,180  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:31,671  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:32,369  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:34,673  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:34,675  WARN MuJavaController:1154 - MJC: About to generate case Father index 44 - [ 1 ]
+13:57:34,675  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:34,713  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857852370-0/a14288578523700/aOpenJMLInWrap83/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:34,713  WARN OpenJMLController:275 - Mutants consumed by RAC: 45
+13:57:34,713  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857850896-0/SinglyLinkedList/insertBack/MULTI/2843/SinglyLinkedList.java for method: insertBack
+13:57:34,844  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:34,898  WARN MuJavaController:847 - MJC: Generating a batch from father index: 45 starting from indexes: [ 0 ]...
+13:57:34,972  WARN MuJavaController:907 - MJC: No more children for father index 45
+13:57:34,972  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:35,457  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:36,207  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:38,574  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:38,578  WARN MuJavaController:1154 - MJC: About to generate case Father index 45 - [ 1 ]
+13:57:38,578  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:38,629  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857856207-0/a14288578562070/aOpenJMLInWrap85/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:38,629  WARN OpenJMLController:275 - Mutants consumed by RAC: 46
+13:57:38,629  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857854681-0/SinglyLinkedList/insertBack/MULTI/2854/SinglyLinkedList.java for method: insertBack
+13:57:38,804  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:38,898  WARN MuJavaController:847 - MJC: Generating a batch from father index: 46 starting from indexes: [ 0 ]...
+13:57:38,987  WARN MuJavaController:907 - MJC: No more children for father index 46
+13:57:38,987  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:39,525  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:40,271  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:42,300  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:42,303  WARN MuJavaController:1154 - MJC: About to generate case Father index 46 - [ 1 ]
+13:57:42,304  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:42,340  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857860272-0/a14288578602720/aOpenJMLInWrap87/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:42,340  WARN OpenJMLController:275 - Mutants consumed by RAC: 47
+13:57:42,340  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857858587-0/SinglyLinkedList/insertBack/MULTI/2865/SinglyLinkedList.java for method: insertBack
+13:57:42,491  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:42,506  WARN MuJavaController:847 - MJC: Generating a batch from father index: 47 starting from indexes: [ 0 ]...
+13:57:42,602  WARN MuJavaController:907 - MJC: No more children for father index 47
+13:57:42,603  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:43,193  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:44,433  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:46,786  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:46,788  WARN MuJavaController:1154 - MJC: About to generate case Father index 47 - [ 1 ]
+13:57:46,788  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:46,828  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857864434-0/a14288578644340/aOpenJMLInWrap89/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:46,828  WARN OpenJMLController:275 - Mutants consumed by RAC: 48
+13:57:46,828  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857862310-0/SinglyLinkedList/insertBack/MULTI/2876/SinglyLinkedList.java for method: insertBack
+13:57:46,974  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:47,010  WARN MuJavaController:847 - MJC: Generating a batch from father index: 48 starting from indexes: [ 0 ]...
+13:57:47,113  WARN MuJavaController:907 - MJC: No more children for father index 48
+13:57:47,113  WARN MuJavaController:921 - MJC: Batch generated. Total: 11
+13:57:47,539  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:48,343  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:50,731  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 2
+13:57:50,733  WARN MuJavaController:1154 - MJC: About to generate case Father index 48 - [ 1 ]
+13:57:50,733  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, freshNode) ]
+13:57:50,773  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857868344-0/a14288578683440/aOpenJMLInWrap91/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:50,773  WARN OpenJMLController:275 - Mutants consumed by RAC: 49
+13:57:50,774  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857866794-0/SinglyLinkedList/insertBack/MULTI/2887/SinglyLinkedList.java for method: insertBack
+13:57:50,952  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:51,332  WARN MuJavaController:847 - MJC: Generating a batch from father index: 49 starting from indexes: [ 0 0 ]...
+13:57:51,704  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:52,052  WARN MuJavaController:907 - MJC: No more children for father index 49
+13:57:52,052  WARN MuJavaController:921 - MJC: Batch generated. Total: 31
+13:57:53,485  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:57:56,634  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 6
+13:57:56,637  WARN MuJavaController:1154 - MJC: About to generate case Father index 49 - [ 5 8 ]
+13:57:56,637  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, this.header.next.next) (PRVOL_SMART, current.value, this.header.next.value) ]
+13:57:56,702  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857873486-0/a14288578734860/aOpenJMLInWrap93/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:57:56,702  WARN OpenJMLController:275 - Mutants consumed by RAC: 50
+13:57:56,702  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857870740-0/SinglyLinkedList/insertBack/MULTI/3079/SinglyLinkedList.java for method: insertBack
+13:57:56,852  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:57,050  WARN MuJavaController:847 - MJC: Generating a batch from father index: 50 starting from indexes: [ 0 0 ]...
+13:57:57,322  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:57,401  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:57:57,752  WARN MuJavaController:907 - MJC: No more children for father index 50
+13:57:57,752  WARN MuJavaController:921 - MJC: Batch generated. Total: 31
+13:57:57,941  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:57:58,039  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: UNSAT
+13:57:59,121  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:58:02,453  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 6
+13:58:02,457  WARN MuJavaController:1154 - MJC: About to generate case Father index 50 - [ 5 8 ]
+13:58:02,457  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, this.header.next.next) (PRVOL_SMART, current.value, this.header.next.value) ]
+13:58:02,534  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857879122-0/a14288578791220/aOpenJMLInWrap95/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:58:02,534  WARN OpenJMLController:275 - Mutants consumed by RAC: 51
+13:58:02,534  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857876648-0/SinglyLinkedList/insertBack/MULTI/3320/SinglyLinkedList.java for method: insertBack
+13:58:02,691  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:02,949  WARN MuJavaController:847 - MJC: Generating a batch from father index: 51 starting from indexes: [ 0 0 ]...
+13:58:03,515  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:03,627  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:03,831  WARN MuJavaController:907 - MJC: No more children for father index 51
+13:58:03,831  WARN MuJavaController:921 - MJC: Batch generated. Total: 31
+13:58:04,425  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:04,561  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: UNSAT
+13:58:05,925  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:58:09,746  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 6
+13:58:09,749  WARN MuJavaController:1154 - MJC: About to generate case Father index 51 - [ 5 8 ]
+13:58:09,749  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, this.header.next.next) (PRVOL_SMART, current.value, this.header.next.value) ]
+13:58:09,826  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857885926-0/a14288578859260/aOpenJMLInWrap97/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:58:09,827  WARN OpenJMLController:275 - Mutants consumed by RAC: 52
+13:58:09,827  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857882464-0/SinglyLinkedList/insertBack/MULTI/3561/SinglyLinkedList.java for method: insertBack
+13:58:10,001  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:10,320  WARN MuJavaController:847 - MJC: Generating a batch from father index: 52 starting from indexes: [ 0 0 ]...
+13:58:10,716  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:10,861  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:11,068  WARN MuJavaController:907 - MJC: No more children for father index 52
+13:58:11,068  WARN MuJavaController:921 - MJC: Batch generated. Total: 31
+13:58:11,600  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:11,689  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: UNSAT
+13:58:12,719  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:58:15,576  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 6
+13:58:15,578  WARN MuJavaController:1154 - MJC: About to generate case Father index 52 - [ 5 8 ]
+13:58:15,579  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, this.header.next.next) (PRVOL_SMART, current.value, this.header.next.value) ]
+13:58:15,635  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857892721-0/a14288578927210/aOpenJMLInWrap99/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:58:15,635  WARN OpenJMLController:275 - Mutants consumed by RAC: 53
+13:58:15,635  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857889763-0/SinglyLinkedList/insertBack/MULTI/3802/SinglyLinkedList.java for method: insertBack
+13:58:15,786  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:16,010  WARN MuJavaController:847 - MJC: Generating a batch from father index: 53 starting from indexes: [ 0 0 ]...
+13:58:16,343  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:16,472  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:16,737  WARN MuJavaController:907 - MJC: No more children for father index 53
+13:58:16,737  WARN MuJavaController:921 - MJC: Batch generated. Total: 31
+13:58:17,114  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:17,199  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: UNSAT
+13:58:18,251  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:58:21,364  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 6
+13:58:21,366  WARN MuJavaController:1154 - MJC: About to generate case Father index 53 - [ 5 8 ]
+13:58:21,367  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, this.header.next.next) (PRVOL_SMART, current.value, this.header.next.value) ]
+13:58:21,436  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857898251-0/a14288578982510/aOpenJMLInWrap101/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:58:21,436  WARN OpenJMLController:275 - Mutants consumed by RAC: 54
+13:58:21,437  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857895585-0/SinglyLinkedList/insertBack/MULTI/4043/SinglyLinkedList.java for method: insertBack
+13:58:21,612  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:21,854  WARN MuJavaController:847 - MJC: Generating a batch from father index: 54 starting from indexes: [ 0 0 ]...
+13:58:22,233  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:22,315  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:22,527  WARN MuJavaController:907 - MJC: No more children for father index 54
+13:58:22,528  WARN MuJavaController:921 - MJC: Batch generated. Total: 31
+13:58:23,046  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:23,117  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: UNSAT
+13:58:24,059  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:58:27,191  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 6
+13:58:27,194  WARN MuJavaController:1154 - MJC: About to generate case Father index 54 - [ 5 8 ]
+13:58:27,194  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, this.header.next.next) (PRVOL_SMART, current.value, this.header.next.value) ]
+13:58:27,270  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857904059-0/a14288579040590/aOpenJMLInWrap103/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:58:27,270  WARN OpenJMLController:275 - Mutants consumed by RAC: 55
+13:58:27,270  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857901373-0/SinglyLinkedList/insertBack/MULTI/4284/SinglyLinkedList.java for method: insertBack
+13:58:27,759  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:27,860  WARN MuJavaController:847 - MJC: Generating a batch from father index: 55 starting from indexes: [ 0 0 ]...
+13:58:28,378  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:28,454  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:28,784  WARN MuJavaController:907 - MJC: No more children for father index 55
+13:58:28,784  WARN MuJavaController:921 - MJC: Batch generated. Total: 79
+13:58:29,076  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:29,162  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: UNSAT
+13:58:30,535  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:58:34,852  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 30
+13:58:34,855  WARN MuJavaController:1154 - MJC: About to generate case Father index 55 - [ 11 6 ]
+13:58:34,855  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOL_SMART, current.value, freshNode.next.value) (PRVOU_REFINED, current.next, current.next.next) ]
+13:58:34,971  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857910537-0/a14288579105370/aOpenJMLInWrap105/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:58:34,972  WARN OpenJMLController:275 - Mutants consumed by RAC: 56
+13:58:34,972  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857907202-0/SinglyLinkedList/insertBack/MULTI/4524/SinglyLinkedList.java for method: insertBack
+13:58:35,085  WARN MuJavaController:847 - MJC: Generating a batch from father index: 56 starting from indexes: [ 0 ]...
+13:58:35,130  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:35,151  WARN MuJavaController:907 - MJC: No more children for father index 56
+13:58:35,151  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:35,343  WARN MuJavaController:847 - MJC: Generating a batch from father index: 57 starting from indexes: [ 0 ]...
+13:58:35,397  WARN MuJavaController:907 - MJC: No more children for father index 57
+13:58:35,397  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:35,622  WARN MuJavaController:847 - MJC: Generating a batch from father index: 58 starting from indexes: [ 0 ]...
+13:58:35,634  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:35,663  WARN MuJavaController:907 - MJC: No more children for father index 58
+13:58:35,664  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:35,811  WARN MuJavaController:847 - MJC: Generating a batch from father index: 59 starting from indexes: [ 0 ]...
+13:58:35,849  WARN MuJavaController:907 - MJC: No more children for father index 59
+13:58:35,849  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:35,996  WARN MuJavaController:847 - MJC: Generating a batch from father index: 60 starting from indexes: [ 0 ]...
+13:58:36,045  WARN MuJavaController:907 - MJC: No more children for father index 60
+13:58:36,045  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:36,251  WARN MuJavaController:847 - MJC: Generating a batch from father index: 61 starting from indexes: [ 0 ]...
+13:58:36,297  WARN MuJavaController:907 - MJC: No more children for father index 61
+13:58:36,298  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:36,540  WARN MuJavaController:847 - MJC: Generating a batch from father index: 62 starting from indexes: [ 0 0 ]...
+13:58:37,278  WARN MuJavaController:907 - MJC: No more children for father index 62
+13:58:37,278  WARN MuJavaController:921 - MJC: Batch generated. Total: 79
+13:58:38,881  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:58:43,166  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 30
+13:58:43,169  WARN MuJavaController:1154 - MJC: About to generate case Father index 62 - [ 11 6 ]
+13:58:43,169  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOL_SMART, current.value, freshNode.next.value) (PRVOU_REFINED, current.next, current.next.next) ]
+13:58:43,261  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857918885-0/a14288579188850/aOpenJMLInWrap107/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:58:43,262  WARN OpenJMLController:275 - Mutants consumed by RAC: 57
+13:58:43,262  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857916303-0/SinglyLinkedList/insertBack/MULTI/4923/SinglyLinkedList.java for method: insertBack
+13:58:43,383  WARN MuJavaController:847 - MJC: Generating a batch from father index: 63 starting from indexes: [ 0 ]...
+13:58:43,404  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:43,430  WARN MuJavaController:907 - MJC: No more children for father index 63
+13:58:43,430  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:43,717  WARN MuJavaController:847 - MJC: Generating a batch from father index: 64 starting from indexes: [ 0 ]...
+13:58:43,763  WARN MuJavaController:907 - MJC: No more children for father index 64
+13:58:43,763  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:44,001  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:44,007  WARN MuJavaController:847 - MJC: Generating a batch from father index: 65 starting from indexes: [ 0 ]...
+13:58:44,062  WARN MuJavaController:907 - MJC: No more children for father index 65
+13:58:44,062  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:44,201  WARN MuJavaController:847 - MJC: Generating a batch from father index: 66 starting from indexes: [ 0 ]...
+13:58:44,240  WARN MuJavaController:907 - MJC: No more children for father index 66
+13:58:44,240  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:44,379  WARN MuJavaController:847 - MJC: Generating a batch from father index: 67 starting from indexes: [ 0 ]...
+13:58:44,416  WARN MuJavaController:907 - MJC: No more children for father index 67
+13:58:44,416  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:44,556  WARN MuJavaController:847 - MJC: Generating a batch from father index: 68 starting from indexes: [ 0 ]...
+13:58:44,594  WARN MuJavaController:907 - MJC: No more children for father index 68
+13:58:44,595  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:44,800  WARN MuJavaController:847 - MJC: Generating a batch from father index: 69 starting from indexes: [ 0 0 ]...
+13:58:45,511  WARN MuJavaController:907 - MJC: No more children for father index 69
+13:58:45,511  WARN MuJavaController:921 - MJC: Batch generated. Total: 79
+13:58:47,123  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:58:51,312  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 30
+13:58:51,315  WARN MuJavaController:1154 - MJC: About to generate case Father index 69 - [ 11 6 ]
+13:58:51,315  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOL_SMART, current.value, freshNode.next.value) (PRVOU_REFINED, current.next, current.next.next) ]
+13:58:51,408  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857927125-0/a14288579271250/aOpenJMLInWrap109/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:58:51,408  WARN OpenJMLController:275 - Mutants consumed by RAC: 58
+13:58:51,408  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857924600-0/SinglyLinkedList/insertBack/MULTI/5322/SinglyLinkedList.java for method: insertBack
+13:58:51,544  WARN MuJavaController:847 - MJC: Generating a batch from father index: 70 starting from indexes: [ 0 ]...
+13:58:51,565  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:58:51,613  WARN MuJavaController:907 - MJC: No more children for father index 70
+13:58:51,613  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:51,837  WARN MuJavaController:847 - MJC: Generating a batch from father index: 71 starting from indexes: [ 0 ]...
+13:58:51,887  WARN MuJavaController:907 - MJC: No more children for father index 71
+13:58:51,887  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:52,087  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:58:52,088  WARN MuJavaController:847 - MJC: Generating a batch from father index: 72 starting from indexes: [ 0 ]...
+13:58:52,144  WARN MuJavaController:907 - MJC: No more children for father index 72
+13:58:52,145  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:52,349  WARN MuJavaController:847 - MJC: Generating a batch from father index: 73 starting from indexes: [ 0 ]...
+13:58:52,393  WARN MuJavaController:907 - MJC: No more children for father index 73
+13:58:52,393  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:52,550  WARN MuJavaController:847 - MJC: Generating a batch from father index: 74 starting from indexes: [ 0 ]...
+13:58:52,592  WARN MuJavaController:907 - MJC: No more children for father index 74
+13:58:52,592  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:52,771  WARN MuJavaController:847 - MJC: Generating a batch from father index: 75 starting from indexes: [ 0 ]...
+13:58:52,809  WARN MuJavaController:907 - MJC: No more children for father index 75
+13:58:52,809  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:58:53,048  WARN MuJavaController:847 - MJC: Generating a batch from father index: 76 starting from indexes: [ 0 0 ]...
+13:58:53,745  WARN MuJavaController:907 - MJC: No more children for father index 76
+13:58:53,745  WARN MuJavaController:921 - MJC: Batch generated. Total: 79
+13:58:55,476  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:58:59,810  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 30
+13:58:59,813  WARN MuJavaController:1154 - MJC: About to generate case Father index 76 - [ 11 6 ]
+13:58:59,813  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOL_SMART, current.value, freshNode.next.value) (PRVOU_REFINED, current.next, current.next.next) ]
+13:58:59,913  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857935479-0/a14288579354790/aOpenJMLInWrap111/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:58:59,913  WARN OpenJMLController:275 - Mutants consumed by RAC: 59
+13:58:59,914  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857932814-0/SinglyLinkedList/insertBack/MULTI/5721/SinglyLinkedList.java for method: insertBack
+13:59:00,038  WARN MuJavaController:847 - MJC: Generating a batch from father index: 77 starting from indexes: [ 0 ]...
+13:59:00,054  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:59:00,102  WARN MuJavaController:907 - MJC: No more children for father index 77
+13:59:00,102  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:00,318  WARN MuJavaController:847 - MJC: Generating a batch from father index: 78 starting from indexes: [ 0 ]...
+13:59:00,373  WARN MuJavaController:907 - MJC: No more children for father index 78
+13:59:00,374  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:00,550  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:59:00,570  WARN MuJavaController:847 - MJC: Generating a batch from father index: 79 starting from indexes: [ 0 ]...
+13:59:00,605  WARN MuJavaController:907 - MJC: No more children for father index 79
+13:59:00,605  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:00,740  WARN MuJavaController:847 - MJC: Generating a batch from father index: 80 starting from indexes: [ 0 ]...
+13:59:00,784  WARN MuJavaController:907 - MJC: No more children for father index 80
+13:59:00,784  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:00,912  WARN MuJavaController:847 - MJC: Generating a batch from father index: 81 starting from indexes: [ 0 ]...
+13:59:00,951  WARN MuJavaController:907 - MJC: No more children for father index 81
+13:59:00,952  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:01,085  WARN MuJavaController:847 - MJC: Generating a batch from father index: 82 starting from indexes: [ 0 ]...
+13:59:01,125  WARN MuJavaController:907 - MJC: No more children for father index 82
+13:59:01,125  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:01,339  WARN MuJavaController:847 - MJC: Generating a batch from father index: 83 starting from indexes: [ 0 0 ]...
+13:59:02,050  WARN MuJavaController:907 - MJC: No more children for father index 83
+13:59:02,050  WARN MuJavaController:921 - MJC: Batch generated. Total: 79
+13:59:03,795  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:59:07,886  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 30
+13:59:07,901  WARN MuJavaController:1154 - MJC: About to generate case Father index 83 - [ 11 6 ]
+13:59:07,901  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOL_SMART, current.value, freshNode.next.value) (PRVOU_REFINED, current.next, current.next.next) ]
+13:59:07,990  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857943798-0/a14288579437980/aOpenJMLInWrap113/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:59:07,990  WARN OpenJMLController:275 - Mutants consumed by RAC: 60
+13:59:07,991  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857941129-0/SinglyLinkedList/insertBack/MULTI/6120/SinglyLinkedList.java for method: insertBack
+13:59:08,122  WARN MuJavaController:847 - MJC: Generating a batch from father index: 84 starting from indexes: [ 0 ]...
+13:59:08,141  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:59:08,169  WARN MuJavaController:907 - MJC: No more children for father index 84
+13:59:08,169  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:08,424  WARN MuJavaController:847 - MJC: Generating a batch from father index: 85 starting from indexes: [ 0 ]...
+13:59:08,470  WARN MuJavaController:907 - MJC: No more children for father index 85
+13:59:08,470  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:08,673  WARN MuJavaController:847 - MJC: Generating a batch from father index: 86 starting from indexes: [ 0 ]...
+13:59:08,679  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:59:08,717  WARN MuJavaController:907 - MJC: No more children for father index 86
+13:59:08,718  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:08,885  WARN MuJavaController:847 - MJC: Generating a batch from father index: 87 starting from indexes: [ 0 ]...
+13:59:08,922  WARN MuJavaController:907 - MJC: No more children for father index 87
+13:59:08,922  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:09,076  WARN MuJavaController:847 - MJC: Generating a batch from father index: 88 starting from indexes: [ 0 ]...
+13:59:09,110  WARN MuJavaController:907 - MJC: No more children for father index 88
+13:59:09,110  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:09,251  WARN MuJavaController:847 - MJC: Generating a batch from father index: 89 starting from indexes: [ 0 ]...
+13:59:09,302  WARN MuJavaController:907 - MJC: No more children for father index 89
+13:59:09,302  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:09,517  WARN MuJavaController:847 - MJC: Generating a batch from father index: 90 starting from indexes: [ 0 0 ]...
+13:59:10,297  WARN MuJavaController:907 - MJC: No more children for father index 90
+13:59:10,297  WARN MuJavaController:921 - MJC: Batch generated. Total: 79
+13:59:11,943  WARN MuJavaController:1006 - MJC: Didn't compile, identifying non-compilable methods to remove.
+13:59:16,028  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 30
+13:59:16,030  WARN MuJavaController:1154 - MJC: About to generate case Father index 90 - [ 11 6 ]
+13:59:16,030  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOL_SMART, current.value, freshNode.next.value) (PRVOU_REFINED, current.next, current.next.next) ]
+13:59:16,130  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857951944-0/a14288579519440/aOpenJMLInWrap115/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack, input: 0
+13:59:16,130  WARN OpenJMLController:275 - Mutants consumed by RAC: 61
+13:59:16,130  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857949307-0/SinglyLinkedList/insertBack/MULTI/6519/SinglyLinkedList.java for method: insertBack
+13:59:16,244  WARN MuJavaController:847 - MJC: Generating a batch from father index: 91 starting from indexes: [ 0 ]...
+13:59:16,295  WARN DarwinistController:224 - ========================================================================PREVIOUS TO CALL OF TACOMAIN
+13:59:16,297  WARN MuJavaController:907 - MJC: No more children for father index 91
+13:59:16,297  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:16,510  WARN MuJavaController:847 - MJC: Generating a batch from father index: 92 starting from indexes: [ 0 ]...
+13:59:16,560  WARN MuJavaController:907 - MJC: No more children for father index 92
+13:59:16,560  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:16,767  WARN MuJavaController:847 - MJC: Generating a batch from father index: 93 starting from indexes: [ 0 ]...
+13:59:16,806  WARN DarwinistController:236 - STORING A NEW VARIABLIZATION SAT CHECK
+13:59:16,811  WARN MuJavaController:907 - MJC: No more children for father index 93
+13:59:16,811  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:16,954  WARN MuJavaController:847 - MJC: Generating a batch from father index: 94 starting from indexes: [ 0 ]...
+13:59:16,991  WARN MuJavaController:907 - MJC: No more children for father index 94
+13:59:16,991  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:17,147  WARN MuJavaController:847 - MJC: Generating a batch from father index: 95 starting from indexes: [ 0 ]...
+13:59:17,182  WARN MuJavaController:907 - MJC: No more children for father index 95
+13:59:17,182  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:17,318  WARN MuJavaController:847 - MJC: Generating a batch from father index: 96 starting from indexes: [ 0 ]...
+13:59:17,364  WARN MuJavaController:907 - MJC: No more children for father index 96
+13:59:17,364  WARN MuJavaController:509 - MJC: A father with no children, skipping.
+13:59:17,364  WARN MuJavaController:1139 - MJC: No more children for father index 0
+13:59:17,364  WARN MuJavaController:1139 - MJC: No more children for father index 1
+13:59:17,365  WARN MuJavaController:1139 - MJC: No more children for father index 2
+13:59:17,365  WARN MuJavaController:1139 - MJC: No more children for father index 3
+13:59:17,365  WARN MuJavaController:1139 - MJC: No more children for father index 4
+13:59:17,365  WARN MuJavaController:1139 - MJC: No more children for father index 5
+13:59:17,365  WARN MuJavaController:1139 - MJC: No more children for father index 6
+13:59:17,365  WARN MuJavaController:1139 - MJC: No more children for father index 7
+13:59:17,365  WARN MuJavaController:1139 - MJC: No more children for father index 8
+13:59:17,366  WARN MuJavaController:1139 - MJC: No more children for father index 9
+13:59:17,366  WARN MuJavaController:1139 - MJC: No more children for father index 10
+13:59:17,366  WARN MuJavaController:1139 - MJC: No more children for father index 11
+13:59:17,366  WARN MuJavaController:1139 - MJC: No more children for father index 12
+13:59:17,366  WARN MuJavaController:1139 - MJC: No more children for father index 13
+13:59:17,366  WARN MuJavaController:1139 - MJC: No more children for father index 14
+13:59:17,366  WARN MuJavaController:1139 - MJC: No more children for father index 15
+13:59:17,366  WARN MuJavaController:1139 - MJC: No more children for father index 16
+13:59:17,367  WARN MuJavaController:1139 - MJC: No more children for father index 17
+13:59:17,367  WARN MuJavaController:1139 - MJC: No more children for father index 18
+13:59:17,367  WARN MuJavaController:1139 - MJC: No more children for father index 19
+13:59:17,367  WARN MuJavaController:1139 - MJC: No more children for father index 20
+13:59:17,367  WARN MuJavaController:1139 - MJC: No more children for father index 21
+13:59:17,367  WARN MuJavaController:1139 - MJC: No more children for father index 22
+13:59:17,367  WARN MuJavaController:1139 - MJC: No more children for father index 23
+13:59:17,368  WARN MuJavaController:1139 - MJC: No more children for father index 24
+13:59:17,368  WARN MuJavaController:1139 - MJC: No more children for father index 25
+13:59:17,368  WARN MuJavaController:1139 - MJC: No more children for father index 26
+13:59:17,368  WARN MuJavaController:1139 - MJC: No more children for father index 27
+13:59:17,368  WARN MuJavaController:1139 - MJC: No more children for father index 28
+13:59:17,368  WARN MuJavaController:1139 - MJC: No more children for father index 29
+13:59:17,368  WARN MuJavaController:1139 - MJC: No more children for father index 30
+13:59:17,368  WARN MuJavaController:1139 - MJC: No more children for father index 31
+13:59:17,369  WARN MuJavaController:1139 - MJC: No more children for father index 32
+13:59:17,369  WARN MuJavaController:1139 - MJC: No more children for father index 33
+13:59:17,369  WARN MuJavaController:1139 - MJC: No more children for father index 34
+13:59:17,369  WARN MuJavaController:1139 - MJC: No more children for father index 35
+13:59:17,369  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 2 ]
+13:59:17,369  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, current) ]
+13:59:17,371  WARN MuJavaController:1139 - MJC: No more children for father index 37
+13:59:17,371  WARN MuJavaController:1139 - MJC: No more children for father index 38
+13:59:17,371  WARN MuJavaController:1139 - MJC: No more children for father index 39
+13:59:17,372  WARN MuJavaController:1139 - MJC: No more children for father index 40
+13:59:17,372  WARN MuJavaController:1154 - MJC: About to generate case Father index 41 - [ 2 ]
+13:59:17,372  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, current) ]
+13:59:17,375  WARN MuJavaController:1139 - MJC: No more children for father index 42
+13:59:17,376  WARN MuJavaController:1139 - MJC: No more children for father index 43
+13:59:17,376  WARN MuJavaController:1139 - MJC: No more children for father index 44
+13:59:17,376  WARN MuJavaController:1139 - MJC: No more children for father index 45
+13:59:17,376  WARN MuJavaController:1139 - MJC: No more children for father index 46
+13:59:17,377  WARN MuJavaController:1139 - MJC: No more children for father index 47
+13:59:17,377  WARN MuJavaController:1139 - MJC: No more children for father index 48
+13:59:17,377  WARN MuJavaController:1139 - MJC: No more children for father index 49
+13:59:17,377  WARN MuJavaController:1139 - MJC: No more children for father index 50
+13:59:17,377  WARN MuJavaController:1139 - MJC: No more children for father index 51
+13:59:17,378  WARN MuJavaController:1139 - MJC: No more children for father index 52
+13:59:17,378  WARN MuJavaController:1139 - MJC: No more children for father index 53
+13:59:17,378  WARN MuJavaController:1139 - MJC: No more children for father index 54
+13:59:17,378  WARN MuJavaController:1139 - MJC: No more children for father index 55
+13:59:17,378  WARN MuJavaController:1139 - MJC: No more children for father index 62
+13:59:17,379  WARN MuJavaController:1139 - MJC: No more children for father index 69
+13:59:17,379  WARN MuJavaController:1139 - MJC: No more children for father index 76
+13:59:17,379  WARN MuJavaController:1139 - MJC: No more children for father index 83
+13:59:17,379  WARN MuJavaController:1139 - MJC: No more children for father index 90
+13:59:17,418  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857818714-0/a14288578187140/aOpenJMLInWrap68/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack1, input: 1
+13:59:17,418  WARN OpenJMLController:275 - Mutants consumed by RAC: 62
+13:59:17,418  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857817067-0/SinglyLinkedList/insertBack/MULTI/2587/SinglyLinkedList.java for method: insertBack1
+13:59:17,446  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857837821-0/a14288578378210/aOpenJMLInWrap78/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack1, input: 1
+13:59:17,446  WARN OpenJMLController:275 - Mutants consumed by RAC: 63
+13:59:17,447  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857836342-0/SinglyLinkedList/insertBack/MULTI/2642/SinglyLinkedList.java for method: insertBack1
+13:59:17,542  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:17,544  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 3 ]
+13:59:17,544  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, this.header) ]
+13:59:17,582  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857818714-0/a14288578187140/aOpenJMLInWrap68/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack3, input: 1
+13:59:17,582  WARN OpenJMLController:275 - Mutants consumed by RAC: 64
+13:59:17,582  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857817067-0/SinglyLinkedList/insertBack/MULTI/2588/SinglyLinkedList.java for method: insertBack3
+13:59:17,653  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:17,655  WARN MuJavaController:1154 - MJC: About to generate case Father index 41 - [ 3 ]
+13:59:17,655  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, this.header) ]
+13:59:17,691  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857837821-0/a14288578378210/aOpenJMLInWrap78/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack3, input: 1
+13:59:17,691  WARN OpenJMLController:275 - Mutants consumed by RAC: 65
+13:59:17,691  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857836342-0/SinglyLinkedList/insertBack/MULTI/2643/SinglyLinkedList.java for method: insertBack3
+13:59:17,788  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:17,791  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 4 ]
+13:59:17,791  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, freshNode.next.next) ]
+13:59:17,823  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857818714-0/a14288578187140/aOpenJMLInWrap68/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack4, input: 1
+13:59:17,823  WARN OpenJMLController:275 - Mutants consumed by RAC: 66
+13:59:17,823  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857817067-0/SinglyLinkedList/insertBack/MULTI/2589/SinglyLinkedList.java for method: insertBack4
+13:59:17,898  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:17,900  WARN MuJavaController:1154 - MJC: About to generate case Father index 41 - [ 4 ]
+13:59:17,901  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, freshNode.next.next) ]
+13:59:17,945  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857837821-0/a14288578378210/aOpenJMLInWrap78/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack4, input: 1
+13:59:17,945  WARN OpenJMLController:275 - Mutants consumed by RAC: 67
+13:59:17,945  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857836342-0/SinglyLinkedList/insertBack/MULTI/2644/SinglyLinkedList.java for method: insertBack4
+13:59:18,021  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:18,023  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 5 ]
+13:59:18,024  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, this.header.next.next) ]
+13:59:18,057  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857818714-0/a14288578187140/aOpenJMLInWrap68/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack5, input: 1
+13:59:18,057  WARN OpenJMLController:275 - Mutants consumed by RAC: 68
+13:59:18,058  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857817067-0/SinglyLinkedList/insertBack/MULTI/2590/SinglyLinkedList.java for method: insertBack5
+13:59:18,147  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:18,149  WARN MuJavaController:1154 - MJC: About to generate case Father index 41 - [ 5 ]
+13:59:18,149  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, this.header.next.next) ]
+13:59:18,184  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857837821-0/a14288578378210/aOpenJMLInWrap78/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack5, input: 1
+13:59:18,184  WARN OpenJMLController:275 - Mutants consumed by RAC: 69
+13:59:18,184  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857836342-0/SinglyLinkedList/insertBack/MULTI/2645/SinglyLinkedList.java for method: insertBack5
+13:59:18,261  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:18,264  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 6 ]
+13:59:18,264  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, current.next.next) ]
+13:59:18,306  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857818714-0/a14288578187140/aOpenJMLInWrap68/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack6, input: 1
+13:59:18,307  WARN OpenJMLController:275 - Mutants consumed by RAC: 70
+13:59:18,307  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857817067-0/SinglyLinkedList/insertBack/MULTI/2591/SinglyLinkedList.java for method: insertBack6
+13:59:18,429  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:18,432  WARN MuJavaController:1154 - MJC: About to generate case Father index 41 - [ 6 ]
+13:59:18,432  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, current.next.next) ]
+13:59:18,471  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857837821-0/a14288578378210/aOpenJMLInWrap78/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack6, input: 1
+13:59:18,472  WARN OpenJMLController:275 - Mutants consumed by RAC: 71
+13:59:18,472  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857836342-0/SinglyLinkedList/insertBack/MULTI/2646/SinglyLinkedList.java for method: insertBack6
+13:59:18,564  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:18,567  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 7 ]
+13:59:18,567  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, this.header.next) ]
+13:59:18,630  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857818714-0/a14288578187140/aOpenJMLInWrap68/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack7, input: 1
+13:59:18,631  WARN OpenJMLController:275 - Mutants consumed by RAC: 72
+13:59:18,631  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857817067-0/SinglyLinkedList/insertBack/MULTI/2592/SinglyLinkedList.java for method: insertBack7
+13:59:18,701  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:18,704  WARN MuJavaController:1154 - MJC: About to generate case Father index 41 - [ 7 ]
+13:59:18,705  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, current.next, this.header.next) ]
+13:59:18,746  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857837821-0/a14288578378210/aOpenJMLInWrap78/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack7, input: 1
+13:59:18,747  WARN OpenJMLController:275 - Mutants consumed by RAC: 73
+13:59:18,747  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857836342-0/SinglyLinkedList/insertBack/MULTI/2647/SinglyLinkedList.java for method: insertBack7
+13:59:18,847  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:18,850  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 8 ]
+13:59:18,850  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (COI, current.next == null, !(current.next == null)) ]
+13:59:18,881  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857818714-0/a14288578187140/aOpenJMLInWrap68/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack8, input: 1
+13:59:18,882  WARN OpenJMLController:275 - Mutants consumed by RAC: 74
+13:59:18,882  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857817067-0/SinglyLinkedList/insertBack/MULTI/2593/SinglyLinkedList.java for method: insertBack8
+13:59:18,965  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:18,967  WARN MuJavaController:1154 - MJC: About to generate case Father index 41 - [ 8 ]
+13:59:18,967  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (COI, current.next == null, !(current.next == null)) ]
+13:59:19,042  WARN OpenJMLController:248 - TEST PASSED: :) for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857837821-0/a14288578378210/aOpenJMLInWrap78/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack8, input: 0
+13:59:19,042  WARN OpenJMLController:275 - Mutants consumed by RAC: 75
+13:59:19,042  WARN OpenJMLController:280 - Candidate Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857836342-0/SinglyLinkedList/insertBack/MULTI/2648/SinglyLinkedList.java for method: insertBack8
+13:59:19,103  WARN DarwinistController:221 - AVOIDED ONE SAT CHECK. THE OUTCOME IS: SAT
+13:59:19,105  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 9 ]
+13:59:19,106  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (ROR, current.next == null, true) ]
+13:59:19,106  WARN MuJavaController:1193 - MJC: Omitted mutation for non-compiling
+13:59:19,106  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 10 ]
+13:59:19,106  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (ROR, current.next == null, false) ]
+13:59:19,106  WARN MuJavaController:1193 - MJC: Omitted mutation for non-compiling
+13:59:19,106  WARN MuJavaController:1154 - MJC: About to generate case Father index 36 - [ 11 ]
+13:59:19,106  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (ROR, current.next == null, current.next != null) ]
+13:59:19,132  WARN OpenJMLController:238 - TEST FAILED: :( for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857818714-0/a14288578187140/aOpenJMLInWrap68/ar/edu/itba/stryker/mutants/SinglyLinkedList.java, method: insertBack2, input: 1
+13:59:19,132  WARN OpenJMLController:275 - Mutants consumed by RAC: 76
+13:59:19,132  WARN OpenJMLController:282 - Postcondition Failed Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857817067-0/SinglyLinkedList/insertBack/MULTI/2596/SinglyLinkedList.java for method: insertBack2
+13:59:19,600  WARN DarwinistController:692 - U  U  N   N  SSSS  AAAA  TTTTT
+13:59:19,600  WARN DarwinistController:693 - U  U  NN  N  S     A  A    T
+13:59:19,600  WARN DarwinistController:694 - U  U  N N N  SSSS  AAAA    T
+13:59:19,601  WARN DarwinistController:695 - U  U  N  NN     S  A  A    T
+13:59:19,601  WARN DarwinistController:696 - UUUU  N   N  SSSS  A  A    T
+13:59:19,657 ERROR DarwinistController:844 - Solution: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857836342-0/SinglyLinkedList/insertBack/MULTI/2648/SinglyLinkedList.java
+13:59:19,658  WARN DarwinistController:855 - -----------------------STRYKER REPORT-----------------------
+------------------------FEEDBACK: ON------------------------
+
+Fix Filename: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1428857836342-0/SinglyLinkedList/insertBack/MULTI/2648/SinglyLinkedList.java
+Solution Father Index: 41 and LineMutationIndexes: [ 8 ]
+
+STRYKER STATS WHEN THIS FIX WAS FOUND:
+BEAR IN MIND THAT THIS RUNS MULTITHREADED, THEREFORE THE SUM OF TIME OF THE PARTS IS NOT EQUAL TO THE TOTAL TIME SPENT
+Total Time (millis): 350941
+Compilation Time (millis): 289081
+TACO Time (millis): 59956
+RAC Time (millis): 5103
+MuJava Time (millis): 27780
+Amount of generated Mutants: 4072
+Amount of duplicate Mutants: 1668
+Amount of non-compilable Mutants: 384
+Amount of non-compilable Line Mutation Indexes: 0
+Amount of Mutants pruned: 4814
+Amount of Fathers pruned: 74
+Amount of Relevant Computated Feedbacks: 0
+Amount of Mutants fatherized: 97
+Amount of Mutants enqueued to OJMLController: 76
+Amount of Mutants that failed in postcondition in RAC: 74
+Amount of Mutants that throwed NPExcp in RAC: 0
+Amount of Mutants that timeouted in RAC: 0
+Amount of Mutants enqueued to DController for Feedback: 75
+Amount of Mutants enqueued to DController as Candidates: 2
+Amount of Mutants Candidates that give SAT in DController: 1
+------------------------END OF REPORT-------------------------
+
+
+13:59:19,659  WARN OpenJMLController:384 - Shutting down Darwinist Controller
+16:14:51,307  WARN MuJavaController:847 - MJC: Generating a batch from father index: 0 starting from indexes: [ 0 ]...
+16:14:51,789  WARN MuJavaController:907 - MJC: No more children for father index 0
+16:14:51,789  WARN MuJavaController:921 - MJC: Batch generated. Total: 19
+16:14:54,288  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 0
+16:14:54,296  WARN MuJavaController:1154 - MJC: About to generate case Father index 0 - [ 1 ]
+16:14:54,297  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOU_REFINED, null, current) ]
+16:14:54,371  WARN OpenJMLController:248 - TEST PASSED: :) for file: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1430766891790-0/a14307668917900/aOpenJMLInWrap0/ar/edu/itba/stryker/mutants/SinglyLinkedListContainsBug7.java, method: contains, input: 0
+16:14:54,375  WARN OpenJMLController:275 - Mutants consumed by RAC: 1
+16:14:54,375  WARN OpenJMLController:280 - Candidate Mutation: /var/folders/k0/f1n_g1vx4cdft3v1d2cym0h80000gn/T/1430766890217-0/SinglyLinkedListContainsBug7/contains/MULTI/0/SinglyLinkedListContainsBug7.java for method: contains
+16:19:25,605  WARN MuJavaController:847 - MJC: Generating a batch from father index: 0 starting from indexes: [ 0 0 0 ]...
+16:19:26,405  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+16:19:35,645  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 0
+16:19:35,648  WARN MuJavaController:1154 - MJC: About to generate case Father index 0 - [ 1 0 0 ]
+16:19:35,648  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOR_REFINED, node.next.next, node2.next.next) ]
+16:19:36,822  WARN MuJavaController:847 - MJC: Generating a batch from father index: 1 starting from indexes: [ 0 0 ]...
+16:19:37,478  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+16:21:28,939  WARN MuJavaController:847 - MJC: Generating a batch from father index: 0 starting from indexes: [ 0 0 0 ]...
+16:21:29,831  WARN MuJavaController:921 - MJC: Batch generated. Total: 100
+16:21:40,194  WARN MuJavaController:994 - MJC: Batch compiled and the amount of non-compilable mutants was: 0
+16:21:40,198  WARN MuJavaController:1154 - MJC: About to generate case Father index 0 - [ 1 0 0 ]
+16:21:40,199  WARN MuJavaController:1160 - MJC: And it's mutant identifiers are: [  (PRVOR_REFINED, node.next.next, node2.next.next) ]
+16:21:41,406  WARN MuJavaController:847 - MJC: Generating a batch from father index: 1 starting from indexes: [ 0 0 ]...
+16:21:42,096  WARN MuJavaController:921 - MJC: Batch generated. Total: 100

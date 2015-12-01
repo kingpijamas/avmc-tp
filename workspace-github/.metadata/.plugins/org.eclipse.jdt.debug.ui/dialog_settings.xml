@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.internal.debug.ui.ExpressionInformationControlCreator$ExpressionInformationControl">
+		<item value="500" key="SashWeightDetails"/>
+		<item value="500" key="SashWeightTree"/>
+		<item value="156" key="HEIGHT"/>
+		<item value="600" key="WIDTH"/>
+	</section>
+	<section name="conditionHistory">
+		<item value="2" key="conditionHistoryEntryCount"/>
+		<item value="this.inputToFix != null" key="conditionHistoryEntry_0"/>
+		<item value="this instanceof JDynAlloyXlatorVisitor.class" key="conditionHistoryEntry_1"/>
+		<item value="this instanceof JDynAlloyXlatorVisitor" key="conditionHistoryEntry_2"/>
+	</section>
+</section>

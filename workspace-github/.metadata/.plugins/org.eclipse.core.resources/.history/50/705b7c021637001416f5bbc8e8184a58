@@ -1,0 +1,13 @@
+package ar.edu.itba.stryker;
+
+public class StrykerAnalysisOutcome {
+	private StrykerAnalysisResult result;
+	
+	public StrykerAnalysisResult getStrykerAnalysisResult(){
+		return result;
+	}
+	
+	public void setStrykerAnalysisResult(StrykerAnalysisResult result){
+		this.result = result;
+	}
+}

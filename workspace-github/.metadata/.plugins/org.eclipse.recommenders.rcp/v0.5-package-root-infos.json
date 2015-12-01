@@ -1,0 +1,899 @@
+[
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "3f5821c825cc5ff1fbc557abb53dafe452c370ed",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/resources.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "junit",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "365907cf1e488e967f1d3e923d0111b36d930ee6",
+    "jarFileModificationDate": "2012-05-26T07:46:30-03:00",
+    "location": "/Applications/eclipse/plugins/org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.reflections.reflections",
+    "version": {
+      "major": 0,
+      "minor": 9,
+      "micro": 9,
+      "qualifier": "RC1"
+    },
+    "jarFileFingerprint": "dfafc3116742a3a4cc4fba8838cab8c9d7943923",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/reflections-0.9.9-RC1.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "46ee499642f4245081342bd2ab7f02d75ef95057",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/ext/zipfs.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "06b897f357f111e205017803b1d10f972e8f1075",
+    "jarFileModificationDate": "2013-08-07T23:15:41-03:00",
+    "location": "/System/Library/Java/Extensions/j3dcore.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "51dbde992ee8e0ee2e9e1be38fcc6d3295ebc66e",
+    "jarFileModificationDate": "2013-08-07T23:16:58-03:00",
+    "location": "/System/Library/Java/Extensions/AppleScriptEngine.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "5da320e46f1c616986563b2e788b5a0569cad088",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "hamcrest-core-1.3",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "42a25dc3219429f0e5d060061f71acb49bf010a0",
+    "jarFileModificationDate": "2014-09-07T22:53:13-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/hamcrest-core-1.3.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.taglib",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "baf2062c24417e33e4b1cd6afd1c9fadc5592953",
+    "jarFileModificationDate": "2014-08-17T00:33:36-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-taglib-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.eclipse.core.jobs",
+    "version": {
+      "major": 3,
+      "minor": 5,
+      "micro": 200,
+      "qualifier": "v20120521-2346"
+    },
+    "jarFileFingerprint": "3af73dd0190a76ddde3e13f5bed493adaf464846",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/org.eclipse.core.jobs_3.5.200.v20120521-2346.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "74fbd95f1fada6d20339c3f6afea597395972f7f",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/ext/localedata.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.eclipse.equinox.common",
+    "version": {
+      "major": 3,
+      "minor": 6,
+      "micro": 100,
+      "qualifier": "v20120522-1841"
+    },
+    "jarFileFingerprint": "3d1eaf476003cedf4f33ca77bb86e7ce14aace82",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/org.eclipse.equinox.common_3.6.100.v20120522-1841.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "9c41c0dac908567ea498f1072fb54cd6aa4712f4",
+    "jarFileModificationDate": "2013-11-05T18:57:02-03:00",
+    "location": "/System/Library/Java/Extensions/MRJToolkit.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.slf4j-impl",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "f2cc4647e51810c3dd11df832229fac01d41aa51",
+    "jarFileModificationDate": "2014-08-17T00:31:56-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-slf4j-impl-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.apache.commons.lang",
+    "version": {
+      "major": 2,
+      "minor": 4,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "16313e02a793435009f1e458fa4af5d879f6fb11",
+    "jarFileModificationDate": "2014-07-28T18:50:37-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/commons-lang-2.4.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.antlr.ST4",
+    "version": {
+      "major": 4,
+      "minor": 0,
+      "micro": 8,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "173cf3165fdc54dcb9d2c6bc30c9d2c178f348bc",
+    "jarFileModificationDate": "2014-07-28T19:14:20-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/antlr-4.3-complete.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.jmlspecs.jml4.rac",
+    "version": {
+      "major": 0,
+      "minor": 1,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "30b30d94dedcc7c28fd9898d1f93f9e086e9b0bb",
+    "jarFileModificationDate": "2014-07-28T18:50:37-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/stryker/jml4c.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "2e6f88d9a372e125b482558fb28ad6ba4a5fd5e7",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/JObjC.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.hamcrest.core",
+    "version": {
+      "major": 1,
+      "minor": 1,
+      "micro": 0,
+      "qualifier": "v20090501071000"
+    },
+    "jarFileFingerprint": "254c9660266e1177c94b1a9ba05f6f757e7fb85a",
+    "jarFileModificationDate": "2013-02-25T02:00:22-03:00",
+    "location": "/Applications/eclipse/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.eclipse.jdt.core",
+    "version": {
+      "major": 3,
+      "minor": 8,
+      "micro": 1,
+      "qualifier": "v20120531-0637"
+    },
+    "jarFileFingerprint": "616d995ac96eb9d8d14599a467a0ced8ae7ad71e",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/org.eclipse.jdt.core_3.8.1.v20120531-0637.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.jmlspecs.jml4.rac",
+    "version": {
+      "major": 0,
+      "minor": 1,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "30b30d94dedcc7c28fd9898d1f93f9e086e9b0bb",
+    "jarFileModificationDate": "2013-06-24T21:09:39-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/jml4c.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "2e2267bfa86e19e82b64cc07c055a91e8b9f02c1",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/jsse.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "commons-logging",
+    "version": {
+      "major": 1,
+      "minor": 1,
+      "micro": 1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "2d859791fbf7d880591864bd4004d8442a8a3b81",
+    "jarFileModificationDate": "2014-07-28T18:50:37-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/commons-logging-1.1.1.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "a85d5af49e138a0adefc26bf22d2cfc8c754e6dd",
+    "jarFileModificationDate": "2013-08-07T23:11:25-03:00",
+    "location": "/System/Library/Java/Extensions/jai_codec.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.eclipse.core.runtime",
+    "version": {
+      "major": 3,
+      "minor": 8,
+      "micro": 0,
+      "qualifier": "v20120521-2346"
+    },
+    "jarFileFingerprint": "d7e393663db22d5d49563d84e72155d960f6a2a0",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/org.eclipse.core.runtime_3.8.0.v20120521-2346.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.core",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "13521c5364501478e28c77a7f86b90b6ed5dbb77",
+    "jarFileModificationDate": "2014-08-17T00:28:10-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-core-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "log4j",
+    "version": {
+      "major": 1,
+      "minor": 2,
+      "micro": 15,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "f0a0d2e29ed910808c33135a3a5a51bba6358f7b",
+    "jarFileModificationDate": "2014-07-28T18:29:40-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/jdynalloy/lib/log4j-1.2.15.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.eclipse.equinox.preferences",
+    "version": {
+      "major": 3,
+      "minor": 5,
+      "micro": 0,
+      "qualifier": "v20120522-1841"
+    },
+    "jarFileFingerprint": "1ea85b0b76ee7863c2a518b2c8264fc1b6f63970",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/org.eclipse.equinox.preferences_3.5.0.v20120522-1841.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "f0175c4c28f08b9236108499c33d6542c0bcd8b4",
+    "jarFileModificationDate": "2013-08-07T23:15:41-03:00",
+    "location": "/System/Library/Java/Extensions/j3daudio.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.nosql",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "0be1a88256c9edd036b36104294ea8867b775002",
+    "jarFileModificationDate": "2014-08-17T00:34:20-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-nosql-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "junit-4.11",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "4e031bb61df09069aeb2bffb4019e7a5034a4ee0",
+    "jarFileModificationDate": "2014-09-07T22:53:03-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/junit-4.11.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "tools",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "8e367c4f683c15f177f0121a4287526b77b1612c",
+    "jarFileModificationDate": "2013-04-07T19:10:54-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/lib/tools.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "63fbdd9c7e93573cc15ee487950217886be2aef6",
+    "jarFileModificationDate": "2013-08-07T23:15:03-03:00",
+    "location": "/System/Library/Java/Extensions/dns_sd.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "005810d865dab9bd200ea485d0e44c18a329aa26",
+    "jarFileModificationDate": "2013-08-07T23:15:41-03:00",
+    "location": "/System/Library/Java/Extensions/vecmath.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.apache.commons.lang3",
+    "version": {
+      "major": 3,
+      "minor": 3,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "659861b4acde07a0527211e40d256119face1d15",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/commons-lang3-3.3.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.eclipse.osgi",
+    "version": {
+      "major": 3,
+      "minor": 8,
+      "micro": 0,
+      "qualifier": "v20120529-1548"
+    },
+    "jarFileFingerprint": "b54e470d47df378b9dce9423f919ccf4c7a60138",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/org.eclipse.osgi_3.8.0.v20120529-1548.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.eclipse.core.resources",
+    "version": {
+      "major": 3,
+      "minor": 8,
+      "micro": 0,
+      "qualifier": "v20120522-2034"
+    },
+    "jarFileFingerprint": "18d105f0f789207d014a79c8644162053f086044",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/org.eclipse.core.resources_3.8.0.v20120522-2034.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "c5d7b7bfab9b433c4b62aebbe76a564b6bcf8192",
+    "jarFileModificationDate": "2013-08-07T23:11:00-03:00",
+    "location": "/System/Library/Java/Extensions/mlibwrapper_jai.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.apache.commons.configuration",
+    "version": {
+      "major": 1,
+      "minor": 6,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "32cadde23955d7681b0d94a2715846d20b425235",
+    "jarFileModificationDate": "2014-07-28T18:50:37-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/commons-configuration-1.6.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.eclipse.text",
+    "version": {
+      "major": 3,
+      "minor": 5,
+      "micro": 200,
+      "qualifier": "v20120523-1310"
+    },
+    "jarFileFingerprint": "eaf2cd6b6491c6996031fa81e660d674aba9810d",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/org.eclipse.text_3.5.200.v20120523-1310.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "c4c7923b11e98bc8d1d32bfd2ff6363d212ead80",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/ext/sunec.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "com.google.guava",
+    "version": {
+      "major": 16,
+      "minor": 0,
+      "micro": 1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "5fa98cd1a63c99a44dd8d3b77e4762b066a5d0c5",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/guava-16.0.1.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.eclipse.core.contenttype",
+    "version": {
+      "major": 3,
+      "minor": 4,
+      "micro": 200,
+      "qualifier": "v20120523-2004"
+    },
+    "jarFileFingerprint": "052e4af216995c8c8b6f4ac9731a6351e3b3bc25",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/org.eclipse.core.contenttype_3.4.200.v20120523-2004.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "538c3541ea9367ca1e5c1408503a30f7b1413729",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/jfr.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "junit-4.8.2",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "c94f54227b08100974c36170dcb53329435fe5ad",
+    "jarFileModificationDate": "2014-07-28T18:50:37-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/junit-4.8.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jml-release",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "fab2b78c9125f8eb39107069d79aff8ccc7a99a9",
+    "jarFileModificationDate": "2014-07-28T18:50:37-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/jml-release.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "mujava++",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "edca1c5552d1e96169eb862930e5c1fc92010a94",
+    "jarFileModificationDate": "2015-01-12T17:43:30-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/mujava++.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "e7533ef29283d456ddcc700ad2ccdd0c3452e464",
+    "jarFileModificationDate": "2013-08-07T23:15:41-03:00",
+    "location": "/System/Library/Java/Extensions/j3dutils.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "alloy4",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "76f4a840e3d1079d940011e2a0665d82be1bedd9",
+    "jarFileModificationDate": "2014-07-28T18:29:48-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/dynalloy4/lib/alloy4.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "recoder",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "e2c343ecf58ede00a1ec17fa5be731e638eb38ef",
+    "jarFileModificationDate": "2014-08-11T13:33:23-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/recoder.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "58b73b8d90076ae96e9975e3664b49831ccbef5c",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/ext/dnsns.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.jmx-gui",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "05aaf1d721b1976a8e444fd6964150bbd4c6dbc5",
+    "jarFileModificationDate": "2014-08-17T00:33:44-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-jmx-gui-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.jcl",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "3b3803b7418391b929d70d4ff654d486a94fde51",
+    "jarFileModificationDate": "2014-08-17T00:32:26-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-jcl-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.web",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "d3dc93d134cbaf4ac362705990bdeabab1dbe59b",
+    "jarFileModificationDate": "2014-08-17T00:34:32-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-web-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "javassist",
+    "version": {
+      "major": 3,
+      "minor": 18,
+      "micro": 0,
+      "qualifier": "GA"
+    },
+    "jarFileFingerprint": "f3f04ac6843db3d6568cd4f4127b4c500f58439e",
+    "jarFileModificationDate": "2014-07-28T18:51:46-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/javassist.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "f831655c50b92c41e366442d09511ea84270c45e",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/jce.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "antlr",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "cf6b539a8864418bb9317a93e7d549bd3fd88384",
+    "jarFileModificationDate": "2014-07-28T18:29:48-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/dynalloy4/lib/antlr.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.flume",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "5e8b779ec29c2a9e3afc4a5c65ceb013bb4ce839",
+    "jarFileModificationDate": "2014-08-17T00:33:12-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-flume-ng-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "log4j",
+    "version": {
+      "major": 1,
+      "minor": 2,
+      "micro": 15,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "f0a0d2e29ed910808c33135a3a5a51bba6358f7b",
+    "jarFileModificationDate": "2014-07-28T18:50:37-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/log4j-1.2.15.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.apache.commons.cli",
+    "version": {
+      "major": 1,
+      "minor": 2,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "2bf96b7aa8b611c177d329452af1dc933e14501c",
+    "jarFileModificationDate": "2014-09-06T20:01:40-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/commons-cli-1.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.1.2-api",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "7c5170775e68587dd3b369137c152fffa8f6a0af",
+    "jarFileModificationDate": "2014-08-17T00:31:26-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-1.2-api-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.api",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "8bc86f5add32e0259d83d1b62ab64f9ecfda109d",
+    "jarFileModificationDate": "2014-08-17T00:23:58-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-api-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "79faf6c92c0f506030104dd2fae3213115359e61",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/charsets.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "21240ab7c12f378058cbb7a9b2f5b762dd30e1b8",
+    "jarFileModificationDate": "2013-08-07T23:11:25-03:00",
+    "location": "/System/Library/Java/Extensions/jai_core.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.apache.logging.log4j.to-slf4j",
+    "version": {
+      "major": 2,
+      "minor": 0,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "40a74ce60d82d856440988a3c783948979daf7ff",
+    "jarFileModificationDate": "2014-08-17T00:32:08-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/Stryker/lib/log4j/log4j-to-slf4j-2.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "66e8a334d934d065716c27d73115584cf88153e3",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/rt.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.apache.commons.collections",
+    "version": {
+      "major": 3,
+      "minor": 2,
+      "micro": 1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "761ea405b9b37ced573d2df0d1e3a4e0f9edc668",
+    "jarFileModificationDate": "2014-07-28T18:50:37-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/commons-collections-3.2.1.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "edu.mit.csail.sdg.annotations",
+    "version": {
+      "major": 0,
+      "minor": 2,
+      "micro": 5,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "a2f3a8106a7a0c16552d2441558c435f75a0b829",
+    "jarFileModificationDate": "2014-07-28T18:50:37-03:00",
+    "location": "/Users/mfrias/Documents/workspace-github/taco/lib/edu.mit.csail.sdg.annotations_0.2.5.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "3fd7709166f70fe311b45a7bafe7cdccbecf6b04",
+    "jarFileModificationDate": "2013-04-07T19:10:53-03:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar",
+    "javaRuntime": true
+  }
+]

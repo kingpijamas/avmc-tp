@@ -1,0 +1,11 @@
+1410097945459	Rename package 'ar.edu.itba.strykerMain'
+1410097978335	Rename type 'Stryker'
+1410132833227	Move compilation unit
+1410133013656	Copy package
+1410133021254	Delete element
+1410133039137	Copy package
+1410133046726	Delete element
+1410133058198	Move package
+1410133071909	Rename package 'ar.edu.itba.examples.singlylinkedlist.copy'
+1410139937318	Rename type 'StrykerSinglyLinkedListTest'
+1410152839858	Delete element
