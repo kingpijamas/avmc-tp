@@ -1,5 +1,7 @@
 package lalala;
 
+import ar.edu.itba.avmc.tp.annotations.check;
+
 public class wololo {
     @check("Arithmetic")
     public static int wololoInt(String foo){

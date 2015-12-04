@@ -1,6 +1,8 @@
 package lalala;
 
-class lalaAnnotated {
+import ar.edu.itba.avmc.tp.annotations.check;
+
+public class lalaAnnotated {
     
     @check("Arithmetic")
     public void foo(String myParam) {

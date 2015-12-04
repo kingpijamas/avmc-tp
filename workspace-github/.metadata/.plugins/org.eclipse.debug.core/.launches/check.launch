@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/tp-AVMC-alone/src/lalala/check.java"/>
+<listEntry value="/tp-AVMC-alone/src/ar/edu/itba/avmc/tp/annotations/check.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="lalala.check"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ar.edu.itba.avmc.tp.annotations.check"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="tp-AVMC-alone"/>
 </launchConfiguration>
