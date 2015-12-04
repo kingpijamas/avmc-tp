@@ -1,0 +1,11 @@
+package lalala;
+
+public class wololo {
+    public static void main(String[] args) {
+        System.out.println("lalal");
+        Integer a=1;
+        Integer b=0;
+        a=a / b;
+        System.out.println(a);
+    }
+}

@@ -1,0 +1,33 @@
+package lalala;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.reflections.Reflections;
+import org.reflections.scanners.ResourcesScanner;
+import org.reflections.scanners.SubTypesScanner;
+import org.reflections.util.ClasspathHelper;
+import org.reflections.util.ConfigurationBuilder;
+
+
+
+public class oooo {
+   public static void main(String[] args) throws Exception {
+//      Rebound r = new Rebound("lalala");
+      CheckAnnotationParser parser = new CheckAnnotationParser();
+      Reflections reflections = new Reflections(new ConfigurationBuilder()
+              .setScanners(new SubTypesScanner(false /* don't exclude Object.class */), new ResourcesScanner())
+              .setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[2])))
+              .filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix("org.reflections"))));
+      
+      Set<Class<? extends Object>> classes= reflections.getSubTypesOf(Object.class);
+//      Set<Class<? extends Object>> classes = r.getSubClassesOf(Object.class);
+      Iterator<Class<? extends Object>> iter = classes.iterator();
+      while (iter.hasNext()) {
+          parser.parse(iter.next());
+      }
+
+
+
+   }
+}

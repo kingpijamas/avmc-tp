@@ -1,0 +1,15 @@
+package lalala;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.annotation.ElementType;
+import java.lang.reflect.Method;
+
+
+public class oooo {
+   public static void main(String[] args) throws Exception {
+      checkAnnotationParser parser = new checkAnnotationParser();
+      parser.parse(lalaAnnotated.class);
+   }
+}

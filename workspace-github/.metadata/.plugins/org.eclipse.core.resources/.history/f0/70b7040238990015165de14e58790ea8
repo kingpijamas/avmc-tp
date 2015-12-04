@@ -1,0 +1,5 @@
+package lalala;
+
+public @interface check {
+    String info() default "";
+}

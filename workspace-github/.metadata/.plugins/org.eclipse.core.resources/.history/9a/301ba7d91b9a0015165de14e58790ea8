@@ -1,0 +1,30 @@
+package lalala;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.reflections.Reflections;
+import org.reflections.scanners.ResourcesScanner;
+import org.reflections.scanners.SubTypesScanner;
+import org.reflections.util.ClasspathHelper;
+import org.reflections.util.ConfigurationBuilder;
+
+import gigadot.rebound.Rebound;
+
+public class oooo {
+   public static void main(String[] args) throws Exception {
+//      Rebound r = new Rebound("lalala");
+      CheckAnnotationParser parser = new CheckAnnotationParser();
+      Reflections reflections = new Reflections("lalala");
+
+      Set<Class<? extends Object>> classes= reflections.getSubTypesOf(Object.class);
+//      Set<Class<? extends Object>> classes = r.getSubClassesOf(Object.class);
+      Iterator<Class<? extends Object>> iter = classes.iterator();
+      while (iter.hasNext()) {
+          parser.parse(iter.next());
+      }
+
+
+
+   }
+}

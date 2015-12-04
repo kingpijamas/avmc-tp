@@ -1,0 +1,10 @@
+package lalala;
+
+public class wololo {
+    public static void main(String[] args) {
+        float a=1.0;
+        float b=0.0;
+        
+        
+    }
+}

@@ -1,0 +1,16 @@
+package lalala;
+
+import java.util.Set;
+
+import javax.annotation.processing.Processor;
+
+import gigadot.rebound.Rebound;
+
+public class oooo {
+   public static void main(String[] args) throws Exception {
+       Rebound r = new Rebound("gigadot.exp.reflects");
+       Set<Class<? extends Processor>> classes = r.getSubClassesOf(Processor.class);
+      CheckAnnotationParser parser = new CheckAnnotationParser();
+      parser.parse(wololo.class);
+   }
+}

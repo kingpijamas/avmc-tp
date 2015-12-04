@@ -1,0 +1,8 @@
+package lalala;
+
+class Annotated {
+    @lala("Arithmetic")
+    public void foo(String myParam) {
+       System.out.println("This is " + myParam);
+    }
+ }

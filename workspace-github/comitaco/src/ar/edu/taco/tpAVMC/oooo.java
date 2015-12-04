@@ -1,10 +1,25 @@
 package ar.edu.taco.tpAVMC;
 
+import java.util.Iterator;
+import java.util.Set;
+
+
+import gigadot.rebound.Rebound;
+
 
 
 public class oooo {
    public static void main(String[] args) throws Exception {
+      Rebound r = new Rebound("ar.edu.taco");
       CheckAnnotationParser parser = new CheckAnnotationParser();
-      parser.parse(lalaAnnotated.class);
+      
+      Set<Class<? extends Object>> classes = r.getSubClassesOf(Object.class);
+      Iterator<Class<? extends Object>> iter = classes.iterator();
+      while (iter.hasNext()) {
+          parser.parse(iter.next());
+      }
+
+
+
    }
 }

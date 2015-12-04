@@ -1,0 +1,54 @@
+package lalala;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.annotation.ElementType;
+import java.lang.reflect.Method;
+
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@interface lala {
+   //String info() default "";
+
+   String value();
+}
+
+
+class lalaAnnotationParser {
+   public void parse(Class<?> clazz) throws Exception {
+      Method[] methods = clazz.getMethods();
+      for (Method method : methods) {
+         if (method.isAnnotationPresent(lala.class)) {
+            lala test = method.getAnnotation(lala.class);
+            String info = test.value();
+            if ("Arithmetic".equals(info)) {
+                System.out.println("annotation arithmetic exception");
+                // try to invoke the method with param
+                Class<?> l =method.getDeclaringClass();
+                method.invoke(
+                   l.newInstance(),
+                   info
+                );
+            }
+            else if ("NullPointer".equals(info)){
+                System.out.println("annotation nullpointer exception");
+                // try to invoke the method with param
+                /*method.invoke(
+                   Annotated.class.newInstance(),
+                   info
+                );*/
+                Class<?> l =method.getDeclaringClass();
+                method.invoke(l.newInstance(), info);
+            }
+            
+         }
+      }
+   }
+}
+public class check {
+   public static void main(String[] args) throws Exception {
+      lalaAnnotationParser parser = new lalaAnnotationParser();
+      parser.parse(Annotated.class);
+   }
+}
