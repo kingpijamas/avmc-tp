@@ -1,9 +1,9 @@
 package lalala;
 
-import ar.edu.itba.avmc.tp.annotations.check;
+import ar.edu.itba.avmc.tp.annotations.Check;
 
 public class wololo {
-    @check("Arithmetic")
+    @Check("Arithmetic")
     public static int wololoInt(String foo){
         System.out.println("pase por wololoInt con "+foo);
         return 1;

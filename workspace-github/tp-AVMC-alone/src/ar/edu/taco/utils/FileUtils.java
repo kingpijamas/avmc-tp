@@ -79,4 +79,13 @@ public class FileUtils {
 		}
 		return normalizatedFileName;
 	}
+	
+	/*
+	 * Change package path with dots to directory path with backslashes (ie: ar.edu.taco.utils.FileUtils to ar/edu/taco/utils/FileUtils)
+	 * Be careful to not pass the file extension!
+	 * */
+	public static String normalizatePackageName(String path){
+	    String normalizatedFileName = path.replaceAll("\\.", NORMALIZATED_FILE_SEPARATOR);
+	    return normalizatedFileName;
+	}
 }

@@ -8,7 +8,7 @@ import gigadot.rebound.Rebound;
 
 
 
-public class oooo {
+public class MainTP {
    public static void main(String[] args) throws Exception {
       Rebound r = new Rebound("");
       CheckAnnotationParser parser = new CheckAnnotationParser();
