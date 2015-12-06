@@ -1,6 +1,7 @@
 package ar.edu.itba.avmc.tp.api;
 
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -10,51 +11,47 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.AbstractTypeDeclaration;
+import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.BodyDeclaration;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.SimpleName;
+import org.eclipse.jdt.core.dom.Statement;
+import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
+import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
+import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
+import org.eclipse.jface.text.BadLocationException;
+import org.eclipse.jface.text.Document;
+import org.eclipse.jface.text.IDocument;
+import org.eclipse.text.edits.MalformedTreeException;
+import org.eclipse.text.edits.TextEdit;
+
+import ar.edu.taco.utils.FileUtils;
 
  
 public class ParserAPIImpl implements ParserAPI {
     
     
     //use ASTParse to parse string
-    public void parse(String str, String methodName) {
+    public void parse(String source, String methodName) {
        System.out.println("parse with "+ methodName + "method");
         org.eclipse.jdt.core.dom.ASTParser parser = org.eclipse.jdt.core.dom.ASTParser.newParser(org.eclipse.jdt.core.dom.AST.JLS4);
 
-        parser.setSource(str.toCharArray());
+        parser.setSource(source.toCharArray());
         parser.setKind(ASTParser.K_COMPILATION_UNIT);
- 
+        
+        final IDocument document = new Document(source);
+        
         // Parse the source code and generate an AST.
         final CompilationUnit unit = (CompilationUnit) parser.createAST(null);
 
         //Add imports to enable file output of the instrumented code
         final AST ast = unit.getAST();
  
-        ASTVisitor astv = new ASTVisitor() {
- 
-            Set names = new HashSet();
-            
-            public boolean visit(VariableDeclarationFragment node) {
-                SimpleName name = node.getName();
-                this.names.add(name.getIdentifier());
-                System.out.println("Declaration of '" + name + "' at line"
-                        + unit.getLineNumber(name.getStartPosition()));
-                return false; // do not continue 
-            }
- 
-            public boolean visit(SimpleName node) {
-                if (this.names.contains(node.getIdentifier())) {
-                    System.out.println("Usage of '" + node + "' at line "
-                            + unit.getLineNumber(node.getStartPosition()));
-                }
-                return true;
-            }
-        };
-
+        ASTVisitor astv = new TpAvmcVisitor(unit, ast);
+        ASTRewrite rewrite = ((TpAvmcVisitor)astv).getRewrite();
+        
 
         //StrykerASTVisitor visitor = new StrykerASTVisitor(wrapper, unit, source, ast, seqFileName, lastMutatedLines, mutableLines);
         // to iterate through methods
@@ -80,6 +77,11 @@ public class ParserAPIImpl implements ParserAPI {
                             //astv.setMethodName(method.getName().toString());
                             //astv.setNextMutID(0);
                             method.accept(astv);
+                            //Block block= ((TypeDeclaration) unit.types().get(0)).getMethods()[0].getBody();
+                            Block block= method.getBody();
+                            ListRewrite listRewrite= rewrite.getListRewrite(block, Block.STATEMENTS_PROPERTY);
+                            Statement placeHolder= (Statement) rewrite.createStringPlaceholder("//mycomment", ASTNode.EMPTY_STATEMENT);
+                            listRewrite.insertFirst(placeHolder, null);
 
                         }
                     }
@@ -87,6 +89,21 @@ public class ParserAPIImpl implements ParserAPI {
             }
         }
         
+        
+      //Reescribimos el archivo fuente con su instrumentacion
+        final TextEdit edits = rewrite.rewriteAST(document, null);
+        try {
+            edits.apply(document);
+        } catch (MalformedTreeException | BadLocationException e) {
+            // Handle Exceptions
+        }
+        try {
+            //            System.out.println(document.get());
+            FileUtils.writeToFile(methodName+".java", document.get());
+
+        } catch (final IOException e) {
+            // Handle exceptions
+        }
  
     }
  
