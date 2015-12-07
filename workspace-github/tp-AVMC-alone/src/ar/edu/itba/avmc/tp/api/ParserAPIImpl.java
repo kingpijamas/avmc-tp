@@ -77,11 +77,13 @@ public class ParserAPIImpl implements ParserAPI {
                             //astv.setMethodName(method.getName().toString());
                             //astv.setNextMutID(0);
                             method.accept(astv);
-                            //Block block= ((TypeDeclaration) unit.types().get(0)).getMethods()[0].getBody();
+                            
+                            
+                            /*Block block= ((TypeDeclaration) unit.types().get(0)).getMethods()[0].getBody();
                             Block block= method.getBody();
                             ListRewrite listRewrite= rewrite.getListRewrite(block, Block.STATEMENTS_PROPERTY);
                             Statement placeHolder= (Statement) rewrite.createStringPlaceholder("//mycomment", ASTNode.EMPTY_STATEMENT);
-                            listRewrite.insertFirst(placeHolder, null);
+                            listRewrite.insertFirst(placeHolder, null); */
 
                         }
                     }
