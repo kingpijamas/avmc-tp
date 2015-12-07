@@ -11,6 +11,7 @@ import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.BooleanLiteral;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.Expression;
+import org.eclipse.jdt.core.dom.ExpressionStatement;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.Statement;
 import org.eclipse.jdt.core.dom.Type;
@@ -51,28 +52,12 @@ public class TpAvmcVisitor extends ASTVisitor{
             System.out.println("Declaration of '" + name + "' at line"
                     + unit.getLineNumber(name.getStartPosition()));
             
-            // create an empty variable declaration fragment
-            VariableDeclarationFragment canaryFragment = ast
-                    .newVariableDeclarationFragment();
-
-            // set the initializer
-            canaryFragment.setInitializer(ast.newBooleanLiteral(false));
-
-            // set the name
-            canaryFragment.setName(ast.newSimpleName("canary$"+name));
-
-            // create a statement for the fragment
-            VariableDeclarationStatement statement = ast
-                    .newVariableDeclarationStatement(canaryFragment);
-
-            // set the type of the variable declaration statement
-            Type type = ((VariableDeclarationStatement) fragment.getParent()).getType();
-            statement.setType((Type) ASTNode.copySubtree(ast, type));
             
-            
-            ListRewrite listRewrite= rewrite.getListRewrite(node.getParent(), Block.STATEMENTS_PROPERTY);
-            //ListRewrite listRewrite= rewrite.getListRewrite(node, VariableDeclarationStatement.MODIFIERS2_PROPERTY);
+            VariableDeclarationStatement statement = createDeclarationStatement(ast, ast.newSimpleName("Boolean"), "canary$"+name);
+            //ListRewrite listRewrite= rewrite.getListRewrite(node.getParent(), Block.STATEMENTS_PROPERTY);
+            ListRewrite listRewrite= rewrite.getListRewrite(node, VariableDeclarationStatement.MODIFIERS2_PROPERTY);
             //Statement placeHolder= (Statement) rewrite.createStringPlaceholder("//mycomment", ASTNode.EMPTY_STATEMENT);
+            
             listRewrite.insertLast(statement, null);
         }
         
@@ -80,6 +65,15 @@ public class TpAvmcVisitor extends ASTVisitor{
         return false; // do not continue 
     }
 
+    
+    @Override
+    public boolean visit(ExpressionStatement node) {
+        
+        System.out.println("Usage of expresion '" + node + "' at line " + unit.getLineNumber(node.getStartPosition()));
+        
+        return true;
+    }
+    
     @Override
     public boolean visit(SimpleName node) {
         if (this.names.contains(node.getIdentifier())) {
@@ -87,5 +81,28 @@ public class TpAvmcVisitor extends ASTVisitor{
                     + unit.getLineNumber(node.getStartPosition()));
         }
         return true;
+    }
+    
+    private VariableDeclarationStatement createDeclarationStatement(AST ast, SimpleName typeSimpleName, String variableName){
+     // create an empty variable declaration fragment
+        VariableDeclarationFragment canaryFragment = ast
+                .newVariableDeclarationFragment();
+
+        // set the initializer
+        canaryFragment.setInitializer(ast.newBooleanLiteral(false));
+
+        // set the name
+        canaryFragment.setName(ast.newSimpleName(variableName));
+
+        // create a statement for the fragment
+        VariableDeclarationStatement statement = ast
+                .newVariableDeclarationStatement(canaryFragment);
+
+        // set the type of the variable declaration statement
+        
+        Type type = ast.newSimpleType(typeSimpleName);
+        //Type type = ((VariableDeclarationStatement) fragment.getParent()).getType();
+        statement.setType((Type) ASTNode.copySubtree(ast, type));
+        return statement;
     }
 }
