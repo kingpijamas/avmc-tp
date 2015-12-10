@@ -29,10 +29,10 @@ public class CheckAnnotationParser {
              
              File dirs = new File(".");
              String dirPath = dirs.getCanonicalPath() + File.separator+"src"+File.separator+className+".java";
-             
+             String newDirPath = dirs.getCanonicalPath() + File.separator+"results"+File.separator+className+".java";             
              String str=FileUtils.readFile(dirPath);
              
-             new ParserAPIImpl().parse(str, method.getName());
+             new ParserAPIImpl().parse(str, method.getName(),newDirPath);
              
           }
        }

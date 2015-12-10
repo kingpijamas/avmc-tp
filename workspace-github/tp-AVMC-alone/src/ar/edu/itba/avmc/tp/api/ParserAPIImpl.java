@@ -34,7 +34,7 @@ public class ParserAPIImpl implements ParserAPI {
     
     
     //use ASTParse to parse string
-    public void parse(String source, String methodName) {
+    public void parse(String source, String methodName, String newFileName) {
        System.out.println("parse with "+ methodName + "method");
         org.eclipse.jdt.core.dom.ASTParser parser = org.eclipse.jdt.core.dom.ASTParser.newParser(org.eclipse.jdt.core.dom.AST.JLS4);
 
@@ -101,7 +101,7 @@ public class ParserAPIImpl implements ParserAPI {
         }
         try {
             //            System.out.println(document.get());
-            FileUtils.writeToFile(methodName+".java", document.get());
+            FileUtils.writeToFile(newFileName, document.get());
 
         } catch (final IOException e) {
             // Handle exceptions

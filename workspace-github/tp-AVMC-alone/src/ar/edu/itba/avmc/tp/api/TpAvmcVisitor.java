@@ -147,7 +147,7 @@ public class TpAvmcVisitor extends ASTVisitor{
             jml_buffer.append(it.next()+" == false ");
             first = false;
         }
-        jml_buffer.append("; */\n");
+        jml_buffer.append("; @*/\n");
         
         BlockComment javadoc= (BlockComment) rewrite.createStringPlaceholder(jml_buffer.toString(), ASTNode.BLOCK_COMMENT);
         
