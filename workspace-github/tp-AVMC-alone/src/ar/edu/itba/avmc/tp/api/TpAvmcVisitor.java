@@ -28,11 +28,10 @@ import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 
-public class TpAvmcVisitor extends ASTVisitor{
+public abstract class TpAvmcVisitor extends ASTVisitor{
 
     private Map<String, List<String>> methodsNamesMap = new HashMap<String,List<String>>();
-    //Set names = new HashSet();
-    //private String currentMethod;
+    
     Stack<String> methodsNames = new Stack<String>();
     
     private CompilationUnit unit;
@@ -52,6 +51,13 @@ public class TpAvmcVisitor extends ASTVisitor{
         return rewrite;
     }
     
+    /**
+     * Returns if a variable type is in the analysis scope of the visitor 
+     * (ie: yo cannot analyze in the same way an arithmetic exception
+     * that a null pointer exception)
+     * 
+     * */
+    public abstract boolean isInScope(Type type);
     
     @Override
     public void endVisit(MethodDeclaration node) {
@@ -89,22 +95,28 @@ public class TpAvmcVisitor extends ASTVisitor{
         List<VariableDeclarationFragment> fragments = node.fragments();
         
         for (VariableDeclarationFragment fragment : fragments) {
-            SimpleName name = fragment.getName();
-            String canaryName = "canary$"+name.getIdentifier();
-            // como antes pasa por el visit de MethodDeclaration, seguro methodCanaries no va a ser null 
-            List<String> methodCanaries =this.methodsNamesMap.get(methodsNames.peek());
-            methodCanaries.add(canaryName);
-            //this.names.add(canaryName);
-            System.out.println("Declaration of '" + name + "' at line"
-                    + unit.getLineNumber(name.getStartPosition()));
+            if(isInScope(node.getType())){
+                SimpleName name = fragment.getName();
+                String canaryName = "canary$"+name.getIdentifier();
+                // como antes pasa por el visit de MethodDeclaration, seguro methodCanaries no va a ser null 
+                List<String> methodCanaries =this.methodsNamesMap.get(methodsNames.peek());
+                methodCanaries.add(canaryName);
+                //this.names.add(canaryName);
+                
+                
+                System.out.println("Declaration of '" + name +" with type "+ node.getType() + "' at line"
+                        + unit.getLineNumber(name.getStartPosition()));
+                
+                
+                VariableDeclarationStatement statement = createDeclarationStatement(ast, ast.newSimpleName("Boolean"), canaryName);
+                //ListRewrite listRewrite= rewrite.getListRewrite(node.getParent(), Block.STATEMENTS_PROPERTY);
+                ListRewrite listRewrite= rewrite.getListRewrite(node, VariableDeclarationStatement.MODIFIERS2_PROPERTY);
+                //Statement placeHolder= (Statement) rewrite.createStringPlaceholder("//mycomment", ASTNode.EMPTY_STATEMENT);
+                
+                listRewrite.insertLast(statement, null);
+                
+            }
             
-            
-            VariableDeclarationStatement statement = createDeclarationStatement(ast, ast.newSimpleName("Boolean"), canaryName);
-            //ListRewrite listRewrite= rewrite.getListRewrite(node.getParent(), Block.STATEMENTS_PROPERTY);
-            ListRewrite listRewrite= rewrite.getListRewrite(node, VariableDeclarationStatement.MODIFIERS2_PROPERTY);
-            //Statement placeHolder= (Statement) rewrite.createStringPlaceholder("//mycomment", ASTNode.EMPTY_STATEMENT);
-            
-            listRewrite.insertLast(statement, null);
         }
         
         

@@ -52,7 +52,7 @@ public class ParserAPIImpl implements ParserAPI {
         //Add imports to enable file output of the instrumented code
         final AST ast = unit.getAST();
  
-        ASTVisitor astv = new TpAvmcVisitor(unit, ast);
+        ASTVisitor astv = new NullTpAvmcVisitor(unit, ast);
         ASTRewrite rewrite = ((TpAvmcVisitor)astv).getRewrite();
         
 

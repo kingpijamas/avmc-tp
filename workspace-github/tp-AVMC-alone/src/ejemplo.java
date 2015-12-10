@@ -7,6 +7,8 @@ public class ejemplo {
     public static int wololoInt(String foo){
         Double a=1.0;
         Double c=0.0;
+        int d=0;
+        String lola="lola";
         a=a / c;
         
         System.out.println("pase por wololoInt del package lalo con "+foo);
