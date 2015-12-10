@@ -34,9 +34,12 @@ public class ParserAPIImpl implements ParserAPI {
     
     
     //use ASTParse to parse string
-    public void parse(String source, String methodName, String newFileName) {
-       System.out.println("parse with "+ methodName + "method");
-        org.eclipse.jdt.core.dom.ASTParser parser = org.eclipse.jdt.core.dom.ASTParser.newParser(org.eclipse.jdt.core.dom.AST.JLS4);
+    public void parse(String source, List<String> methodNames, String newFileName) {
+       System.out.println("parse with "+ methodNames + "method");
+       if(methodNames.isEmpty()){
+           return;
+       }
+       org.eclipse.jdt.core.dom.ASTParser parser = org.eclipse.jdt.core.dom.ASTParser.newParser(org.eclipse.jdt.core.dom.AST.JLS4);
 
         parser.setSource(source.toCharArray());
         parser.setKind(ASTParser.K_COMPILATION_UNIT);
@@ -63,7 +66,8 @@ public class ParserAPIImpl implements ParserAPI {
                 for (final BodyDeclaration body : bodies) {
                     if (body.getNodeType() == ASTNode.METHOD_DECLARATION) {
                         final MethodDeclaration method = (MethodDeclaration)body;
-                        if (method.getName().toString().contains(methodName)) {
+                     
+                        if (methodNames.contains(method.getName().toString())) {
                         
                             //First, we want to add some instructions as first lines of the method to create the output
                             //file for this method, where the sequential code is going to be outputted.

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.jmlspecs.checker.JmlVariantFunction"/>
-<fullyQualifiedTypeName name="org.multijava.mjc.CNumericType"/>
-<fullyQualifiedTypeName name="org.multijava.mjc.JOrdinalLiteral"/>
-<fullyQualifiedTypeName name="org.jmlspecs.checker.JmlSpecExpression"/>
 <fullyQualifiedTypeName name="org.multijava.mjc.JMethodCallExpression"/>
 <fullyQualifiedTypeName name="org.multijava.mjc.JMethodCallExpressionExtension"/>
 <fullyQualifiedTypeName name="ar.edu.jdynalloy.ast.JVariableDeclaration"/>
@@ -54,10 +50,14 @@
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.TypeDeclaration"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.VariableDeclarationFragment"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.VariableDeclarationStatement"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.BooleanLiteral"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.Javadoc"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.BlockComment"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
 </qualifiedTypeNameHistroy>

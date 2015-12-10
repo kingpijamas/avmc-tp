@@ -1,9 +1,13 @@
 package ar.edu.itba.avmc.tp.api;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
@@ -26,7 +30,11 @@ import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 
 public class TpAvmcVisitor extends ASTVisitor{
 
-    Set names = new HashSet();
+    private Map<String, List<String>> methodsNamesMap = new HashMap<String,List<String>>();
+    //Set names = new HashSet();
+    //private String currentMethod;
+    Stack<String> methodsNames = new Stack<String>();
+    
     private CompilationUnit unit;
     private AST ast;
     private ASTRewrite rewrite;
@@ -53,15 +61,27 @@ public class TpAvmcVisitor extends ASTVisitor{
                 + unit.getLineNumber(node.getStartPosition()));
         
         //MethodDeclaration newNode =(MethodDeclaration)ASTNode.copySubtree(ast, node);
-        
-        BlockComment jml_block = createJMLComment();
+        String currentMethod = methodsNames.pop();
+        BlockComment jml_block = createJMLComment(currentMethod);
         if(jml_block!=null){
             ListRewrite listRewrite = rewrite.getListRewrite(node, MethodDeclaration.MODIFIERS2_PROPERTY);
             //listRewrite.replace(node, newNode, null);
             listRewrite.insertAt(jml_block,1, null);
         }
         
+        
     } 
+    
+    @Override
+    public boolean visit(MethodDeclaration node) {
+        
+        methodsNames.push(node.getName().toString());
+        if(methodsNamesMap.get(node.getName().toString())==null){
+            methodsNamesMap.put(node.getName().toString(), new ArrayList<String>());
+            
+        }
+        return super.visit(node);
+    }
     
     @Override
     public boolean visit(VariableDeclarationStatement node) {
@@ -71,7 +91,10 @@ public class TpAvmcVisitor extends ASTVisitor{
         for (VariableDeclarationFragment fragment : fragments) {
             SimpleName name = fragment.getName();
             String canaryName = "canary$"+name.getIdentifier();
-            this.names.add(canaryName);
+            // como antes pasa por el visit de MethodDeclaration, seguro methodCanaries no va a ser null 
+            List<String> methodCanaries =this.methodsNamesMap.get(methodsNames.peek());
+            methodCanaries.add(canaryName);
+            //this.names.add(canaryName);
             System.out.println("Declaration of '" + name + "' at line"
                     + unit.getLineNumber(name.getStartPosition()));
             
@@ -101,7 +124,8 @@ public class TpAvmcVisitor extends ASTVisitor{
     
     @Override
     public boolean visit(SimpleName node) {
-        if (this.names.contains(node.getIdentifier())) {
+        List<String> canaryNames = methodsNamesMap.get(methodsNames.peek());
+        if (canaryNames.contains(node.getIdentifier())) {
             System.out.println("Usage of '" + node + "' at line "
                     + unit.getLineNumber(node.getStartPosition()));
         }
@@ -131,11 +155,12 @@ public class TpAvmcVisitor extends ASTVisitor{
         return statement;
     }
     
-    private BlockComment createJMLComment(){
-        if(names.isEmpty()){
+    private BlockComment createJMLComment(String method){
+        List<String> canaryNames = methodsNamesMap.get(method);
+        if(canaryNames.isEmpty()){
             return null;
         }
-        Iterator <String> it =names.iterator();
+        Iterator <String> it =canaryNames.iterator();
         
         StringBuffer jml_buffer = new StringBuffer("/*@ ensures ");
         boolean first = true;

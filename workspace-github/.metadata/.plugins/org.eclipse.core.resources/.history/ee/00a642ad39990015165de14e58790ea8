@@ -1,6 +1,0 @@
-package lalala;
-
-@Target(ElementType.METHOD)
-public @interface check {
-    String info() default "";
-}
