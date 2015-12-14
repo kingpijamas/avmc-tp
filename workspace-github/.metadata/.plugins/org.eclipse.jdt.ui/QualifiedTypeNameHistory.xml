@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.multijava.mjc.JMethodCallExpression"/>
-<fullyQualifiedTypeName name="org.multijava.mjc.JMethodCallExpressionExtension"/>
-<fullyQualifiedTypeName name="ar.edu.jdynalloy.ast.JVariableDeclaration"/>
-<fullyQualifiedTypeName name="ar.uba.dc.rfm.alloy.AlloyVariable"/>
 <fullyQualifiedTypeName name="org.multijava.mjc.JVariableDefinition"/>
 <fullyQualifiedTypeName name="ar.edu.taco.TacoAnalysisResult"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -46,7 +42,6 @@
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.Statement"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.rewrite.ASTRewrite"/>
-<fullyQualifiedTypeName name="ar.edu.itba.avmc.tp.api.TpAvmcVisitor"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.TypeDeclaration"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.VariableDeclarationFragment"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.VariableDeclarationStatement"/>
@@ -58,6 +53,11 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.Type"/>
+<fullyQualifiedTypeName name="ar.edu.itba.avmc.tp.api.TpAvmcVisitor"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.ASTNode"/>
+<fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.IfStatement"/>
 </qualifiedTypeNameHistroy>
