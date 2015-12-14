@@ -38,6 +38,7 @@ import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
+import org.eclipse.text.edits.TextEditGroup;
 
 public abstract class TpAvmcVisitor extends ASTVisitor{
 
@@ -140,13 +141,18 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     public boolean visit(InfixExpression node) {
         System.out.println("--------");
         System.out.println("Usage of expresion '" + node.toString() + "' at line " + unit.getLineNumber(node.getStartPosition()));
-        BlockComment block =ast.newBlockComment();
-        ASTNode parent= node.getParent();
-        /*List<String> ans=denominatorVariables(node.getExpression().toString());
-        for (String s: ans){
-            System.out.println("lala: "+ans);
-        }*/
-        return true;
+        List<String> canariesNames = denominatorVariables(node.toString());
+        if(!canariesNames.isEmpty()){
+               
+           ASTNode expression = ASTNode.copySubtree(ast, node.getParent());
+           ASTNode new_if = ifst((Expression)expression, canariesNames);
+           
+           rewrite.replace(node.getParent().getParent(), new_if, null);
+           
+           System.out.println(new_if);
+            
+        }
+        return false;
     }
     
     /*@Override
@@ -164,6 +170,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     
     @Override
     public boolean visit(SimpleName node) {
+        
         List<String> canaryNames = methodsNamesMap.get(methodsNames.peek());
         String node_canary = "canary$"+node.getIdentifier();
         if (canaryNames.contains(node_canary)) {
@@ -181,7 +188,8 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
                 }
 
             ASTNode expression = ASTNode.copySubtree(ast, node.getParent().getParent());
-            ASTNode new_if = ifst((Expression)expression);
+            List<String> canaries = denominatorVariables(node.getParent().toString());
+            ASTNode new_if = ifst((Expression)expression,canaries);
             listRewrite.insertLast(new_if, null);
             System.out.println(new_if);
             }
@@ -263,7 +271,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
                 for(int i=0;i<s.length();i++){
                     
                     if(canaryNames.contains("canary$"+s.charAt(i))){
-                        answers.add("canary$"+s.charAt(i));
+                        answers.add(s.substring(i,i+1));
                     }
                 }
             }
@@ -271,13 +279,13 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         return answers;
     }
     
-    private ASTNode ifst(Expression replacement){
+    private ASTNode ifst(Expression replacement, List<String> variables){
         IfStatement ifs = ast.newIfStatement();
         
         //StringLiteral condition= ast.newStringLiteral();
         NumberLiteral zero = ast.newNumberLiteral("0");
         StringLiteral then_stat= ast.newStringLiteral();
-        SimpleName variableName = ast.newSimpleName("a");
+        SimpleName variableName = ast.newSimpleName(variables.get(0));
         
         
         InfixExpression condition = ast.newInfixExpression();
@@ -290,7 +298,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         
         block_then.setStructuralProperty(then_stat.getLocationInParent(), then_stat);
         Assignment as=ast.newAssignment();
-        SimpleName canaryName = ast.newSimpleName("canary$a");
+        SimpleName canaryName = ast.newSimpleName("canary$"+variables.get(0));
         BooleanLiteral flag = ast.newBooleanLiteral(true);
         as.setLeftHandSide(canaryName);
         as.setRightHandSide(flag);
