@@ -168,7 +168,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     }
     */ 
     
-    @Override
+  /*  @Override
     public boolean visit(SimpleName node) {
         
         List<String> canaryNames = methodsNamesMap.get(methodsNames.peek());
@@ -196,14 +196,15 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         }
         return true;
     }
+   */
     
-    public boolean visit(IfStatement node) {
+    /*public boolean visit(IfStatement node) {
         System.out.println("paso por if: "+node.toString());
         Expression cond = node.getExpression();
         System.out.println("cond es " + cond);
         
         return true;
-    }
+    }*/
     
     private VariableDeclarationStatement createDeclarationStatement(AST ast, SimpleName typeSimpleName, String variableName){
      // create an empty variable declaration fragment
@@ -288,20 +289,16 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         SimpleName variableName = ast.newSimpleName(variables.get(0));
         
         
-        InfixExpression condition = ast.newInfixExpression();
-        condition.setRightOperand(zero);
-        condition.setOperator(Operator.EQUALS);
-        condition.setLeftOperand(variableName);
+        InfixExpression condition = createinfixExpression(variableName, Operator.EQUALS, zero);
+        
         
         Block block_then = ast.newBlock();
         Block block_else = ast.newBlock();
         
         block_then.setStructuralProperty(then_stat.getLocationInParent(), then_stat);
-        Assignment as=ast.newAssignment();
         SimpleName canaryName = ast.newSimpleName("canary$"+variables.get(0));
-        BooleanLiteral flag = ast.newBooleanLiteral(true);
-        as.setLeftHandSide(canaryName);
-        as.setRightHandSide(flag);
+        Assignment as = createAssignment(canaryName, ast.newBooleanLiteral(true));
+        
         
         //then_stat.setLiteralValue("canary$a = true");
         
@@ -321,5 +318,20 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         
         return ifs;
         
+    }
+    
+    private InfixExpression createinfixExpression(Expression leftOperand,Operator op, Expression rightOperand){
+        InfixExpression expression = ast.newInfixExpression();
+        expression.setRightOperand(rightOperand);
+        expression.setOperator(op);
+        expression.setLeftOperand(leftOperand);
+        return expression;
+    }
+    
+    private Assignment createAssignment(Expression leftSide, Expression rightSide){
+        Assignment assignment=ast.newAssignment();
+        assignment.setLeftHandSide(leftSide);
+        assignment.setRightHandSide(rightSide);
+        return assignment;
     }
 }
