@@ -47,7 +47,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     Stack<String> methodsNames = new Stack<String>();
     
     private CompilationUnit unit;
-    private AST ast;
+    protected AST ast;
     private ASTRewrite rewrite;
     
     
@@ -70,6 +70,12 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
      * 
      * */
     public abstract boolean isInScope(Type type);
+    
+    /**
+     * Returns the logical expression used in "if canary"
+     * */
+    public abstract InfixExpression getLogicalCheck(String variableName);
+    
     
     @Override
     public void endVisit(MethodDeclaration node) {
@@ -282,8 +288,8 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         SimpleName variableName = ast.newSimpleName(variables.get(0));
         
         
-        InfixExpression condition = createinfixExpression(variableName, Operator.EQUALS, zero);
-        
+        //InfixExpression condition = createinfixExpression(variableName, Operator.EQUALS, zero);
+        InfixExpression condition = getLogicalCheck(variables.get(0));
         
         Block block_then = ast.newBlock();
         Block block_else = ast.newBlock();
@@ -291,9 +297,6 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         block_then.setStructuralProperty(then_stat.getLocationInParent(), then_stat);
         SimpleName canaryName = ast.newSimpleName("canary$"+variables.get(0));
         Assignment as = createAssignment(canaryName, ast.newBooleanLiteral(true));
-        
-        
-        //then_stat.setLiteralValue("canary$a = true");
         
         
         ifs.setExpression(condition);
@@ -313,7 +316,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         
     }
     
-    private InfixExpression createinfixExpression(Expression leftOperand,Operator op, Expression rightOperand){
+    protected InfixExpression createinfixExpression(Expression leftOperand,Operator op, Expression rightOperand){
         InfixExpression expression = ast.newInfixExpression();
         expression.setRightOperand(rightOperand);
         expression.setOperator(op);

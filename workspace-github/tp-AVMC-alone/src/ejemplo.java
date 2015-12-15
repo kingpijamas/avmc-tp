@@ -3,19 +3,20 @@ import ar.edu.itba.avmc.tp.annotations.Check;
 
 public class ejemplo {
     
-    @Check("NullPointer")
+    @Check("Arithmetic")
     public static int wololoInt(String foo){
         Double a=1.0;
         Double c=0.0;
         int d=0;
         String lola="lola";
+        
         a=a / c;
         
         System.out.println("pase por wololoInt del package lalo con "+foo);
         return 1;
     }
     
-    @Check("NullPointer")
+    @Check("Arithmetic")
     public static void main(String[] args) {
         System.out.println("lalal");
         Double a=1.0;
