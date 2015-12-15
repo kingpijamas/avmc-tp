@@ -3,7 +3,7 @@ import ar.edu.itba.avmc.tp.annotations.Check;
 
 public class ejemplo {
     
-    @Check("Arithmetic")
+    @Check("NullPointer")
     public static int wololoInt(String foo){
         Double a=1.0;
         Double c=0.0;
@@ -15,7 +15,7 @@ public class ejemplo {
         return 1;
     }
     
-    @Check("Arithmetic")
+    @Check("NullPointer")
     public static void main(String[] args) {
         System.out.println("lalal");
         Double a=1.0;

@@ -32,29 +32,43 @@ import ar.edu.taco.utils.FileUtils;
  
 public class ParserAPIImpl implements ParserAPI {
     
+    final CompilationUnit unit;
+    final AST ast;
+    final IDocument document;
     
-    //use ASTParse to parse string
-    public void parse(String source, List<String> methodNames, String newFileName) {
-       System.out.println("parse with "+ methodNames + "method");
-       if(methodNames.isEmpty()){
-           return;
-       }
-       org.eclipse.jdt.core.dom.ASTParser parser = org.eclipse.jdt.core.dom.ASTParser.newParser(org.eclipse.jdt.core.dom.AST.JLS4);
+    public ParserAPIImpl(String source){
+        org.eclipse.jdt.core.dom.ASTParser parser = org.eclipse.jdt.core.dom.ASTParser.newParser(org.eclipse.jdt.core.dom.AST.JLS4);
 
         parser.setSource(source.toCharArray());
         parser.setKind(ASTParser.K_COMPILATION_UNIT);
         
-        final IDocument document = new Document(source);
+        document = new Document(source);
         
         // Parse the source code and generate an AST.
-        final CompilationUnit unit = (CompilationUnit) parser.createAST(null);
+        unit = (CompilationUnit) parser.createAST(null);
 
         //Add imports to enable file output of the instrumented code
-        final AST ast = unit.getAST();
- 
-        ASTVisitor astv = new NullTpAvmcVisitor(unit, ast);
-        ASTRewrite rewrite = ((TpAvmcVisitor)astv).getRewrite();
-        
+        ast = unit.getAST();
+    }
+    
+    public AST getAST(){
+        return ast;
+    }
+    
+    public CompilationUnit getUnit(){
+        return unit;
+    }
+    
+    //use ASTParse to parse string
+    public void parse(List<String> methodNames, String newFileName, TpAvmcVisitor visitor) {
+       System.out.println("parse with "+ methodNames + "method");
+       if(methodNames.isEmpty()){
+           return;
+       }
+
+        //ASTVisitor astv = new ArithmeticTpAvmcVisitor(unit, ast);
+        //ASTRewrite rewrite = ((TpAvmcVisitor)astv).getRewrite();
+       ASTRewrite rewrite = visitor.getRewrite();
 
         //StrykerASTVisitor visitor = new StrykerASTVisitor(wrapper, unit, source, ast, seqFileName, lastMutatedLines, mutableLines);
         // to iterate through methods
@@ -80,7 +94,7 @@ public class ParserAPIImpl implements ParserAPI {
                             
                             //astv.setMethodName(method.getName().toString());
                             //astv.setNextMutID(0);
-                            method.accept(astv);
+                            method.accept(visitor);
                             
                             
                             /*Block block= ((TypeDeclaration) unit.types().get(0)).getMethods()[0].getBody();
@@ -97,7 +111,7 @@ public class ParserAPIImpl implements ParserAPI {
         
         
       //Reescribimos el archivo fuente con su instrumentacion
-        final TextEdit edits = rewrite.rewriteAST(document, null);
+        TextEdit edits = rewrite.rewriteAST(document, null);
         try {
             edits.apply(document);
         } catch (MalformedTreeException | BadLocationException e) {

@@ -16,7 +16,11 @@ public class MainTP {
       Set<Class<? extends Object>> classes = r.getSubClassesOf(Object.class);
       Iterator<Class<? extends Object>> iter = classes.iterator();
       while (iter.hasNext()) {
+         try{
           parser.parse(iter.next());
+         }catch(Exception e){
+             e.printStackTrace();
+         }
       }
 
 

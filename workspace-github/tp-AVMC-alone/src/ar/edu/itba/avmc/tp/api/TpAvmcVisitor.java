@@ -253,13 +253,6 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         return javadoc;
     }
     
-    private boolean isDenominator(String expression, String variable){
-        String[] tokens = expression.split("/");
-        if(tokens.length<2){
-            return false;
-        }
-        return tokens[1].contains(variable);
-    }
     
     private List<String> denominatorVariables(String expression){
         List<String> answers = new ArrayList<String>();
