@@ -42,13 +42,13 @@ import org.eclipse.text.edits.TextEditGroup;
 
 public abstract class TpAvmcVisitor extends ASTVisitor{
 
-    private Map<String, List<String>> methodsNamesMap = new HashMap<String,List<String>>();
+    protected Map<String, List<String>> methodsNamesMap = new HashMap<String,List<String>>();
     
-    Stack<String> methodsNames = new Stack<String>();
+    protected Stack<String> methodsNames = new Stack<String>();
     
-    private CompilationUnit unit;
+    protected CompilationUnit unit;
     protected AST ast;
-    private ASTRewrite rewrite;
+    protected ASTRewrite rewrite;
     
     
     public TpAvmcVisitor(CompilationUnit unit, AST ast) {
@@ -119,12 +119,9 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
                 // como antes pasa por el visit de MethodDeclaration, seguro methodCanaries no va a ser null 
                 List<String> methodCanaries =this.methodsNamesMap.get(methodsNames.peek());
                 methodCanaries.add(canaryName);
-                //this.names.add(canaryName);
-                
                 
                 System.out.println("Declaration of '" + name +" with type "+ node.getType() + "' at line"
                         + unit.getLineNumber(name.getStartPosition()));
-                
                 
                 VariableDeclarationStatement statement = createDeclarationStatement(ast, ast.newSimpleName("Boolean"), "canary$"+canaryName);
                 //ListRewrite listRewrite= rewrite.getListRewrite(node.getParent(), Block.STATEMENTS_PROPERTY);
@@ -141,7 +138,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     }
   
     
-    @Override
+    /*@Override
     public boolean visit(InfixExpression node) {
         System.out.println("--------");
         System.out.println("Usage of expresion '" + node.toString() + "' at line " + unit.getLineNumber(node.getStartPosition()));
@@ -157,7 +154,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
             
         }
         return false;
-    }
+    }*/
     
     
     private VariableDeclarationStatement createDeclarationStatement(AST ast, SimpleName typeSimpleName, String variableName){
@@ -186,7 +183,6 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     /*
      * Creates the jml contract to use later with TACO
      * */
-    
     private BlockComment createJMLComment(String method){
         List<String> canaryNames = methodsNamesMap.get(method);
         if(canaryNames.isEmpty()){
@@ -213,7 +209,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     }
     
     
-    private List<String> denominatorVariables(String expression){
+    protected List<String> denominatorVariables(String expression){
         List<String> answers = new ArrayList<String>();
         
         String[] tokens = expression.split("/");
@@ -236,7 +232,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         return answers;
     }
     
-    private ASTNode ifst(Expression replacement, List<String> variables){
+    protected ASTNode ifst(Expression replacement, List<String> variables){
         IfStatement ifs = ast.newIfStatement();
         
         StringLiteral then_stat= ast.newStringLiteral();
