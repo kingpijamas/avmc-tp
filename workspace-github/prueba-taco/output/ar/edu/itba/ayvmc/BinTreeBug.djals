@@ -1,0 +1,1717 @@
+//-------------- ar_edu_itba_ayvmc_BinTreeBug --------------//
+module ar_edu_itba_ayvmc_BinTreeBug
+sig ar_edu_itba_ayvmc_BinTreeBug extends java_lang_Object {}
+{}
+field ar_edu_itba_ayvmc_BinTreeBug_root:(ar_edu_itba_ayvmc_BinTreeBug)->one(ar_edu_itba_ayvmc_NodeBTBug+null) {}
+field ar_edu_itba_ayvmc_BinTreeBug_intendedSize:(ar_edu_itba_ayvmc_BinTreeBug)->one(Int) {}
+
+object_invariant
+   all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+     liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+     implies 
+             (
+               all m:ar_edu_itba_ayvmc_NodeBTBug+null | {
+                 liftExpression[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_left,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],m]]
+                 implies 
+                         lt[m.ar_edu_itba_ayvmc_NodeBTBug_value,
+                           n.ar_edu_itba_ayvmc_NodeBTBug_value]
+               
+               }
+             )
+   
+   }
+
+object_invariant
+   all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+     liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+     implies 
+             equ[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_left,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
+                false]
+   
+   }
+
+object_invariant
+   all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+     liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+     implies 
+             (
+               all m:ar_edu_itba_ayvmc_NodeBTBug+null | {
+                 liftExpression[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_right,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],m]]
+                 implies 
+                         gte[m.ar_edu_itba_ayvmc_NodeBTBug_value,
+                            n.ar_edu_itba_ayvmc_NodeBTBug_value]
+               
+               }
+             )
+   
+   }
+
+object_invariant
+   all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+     liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+     implies 
+             equ[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_right,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
+                false]
+   
+   }
+
+
+
+program ar_edu_itba_ayvmc_BinTreeBug::remove[
+  var thiz:ar_edu_itba_ayvmc_BinTreeBug,
+  var throw:java_lang_Throwable+null,
+  var return:boolean,
+  var x:Int] 
+Specification 
+{
+  SpecCase #0 {
+   requires {
+      some n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+        equ[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
+           true]
+        and 
+        equ[n.ar_edu_itba_ayvmc_NodeBTBug_value,
+           x]
+      
+      }
+   }
+   
+   ensures {
+      (
+        throw'=null)
+      implies 
+              (
+                all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+                  equ[fun_set_contains[fun_reach[thiz'.ar_edu_itba_ayvmc_BinTreeBug_root',ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left'+ar_edu_itba_ayvmc_NodeBTBug_right'],n],
+                     true]
+                  implies 
+                          neq[n.ar_edu_itba_ayvmc_NodeBTBug_value',
+                             x']
+                
+                }
+              )
+   }
+   
+   modifies {
+   EVERYTHING}
+  }
+}
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var param_x_7:Int;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               param_x_7:=x;
+            } else {
+               skip;
+            };
+            var var_11_current:ar_edu_itba_ayvmc_NodeBTBug+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]{
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  var_11_current:=thiz.ar_edu_itba_ayvmc_BinTreeBug_root;
+               };
+            } else {
+               skip;
+            };
+            var var_12_parent:ar_edu_itba_ayvmc_NodeBTBug+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               var_12_parent:=((ar_edu_itba_ayvmc_NodeBTBug+null) & (null));
+            } else {
+               skip;
+            };
+            var var_13_branch:boolean;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               var_13_branch:=true;
+            } else {
+               skip;
+            };
+            var var_14_ws_6:boolean;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               var_14_ws_6:=(neq[var_11_current,
+                  null]=>(true)else(false));
+            } else {
+               skip;
+            };
+            while liftExpression[var_14_ws_6]
+            and 
+            (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false)
+            
+               {
+                  var t_71:boolean;
+                  var t_72:boolean;
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     t_71:=(equ[var_11_current.ar_edu_itba_ayvmc_NodeBTBug_value,
+                        param_x_7]=>(true)else(false));
+                  } else {
+                     skip;
+                  };
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     if t_71=true   {
+                           var t_59:boolean;
+                           var t_60:boolean;
+                           var t_61:boolean;
+                           var t_67:boolean;
+                           var t_68:boolean;
+                           var t_69:boolean;
+                           var t_70:Int;
+                           var var_15_bigson:ar_edu_itba_ayvmc_NodeBTBug+null;
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              var_15_bigson:=var_11_current;
+                           } else {
+                              skip;
+                           };
+                           var var_16_ws_5:boolean;
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              t_60:=(neq[var_15_bigson.ar_edu_itba_ayvmc_NodeBTBug_left,
+                                 null]=>(true)else(false));
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              if t_60=true{
+                                 if (
+                                   throw=null)
+                                 and 
+                                 (
+                                   exit_stmt_reached=false){
+                                    t_59:=true;
+                                 } else {
+                                    skip;
+                                 };
+                              } else    {
+                                    if (
+                                      throw=null)
+                                    and 
+                                    (
+                                      exit_stmt_reached=false){
+                                       t_61:=(neq[var_15_bigson.ar_edu_itba_ayvmc_NodeBTBug_right,
+                                          null]=>(true)else(false));
+                                    } else {
+                                       skip;
+                                    };
+                                    if (
+                                      throw=null)
+                                    and 
+                                    (
+                                      exit_stmt_reached=false){
+                                       if t_61=true{
+                                          if (
+                                            throw=null)
+                                          and 
+                                          (
+                                            exit_stmt_reached=false){
+                                             t_59:=true;
+                                          } else {
+                                             skip;
+                                          };
+                                       } else {
+                                          if (
+                                            throw=null)
+                                          and 
+                                          (
+                                            exit_stmt_reached=false){
+                                             t_59:=false;
+                                          } else {
+                                             skip;
+                                          };
+                                       };
+                                    } else {
+                                       skip;
+                                    };
+                                 
+                                 }
+                              ;
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              var_16_ws_5:=t_59;
+                           } else {
+                              skip;
+                           };
+                           while liftExpression[var_16_ws_5]
+                           and 
+                           (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false)
+                           
+                              {
+                                 var t_62:boolean;
+                                 var t_63:boolean;
+                                 var t_64:boolean;
+                                 var t_65:boolean;
+                                 if (
+                                   throw=null)
+                                 and 
+                                 (
+                                   exit_stmt_reached=false){
+                                    var_12_parent:=var_15_bigson;
+                                 } else {
+                                    skip;
+                                 };
+                                 if (
+                                   throw=null)
+                                 and 
+                                 (
+                                   exit_stmt_reached=false){
+                                    t_62:=(neq[var_15_bigson.ar_edu_itba_ayvmc_NodeBTBug_right,
+                                       null]=>(true)else(false));
+                                 } else {
+                                    skip;
+                                 };
+                                 if (
+                                   throw=null)
+                                 and 
+                                 (
+                                   exit_stmt_reached=false){
+                                    if t_62=true   {
+                                          if (
+                                            throw=null)
+                                          and 
+                                          (
+                                            exit_stmt_reached=false){
+                                             if isEmptyOrNull[var_15_bigson]{
+                                                throw:=java_lang_NullPointerExceptionLit;
+                                             } else {
+                                                var_15_bigson:=var_15_bigson.ar_edu_itba_ayvmc_NodeBTBug_right;
+                                             };
+                                          } else {
+                                             skip;
+                                          };
+                                          if (
+                                            throw=null)
+                                          and 
+                                          (
+                                            exit_stmt_reached=false){
+                                             var_13_branch:=false;
+                                          } else {
+                                             skip;
+                                          };
+                                       
+                                       }
+                                     else    {
+                                          if (
+                                            throw=null)
+                                          and 
+                                          (
+                                            exit_stmt_reached=false){
+                                             if isEmptyOrNull[var_15_bigson]{
+                                                throw:=java_lang_NullPointerExceptionLit;
+                                             } else {
+                                                var_15_bigson:=var_15_bigson.ar_edu_itba_ayvmc_NodeBTBug_left;
+                                             };
+                                          } else {
+                                             skip;
+                                          };
+                                          if (
+                                            throw=null)
+                                          and 
+                                          (
+                                            exit_stmt_reached=false){
+                                             var_13_branch:=true;
+                                          } else {
+                                             skip;
+                                          };
+                                       
+                                       }
+                                    ;
+                                 } else {
+                                    skip;
+                                 };
+                                 if (
+                                   throw=null)
+                                 and 
+                                 (
+                                   exit_stmt_reached=false){
+                                    t_64:=(neq[var_15_bigson.ar_edu_itba_ayvmc_NodeBTBug_left,
+                                       null]=>(true)else(false));
+                                 } else {
+                                    skip;
+                                 };
+                                 if (
+                                   throw=null)
+                                 and 
+                                 (
+                                   exit_stmt_reached=false){
+                                    if t_64=true{
+                                       if (
+                                         throw=null)
+                                       and 
+                                       (
+                                         exit_stmt_reached=false){
+                                          t_63:=true;
+                                       } else {
+                                          skip;
+                                       };
+                                    } else    {
+                                          if (
+                                            throw=null)
+                                          and 
+                                          (
+                                            exit_stmt_reached=false){
+                                             t_65:=(neq[var_15_bigson.ar_edu_itba_ayvmc_NodeBTBug_right,
+                                                null]=>(true)else(false));
+                                          } else {
+                                             skip;
+                                          };
+                                          if (
+                                            throw=null)
+                                          and 
+                                          (
+                                            exit_stmt_reached=false){
+                                             if t_65=true{
+                                                if (
+                                                  throw=null)
+                                                and 
+                                                (
+                                                  exit_stmt_reached=false){
+                                                   t_63:=true;
+                                                } else {
+                                                   skip;
+                                                };
+                                             } else {
+                                                if (
+                                                  throw=null)
+                                                and 
+                                                (
+                                                  exit_stmt_reached=false){
+                                                   t_63:=false;
+                                                } else {
+                                                   skip;
+                                                };
+                                             };
+                                          } else {
+                                             skip;
+                                          };
+                                       
+                                       }
+                                    ;
+                                 } else {
+                                    skip;
+                                 };
+                                 if (
+                                   throw=null)
+                                 and 
+                                 (
+                                   exit_stmt_reached=false){
+                                    var_16_ws_5:=t_63;
+                                 } else {
+                                    skip;
+                                 };
+                              
+                              }
+                           ;
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              t_67:=(equ[var_15_bigson,
+                                 thiz.ar_edu_itba_ayvmc_BinTreeBug_root]=>(true)else(false));
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              if t_67=true   {
+                                    var t_66:Int;
+                                    if (
+                                      throw=null)
+                                    and 
+                                    (
+                                      exit_stmt_reached=false){
+                                       if isEmptyOrNull[thiz]{
+                                          throw:=java_lang_NullPointerExceptionLit;
+                                       } else {
+                                          thiz.ar_edu_itba_ayvmc_BinTreeBug_root:=((ar_edu_itba_ayvmc_NodeBTBug+null) & (null));
+                                       };
+                                    } else {
+                                       skip;
+                                    };
+                                    if (
+                                      throw=null)
+                                    and 
+                                    (
+                                      exit_stmt_reached=false){
+                                       if isEmptyOrNull[thiz]{
+                                          throw:=java_lang_NullPointerExceptionLit;
+                                       } else {
+                                          t_66:=thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize;
+                                       };
+                                    } else {
+                                       skip;
+                                    };
+                                    if (
+                                      throw=null)
+                                    and 
+                                    (
+                                      exit_stmt_reached=false){
+                                       if isEmptyOrNull[thiz]
+                                       or 
+                                       isEmptyOrNull[thiz]
+                                       {
+                                          throw:=java_lang_NullPointerExceptionLit;
+                                       } else {
+                                          thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize:=add[thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize,negate[1]];
+                                       };
+                                    } else {
+                                       skip;
+                                    };
+                                    if (
+                                      throw=null)
+                                    and 
+                                    (
+                                      exit_stmt_reached=false)   {
+                                          return:=true;
+                                          exit_stmt_reached:=true;
+                                       
+                                       }
+                                     else {
+                                       skip;
+                                    };
+                                 
+                                 }
+                               else {
+                                 skip;
+                              };
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              t_68:=(neq[var_12_parent,
+                                 null]=>(true)else(false));
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              if t_68=true{
+                                 if (
+                                   throw=null)
+                                 and 
+                                 (
+                                   exit_stmt_reached=false){
+                                    if var_13_branch=true{
+                                       if (
+                                         throw=null)
+                                       and 
+                                       (
+                                         exit_stmt_reached=false){
+                                          if isEmptyOrNull[var_12_parent]{
+                                             throw:=java_lang_NullPointerExceptionLit;
+                                          } else {
+                                             var_12_parent.ar_edu_itba_ayvmc_NodeBTBug_left:=((ar_edu_itba_ayvmc_NodeBTBug+null) & (null));
+                                          };
+                                       } else {
+                                          skip;
+                                       };
+                                    } else {
+                                       if (
+                                         throw=null)
+                                       and 
+                                       (
+                                         exit_stmt_reached=false){
+                                          if isEmptyOrNull[var_12_parent]{
+                                             throw:=java_lang_NullPointerExceptionLit;
+                                          } else {
+                                             var_12_parent.ar_edu_itba_ayvmc_NodeBTBug_right:=((ar_edu_itba_ayvmc_NodeBTBug+null) & (null));
+                                          };
+                                       } else {
+                                          skip;
+                                       };
+                                    };
+                                 } else {
+                                    skip;
+                                 };
+                              } else {
+                                 skip;
+                              };
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              t_69:=(neq[var_15_bigson,
+                                 var_11_current]=>(true)else(false));
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              if t_69=true{
+                                 if (
+                                   throw=null)
+                                 and 
+                                 (
+                                   exit_stmt_reached=false){
+                                    if isEmptyOrNull[var_11_current]
+                                    or 
+                                    isEmptyOrNull[var_15_bigson]
+                                    {
+                                       throw:=java_lang_NullPointerExceptionLit;
+                                    } else {
+                                       var_11_current.ar_edu_itba_ayvmc_NodeBTBug_value:=var_15_bigson.ar_edu_itba_ayvmc_NodeBTBug_value;
+                                    };
+                                 } else {
+                                    skip;
+                                 };
+                              } else {
+                                 skip;
+                              };
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              if isEmptyOrNull[thiz]{
+                                 throw:=java_lang_NullPointerExceptionLit;
+                              } else {
+                                 t_70:=thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize;
+                              };
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              if isEmptyOrNull[thiz]
+                              or 
+                              isEmptyOrNull[thiz]
+                              {
+                                 throw:=java_lang_NullPointerExceptionLit;
+                              } else {
+                                 thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize:=add[thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize,negate[1]];
+                              };
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false)   {
+                                 return:=true;
+                                 exit_stmt_reached:=true;
+                              
+                              }
+                            else {
+                              skip;
+                           };
+                        
+                        }
+                      else {
+                        skip;
+                     };
+                  } else {
+                     skip;
+                  };
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     var_12_parent:=var_11_current;
+                  } else {
+                     skip;
+                  };
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     t_72:=(gt[var_11_current.ar_edu_itba_ayvmc_NodeBTBug_value,
+                       param_x_7]=>(true)else(false));
+                  } else {
+                     skip;
+                  };
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     if t_72=true   {
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              if isEmptyOrNull[var_11_current]{
+                                 throw:=java_lang_NullPointerExceptionLit;
+                              } else {
+                                 var_11_current:=var_11_current.ar_edu_itba_ayvmc_NodeBTBug_left;
+                              };
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              var_13_branch:=true;
+                           } else {
+                              skip;
+                           };
+                        
+                        }
+                      else    {
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              if isEmptyOrNull[var_11_current]{
+                                 throw:=java_lang_NullPointerExceptionLit;
+                              } else {
+                                 var_11_current:=var_11_current.ar_edu_itba_ayvmc_NodeBTBug_right;
+                              };
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              var_13_branch:=false;
+                           } else {
+                              skip;
+                           };
+                        
+                        }
+                     ;
+                  } else {
+                     skip;
+                  };
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     var_14_ws_6:=(neq[var_11_current,
+                        null]=>(true)else(false));
+                  } else {
+                     skip;
+                  };
+               
+               }
+            ;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false)   {
+                  return:=false;
+                  exit_stmt_reached:=true;
+               
+               }
+             else {
+               skip;
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+program ar_edu_itba_ayvmc_BinTreeBug::add[
+  var thiz:ar_edu_itba_ayvmc_BinTreeBug,
+  var throw:java_lang_Throwable+null,
+  var x:Int,
+  var n:ar_edu_itba_ayvmc_NodeBTBug+null] 
+Specification 
+{
+  SpecCase #0 {
+   requires {
+      equ[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
+         false]
+   }
+   
+   requires {
+      equ[n.ar_edu_itba_ayvmc_NodeBTBug_left,
+         null]
+      and 
+      equ[n.ar_edu_itba_ayvmc_NodeBTBug_right,
+         null]
+      and 
+      equ[n.ar_edu_itba_ayvmc_NodeBTBug_value,
+         0]
+   }
+   
+   requires {
+      not (
+        n=null)
+   }
+   
+   ensures {
+      (
+        throw'=null)
+      implies 
+              liftExpression[true]
+   }
+   
+   modifies {
+   EVERYTHING}
+  }
+}
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var param_x_5:Int;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               param_x_5:=x;
+            } else {
+               skip;
+            };
+            var param_n_6:ar_edu_itba_ayvmc_NodeBTBug+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               param_n_6:=n;
+            } else {
+               skip;
+            };
+            var t_58:boolean;
+            var var_9_current:ar_edu_itba_ayvmc_NodeBTBug+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]{
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  var_9_current:=thiz.ar_edu_itba_ayvmc_BinTreeBug_root;
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_58:=(equ[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,
+                  null]=>(true)else(false));
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if t_58=true   {
+                     var t_52:Int;
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        if isEmptyOrNull[thiz]{
+                           throw:=java_lang_NullPointerExceptionLit;
+                        } else {
+                           thiz.ar_edu_itba_ayvmc_BinTreeBug_root:=param_n_6;
+                        };
+                     } else {
+                        skip;
+                     };
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        if isEmptyOrNull[thiz.ar_edu_itba_ayvmc_BinTreeBug_root]
+                        or 
+                        isEmptyOrNull[thiz]
+                        {
+                           throw:=java_lang_NullPointerExceptionLit;
+                        } else {
+                           (thiz.ar_edu_itba_ayvmc_BinTreeBug_root).ar_edu_itba_ayvmc_NodeBTBug_value:=param_x_5;
+                        };
+                     } else {
+                        skip;
+                     };
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        if isEmptyOrNull[thiz]{
+                           throw:=java_lang_NullPointerExceptionLit;
+                        } else {
+                           t_52:=thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize;
+                        };
+                     } else {
+                        skip;
+                     };
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        if isEmptyOrNull[thiz]
+                        or 
+                        isEmptyOrNull[thiz]
+                        {
+                           throw:=java_lang_NullPointerExceptionLit;
+                        } else {
+                           thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize:=add[thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize,1];
+                        };
+                     } else {
+                        skip;
+                     };
+                  
+                  }
+                else    {
+                     var var_10_ws_4:boolean;
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        var_10_ws_4:=(neq[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_value,
+                           param_x_5]=>(true)else(false));
+                     } else {
+                        skip;
+                     };
+                     while liftExpression[var_10_ws_4]
+                     and 
+                     (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false)
+                     
+                        {
+                           var t_57:boolean;
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              t_57:=(lt[param_x_5,
+                                var_9_current.ar_edu_itba_ayvmc_NodeBTBug_value]=>(true)else(false));
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              if t_57=true   {
+                                    var t_54:boolean;
+                                    if (
+                                      throw=null)
+                                    and 
+                                    (
+                                      exit_stmt_reached=false){
+                                       t_54:=(equ[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_left,
+                                          null]=>(true)else(false));
+                                    } else {
+                                       skip;
+                                    };
+                                    if (
+                                      throw=null)
+                                    and 
+                                    (
+                                      exit_stmt_reached=false){
+                                       if t_54=true   {
+                                             var t_53:Int;
+                                             if (
+                                               throw=null)
+                                             and 
+                                             (
+                                               exit_stmt_reached=false){
+                                                if isEmptyOrNull[var_9_current]{
+                                                   throw:=java_lang_NullPointerExceptionLit;
+                                                } else {
+                                                   var_9_current.ar_edu_itba_ayvmc_NodeBTBug_left:=param_n_6;
+                                                };
+                                             } else {
+                                                skip;
+                                             };
+                                             if (
+                                               throw=null)
+                                             and 
+                                             (
+                                               exit_stmt_reached=false){
+                                                if isEmptyOrNull[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_left]
+                                                or 
+                                                isEmptyOrNull[var_9_current]
+                                                {
+                                                   throw:=java_lang_NullPointerExceptionLit;
+                                                } else {
+                                                   (var_9_current.ar_edu_itba_ayvmc_NodeBTBug_left).ar_edu_itba_ayvmc_NodeBTBug_value:=param_x_5;
+                                                };
+                                             } else {
+                                                skip;
+                                             };
+                                             if (
+                                               throw=null)
+                                             and 
+                                             (
+                                               exit_stmt_reached=false){
+                                                if isEmptyOrNull[thiz]{
+                                                   throw:=java_lang_NullPointerExceptionLit;
+                                                } else {
+                                                   t_53:=thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize;
+                                                };
+                                             } else {
+                                                skip;
+                                             };
+                                             if (
+                                               throw=null)
+                                             and 
+                                             (
+                                               exit_stmt_reached=false){
+                                                if isEmptyOrNull[thiz]
+                                                or 
+                                                isEmptyOrNull[thiz]
+                                                {
+                                                   throw:=java_lang_NullPointerExceptionLit;
+                                                } else {
+                                                   thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize:=add[thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize,1];
+                                                };
+                                             } else {
+                                                skip;
+                                             };
+                                          
+                                          }
+                                        else {
+                                          if (
+                                            throw=null)
+                                          and 
+                                          (
+                                            exit_stmt_reached=false){
+                                             if isEmptyOrNull[var_9_current]{
+                                                throw:=java_lang_NullPointerExceptionLit;
+                                             } else {
+                                                var_9_current:=var_9_current.ar_edu_itba_ayvmc_NodeBTBug_left;
+                                             };
+                                          } else {
+                                             skip;
+                                          };
+                                       };
+                                    } else {
+                                       skip;
+                                    };
+                                 
+                                 }
+                               else    {
+                                    var t_56:boolean;
+                                    if (
+                                      throw=null)
+                                    and 
+                                    (
+                                      exit_stmt_reached=false){
+                                       t_56:=(equ[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right,
+                                          null]=>(true)else(false));
+                                    } else {
+                                       skip;
+                                    };
+                                    if (
+                                      throw=null)
+                                    and 
+                                    (
+                                      exit_stmt_reached=false){
+                                       if t_56=true   {
+                                             var t_55:Int;
+                                             if (
+                                               throw=null)
+                                             and 
+                                             (
+                                               exit_stmt_reached=false){
+                                                if isEmptyOrNull[var_9_current]{
+                                                   throw:=java_lang_NullPointerExceptionLit;
+                                                } else {
+                                                   var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right:=param_n_6;
+                                                };
+                                             } else {
+                                                skip;
+                                             };
+                                             if (
+                                               throw=null)
+                                             and 
+                                             (
+                                               exit_stmt_reached=false){
+                                                if isEmptyOrNull[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right]
+                                                or 
+                                                isEmptyOrNull[var_9_current]
+                                                {
+                                                   throw:=java_lang_NullPointerExceptionLit;
+                                                } else {
+                                                   (var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right).ar_edu_itba_ayvmc_NodeBTBug_value:=param_x_5;
+                                                };
+                                             } else {
+                                                skip;
+                                             };
+                                             if (
+                                               throw=null)
+                                             and 
+                                             (
+                                               exit_stmt_reached=false){
+                                                if isEmptyOrNull[thiz]{
+                                                   throw:=java_lang_NullPointerExceptionLit;
+                                                } else {
+                                                   t_55:=thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize;
+                                                };
+                                             } else {
+                                                skip;
+                                             };
+                                             if (
+                                               throw=null)
+                                             and 
+                                             (
+                                               exit_stmt_reached=false){
+                                                if isEmptyOrNull[thiz]
+                                                or 
+                                                isEmptyOrNull[thiz]
+                                                {
+                                                   throw:=java_lang_NullPointerExceptionLit;
+                                                } else {
+                                                   thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize:=add[thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize,1];
+                                                };
+                                             } else {
+                                                skip;
+                                             };
+                                          
+                                          }
+                                        else {
+                                          if (
+                                            throw=null)
+                                          and 
+                                          (
+                                            exit_stmt_reached=false){
+                                             if isEmptyOrNull[var_9_current]{
+                                                throw:=java_lang_NullPointerExceptionLit;
+                                             } else {
+                                                var_9_current:=var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right;
+                                             };
+                                          } else {
+                                             skip;
+                                          };
+                                       };
+                                    } else {
+                                       skip;
+                                    };
+                                 
+                                 }
+                              ;
+                           } else {
+                              skip;
+                           };
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              var_10_ws_4:=(neq[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_value,
+                                 param_x_5]=>(true)else(false));
+                           } else {
+                              skip;
+                           };
+                        
+                        }
+                     ;
+                  
+                  }
+               ;
+            } else {
+               skip;
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+program ar_edu_itba_ayvmc_BinTreeBug::BinTreeBug[
+  var thiz:ar_edu_itba_ayvmc_BinTreeBug,
+  var throw:java_lang_Throwable+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]{
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  thiz.ar_edu_itba_ayvmc_BinTreeBug_root:=((ar_edu_itba_ayvmc_NodeBTBug+null) & (null));
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]{
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize:=0;
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]{
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  thiz.ar_edu_itba_ayvmc_BinTreeBug_root:=((ar_edu_itba_ayvmc_NodeBTBug+null) & (null));
+               };
+            } else {
+               skip;
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+program ar_edu_itba_ayvmc_BinTreeBug::getTreeSize[
+  var thiz:ar_edu_itba_ayvmc_BinTreeBug,
+  var throw:java_lang_Throwable+null,
+  var return:Int,
+  var n:ar_edu_itba_ayvmc_NodeBTBug+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var param_n_4:ar_edu_itba_ayvmc_NodeBTBug+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               param_n_4:=n;
+            } else {
+               skip;
+            };
+            var t_38:boolean;
+            var t_39:boolean;
+            var t_40:boolean;
+            var t_41:boolean;
+            var t_44:boolean;
+            var t_47:boolean;
+            var t_48:Int;
+            var t_49:Int;
+            var t_50:Int;
+            var t_51:Int;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_38:=(equ[param_n_4,
+                  null]=>(true)else(false));
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if t_38=true{
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false)   {
+                        return:=0;
+                        exit_stmt_reached:=true;
+                     
+                     }
+                   else {
+                     skip;
+                  };
+               } else {
+                  skip;
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_40:=(equ[n.ar_edu_itba_ayvmc_NodeBTBug_left,
+                  null]=>(true)else(false));
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if t_40=true   {
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        t_41:=(equ[n.ar_edu_itba_ayvmc_NodeBTBug_right,
+                           null]=>(true)else(false));
+                     } else {
+                        skip;
+                     };
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        if t_41=true{
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              t_39:=true;
+                           } else {
+                              skip;
+                           };
+                        } else {
+                           if (
+                             throw=null)
+                           and 
+                           (
+                             exit_stmt_reached=false){
+                              t_39:=false;
+                           } else {
+                              skip;
+                           };
+                        };
+                     } else {
+                        skip;
+                     };
+                  
+                  }
+                else {
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     t_39:=false;
+                  } else {
+                     skip;
+                  };
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if t_39=true{
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false)   {
+                        return:=1;
+                        exit_stmt_reached:=true;
+                     
+                     }
+                   else {
+                     skip;
+                  };
+               } else {
+                  skip;
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_44:=(equ[n.ar_edu_itba_ayvmc_NodeBTBug_left,
+                  null]=>(true)else(false));
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if t_44=true   {
+                     var t_42:Int;
+                     var t_43:Int;
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        if isEmptyOrNull[n]
+                        or 
+                        isEmptyOrNull[thiz]
+                        {
+                           throw:=java_lang_NullPointerExceptionLit;
+                        } else {
+                           call getTreeSize[thiz,throw,t_42,n.ar_edu_itba_ayvmc_NodeBTBug_right];
+                        };
+                     } else {
+                        skip;
+                     };
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        t_43:=add[1,t_42];
+                     } else {
+                        skip;
+                     };
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false)   {
+                           return:=t_43;
+                           exit_stmt_reached:=true;
+                        
+                        }
+                      else {
+                        skip;
+                     };
+                  
+                  }
+                else {
+                  skip;
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_47:=(equ[n.ar_edu_itba_ayvmc_NodeBTBug_right,
+                  null]=>(true)else(false));
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if t_47=true   {
+                     var t_45:Int;
+                     var t_46:Int;
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        if isEmptyOrNull[n]
+                        or 
+                        isEmptyOrNull[thiz]
+                        {
+                           throw:=java_lang_NullPointerExceptionLit;
+                        } else {
+                           call getTreeSize[thiz,throw,t_45,n.ar_edu_itba_ayvmc_NodeBTBug_left];
+                        };
+                     } else {
+                        skip;
+                     };
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false){
+                        t_46:=add[1,t_45];
+                     } else {
+                        skip;
+                     };
+                     if (
+                       throw=null)
+                     and 
+                     (
+                       exit_stmt_reached=false)   {
+                           return:=t_46;
+                           exit_stmt_reached:=true;
+                        
+                        }
+                      else {
+                        skip;
+                     };
+                  
+                  }
+                else {
+                  skip;
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[n]
+               or 
+               isEmptyOrNull[thiz]
+               {
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  call getTreeSize[thiz,throw,t_48,n.ar_edu_itba_ayvmc_NodeBTBug_left];
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_49:=add[1,t_48];
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[n]
+               or 
+               isEmptyOrNull[thiz]
+               {
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  call getTreeSize[thiz,throw,t_50,n.ar_edu_itba_ayvmc_NodeBTBug_right];
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_51:=add[t_49,t_50];
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false)   {
+                  return:=t_51;
+                  exit_stmt_reached:=true;
+               
+               }
+             else {
+               skip;
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+program ar_edu_itba_ayvmc_BinTreeBug::getSize[
+  var thiz:ar_edu_itba_ayvmc_BinTreeBug,
+  var throw:java_lang_Throwable+null,
+  var return:Int] 
+Specification 
+{
+  SpecCase #0 {
+   requires {
+      true=true
+   }
+   
+   ensures {
+      (
+        throw'=null)
+      implies 
+              equ[return',
+                 fun_set_size[fun_reach[thiz'.ar_edu_itba_ayvmc_BinTreeBug_root',ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left'+ar_edu_itba_ayvmc_NodeBTBug_right']]]
+   }
+   
+   modifies {
+   EVERYTHING}
+  }
+}
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var t_37:Int;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]
+               or 
+               isEmptyOrNull[thiz]
+               {
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  call getTreeSize[thiz,throw,t_37,thiz.ar_edu_itba_ayvmc_BinTreeBug_root];
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false)   {
+                  return:=t_37;
+                  exit_stmt_reached:=true;
+               
+               }
+             else {
+               skip;
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+
