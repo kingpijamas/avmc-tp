@@ -78,11 +78,7 @@ public class ParserAPIImpl implements ParserAPI {
                 // Class def found
                 final List<BodyDeclaration> bodies = type.bodyDeclarations();
                 for (final BodyDeclaration body : bodies) {
-                    if(body.getNodeType() == ASTNode.SINGLE_MEMBER_ANNOTATION){
-                        System.out.println("#####single member annotation");
-                        System.out.println(body.toString());
-                        body.accept(visitor);
-                    }
+                    
                     if (body.getNodeType() == ASTNode.METHOD_DECLARATION) {
                         final MethodDeclaration method = (MethodDeclaration)body;
                      

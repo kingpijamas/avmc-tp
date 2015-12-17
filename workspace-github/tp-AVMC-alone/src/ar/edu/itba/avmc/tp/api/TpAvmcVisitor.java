@@ -29,6 +29,7 @@ import org.eclipse.jdt.core.dom.Javadoc;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.NumberLiteral;
+import org.eclipse.jdt.core.dom.PrimitiveType;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.SingleMemberAnnotation;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
@@ -109,17 +110,21 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         return super.visit(node);
     }
     
+    
+    /**
+     * The SingleMemberAnnotation refers to Annotation invocation
+     * (taco don't accept sources with annotations, so we need to remove them all)
+     * 
+     * */
     @Override
     public boolean visit(SingleMemberAnnotation node){
+        
+        /* This seems to be another way to delete nodes*/
         rewrite.replace(node, null, null);
         return false;
     }
     
-    @Override
-    public boolean visit(AnnotationTypeDeclaration node) {
-        rewrite.replace(node.getParent().getParent(), null, null);
-        return false;
-    }
+    
     @Override
     public boolean visit(VariableDeclarationStatement node) {
         
@@ -135,8 +140,8 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
                 
                 System.out.println("Declaration of '" + name +" with type "+ node.getType() + "' at line"
                         + unit.getLineNumber(name.getStartPosition()));
-                
-                VariableDeclarationStatement statement = createDeclarationStatement(ast, ast.newSimpleName("Boolean"), "canary$"+canaryName);
+                PrimitiveType type = ast.newPrimitiveType(PrimitiveType.BOOLEAN);
+                VariableDeclarationStatement statement = createDeclarationStatement(ast, type, "canary$"+canaryName);
                 //ListRewrite listRewrite= rewrite.getListRewrite(node.getParent(), Block.STATEMENTS_PROPERTY);
                 ListRewrite listRewrite= rewrite.getListRewrite(node, VariableDeclarationStatement.MODIFIERS2_PROPERTY);
                 //Statement placeHolder= (Statement) rewrite.createStringPlaceholder("//mycomment", ASTNode.EMPTY_STATEMENT);
@@ -151,47 +156,34 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     }
   
     
-    /*@Override
-    public boolean visit(InfixExpression node) {
-        System.out.println("--------");
-        System.out.println("Usage of expresion '" + node.toString() + "' at line " + unit.getLineNumber(node.getStartPosition()));
-        List<String> canariesNames = denominatorVariables(node.toString());
-        if(!canariesNames.isEmpty()){
-               
-           ASTNode expression = ASTNode.copySubtree(ast, node.getParent());
-           ASTNode new_if = ifst((Expression)expression, canariesNames);
-           
-           rewrite.replace(node.getParent().getParent(), new_if, null);
-           
-           System.out.println(new_if);
-            
-        }
-        return false;
-    }*/
-    
-    
     private VariableDeclarationStatement createDeclarationStatement(AST ast, SimpleName typeSimpleName, String variableName){
-     // create an empty variable declaration fragment
-        VariableDeclarationFragment canaryFragment = ast
-                .newVariableDeclarationFragment();
-
-        // set the initializer
-        canaryFragment.setInitializer(ast.newBooleanLiteral(false));
-
-        // set the name
-        canaryFragment.setName(ast.newSimpleName(variableName));
-
-        // create a statement for the fragment
-        VariableDeclarationStatement statement = ast
-                .newVariableDeclarationStatement(canaryFragment);
-
-        // set the type of the variable declaration statement
-        
         Type type = ast.newSimpleType(typeSimpleName);
-        //Type type = ((VariableDeclarationStatement) fragment.getParent()).getType();
-        statement.setType((Type) ASTNode.copySubtree(ast, type));
-        return statement;
+        return createDeclarationStatement(ast,type,variableName);
+        
     }
+    
+    private VariableDeclarationStatement createDeclarationStatement(AST ast, Type type, String variableName){
+        // create an empty variable declaration fragment
+           VariableDeclarationFragment canaryFragment = ast
+                   .newVariableDeclarationFragment();
+
+           // set the initializer
+           canaryFragment.setInitializer(ast.newBooleanLiteral(false));
+
+           // set the name
+           canaryFragment.setName(ast.newSimpleName(variableName));
+
+           // create a statement for the fragment
+           VariableDeclarationStatement statement = ast
+                   .newVariableDeclarationStatement(canaryFragment);
+
+           // set the type of the variable declaration statement
+           
+           
+           //Type type = ((VariableDeclarationStatement) fragment.getParent()).getType();
+           statement.setType((Type) ASTNode.copySubtree(ast, type));
+           return statement;
+       }
     
     /*
      * Creates the jml contract to use later with TACO
@@ -211,7 +203,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
                 jml_buffer.append(" && ");               
             }
             String canaryName = "canary$"+it.next();
-            jml_buffer.append(canaryName+" == false ");
+            jml_buffer.append(canaryName+" == false");
             first = false;
         }
         jml_buffer.append("; @*/\n");

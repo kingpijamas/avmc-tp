@@ -12,6 +12,9 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/teresa/Documents/AVMC/TACO/dynalloy4"/>
+			<item value="/Users/teresa/Documents/AVMC/TACO/JDynAlloy"/>
+			<item value="/Users/teresa/Documents/AVMC/TACO/taco"/>
 			<item value="/Users/teresa/Documents/AVMC/avmc-tp/workspace-github/prueba-taco"/>
 			<item value="/Users/teresa/Downloads"/>
 			<item value="/Users/mfrias/Documents/workspace-github/comitaco"/>

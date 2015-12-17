@@ -10,7 +10,7 @@
 	<item value="500" key="CallHierarchyViewPart.ratio3"/>
 	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="0" key="CallHierarchyViewPart.call_mode"/>
-	<item value="/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/lib" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="/Users/teresa/Documents/AVMC/avmc-tp/workspace-github/tp-AVMC-alone/lib" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="filter_imports;" key="filters_last_used"/>
 	<item value="3" key="CallHierarchyViewPart.orientation"/>
 	<list key="SearchScopeActionGroup.working_set">

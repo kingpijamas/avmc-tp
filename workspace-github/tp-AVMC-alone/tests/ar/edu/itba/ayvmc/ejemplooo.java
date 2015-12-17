@@ -4,8 +4,8 @@ package ar.edu.itba.ayvmc;
 public class ejemplooo {
     
     boolean canary$i = false;
-    static boolean canary$as;
-    static boolean canary$bs;
+    static boolean canary$as = false;
+    static boolean canary$bs = false;
     
     /*@ ensures canary$i == false; @*/
 	 public void add(String foo){

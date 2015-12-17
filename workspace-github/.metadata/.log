@@ -8216,3 +8216,12 @@ Binding(ALT+COMMAND+R,
 
 !ENTRY org.eclipse.core.net 1 0 2015-12-17 09:06:49.856
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jdt.launching 4 150 2015-12-17 11:54:34.006
+!MESSAGE The project: dynalloy4 which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2015-12-17 11:58:35.435
+!MESSAGE The project: dynalloy4 which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2015-12-17 11:59:15.352
+!MESSAGE The project: dynalloy4 which is referenced by the classpath, does not exist.

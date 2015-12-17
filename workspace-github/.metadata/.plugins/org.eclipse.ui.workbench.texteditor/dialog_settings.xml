@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="canary$" key="selection"/>
+		<item value="Boolean" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Boolean"/>
 			<item value="canary$"/>
 			<item value="isinS"/>
 			<item value="ASTNode.copy"/>
@@ -15,7 +16,6 @@
 			<item value="toJavaPrimitiveIntegerLiteral"/>
 			<item value="inputToFix"/>
 			<item value="insertBeforeNode.previous.next"/>
-			<item value="SAT"/>
 		</list>
 		<list key="replacehistory">
 			<item value=" ="/>
@@ -32,7 +32,7 @@
 		<item value="265" key="DIALOG_WIDTH"/>
 		<item value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="13" key="DIALOG_Y_ORIGIN"/>
-		<item value="905" key="DIALOG_X_ORIGIN"/>
+		<item value="61" key="DIALOG_Y_ORIGIN"/>
+		<item value="1019" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>
