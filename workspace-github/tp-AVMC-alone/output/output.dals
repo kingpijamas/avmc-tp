@@ -1,0 +1,1250 @@
+//-------------- prelude--------------//
+module moduleId 
+
+open util/integer 
+open util/sequniv as sequniv 
+
+one sig null {} 
+
+fun fun_reach[h: univ, 
+              type: set univ, 
+              field: univ -> univ
+]: set univ { 
+  h.*(field & type->(type+null)) & type 
+}
+
+fun fun_weak_reach[h: univ, 
+              type: set univ, 
+              field: univ -> univ
+]: set univ { 
+  h.*(field) & type 
+}
+
+one sig AssertionFailureLit extends java_lang_Throwable {} 
+abstract sig boolean {} 
+one sig true extends boolean {} 
+one sig false extends boolean {} 
+
+abstract sig char {} 
+
+pred TruePred[] {} 
+pred FalsePred[] { not TruePred[] } 
+pred equ[l,r:univ] {l=r} 
+pred neq[l,r:univ] {l!=r} 
+
+fun shl[l,r: Int]: Int { l << r } 
+fun sshr[l,r: Int]: Int { l >> r } 
+fun ushr[l,r: Int]: Int { l >>> r } 
+
+fun fun_univ_equals[
+  l:univ, 
+  r: univ 
+]: boolean { 
+  (equ[l,r]) => true else false 
+} 
+
+fun fun_set_add[
+  l: set univ,
+  e: univ
+]: set univ { 
+  l+e 
+} 
+
+fun fun_set_remove[
+  l: set univ,
+  e: univ
+]: set univ {
+  l-e
+}
+fun fun_set_contains[
+  l: set univ,
+  e: univ
+]: boolean {
+  (e in l) => true else false 
+} 
+pred isSubset[
+  l: set univ,
+  r: set univ
+] {
+  (l in r) 
+} 
+pred isNotSubset[
+  l: set univ,
+  r: set univ
+] {
+  (l !in r) 
+} 
+fun fun_set_size[s: set univ]: Int { #s } 
+
+fun fun_not_empty_set[s: set univ]: boolean { (no s) => false else true } 
+
+fun fun_set_is_empty[s: set univ]: boolean { (no s) => true else false } 
+
+pred pred_empty_set[l: set univ] { (no l) } 
+
+pred pred_set_some[l: set univ] { some l } 
+
+pred pred_set_one[l: set univ] { one l } 
+
+pred pred_set_lone[l: set univ] { lone l } 
+
+pred pred_Object_subset[
+  s: set univ
+] {
+  s in java_lang_Object+null
+}
+
+fun fun_set_intersection[
+  l: set univ,
+  r: set univ
+]: set univ {
+  l & r 
+} 
+fun fun_set_difference[
+  l: set univ,
+  r: set univ
+]: set univ {
+  l - r 
+} 
+fun fun_rel_difference[ 
+  rel: univ -> univ, 
+  l: univ,
+  r: univ
+]: univ->univ {
+ rel - (l->r) 
+}
+fun fun_rel_add[ 
+  rel: univ -> univ, 
+  l: univ,
+  r: univ
+]: univ->univ {
+ rel + (l->r) 
+}
+fun fun_set_sum[
+  s: set Int
+]: Int {
+  sum s 
+} 
+pred pred_empty_list[l: Int -> univ] { (no l) } 
+
+fun fun_list_add[
+  l: Int -> univ,
+  e: univ
+]: Int -> univ {
+  l + (Int[#(l.univ)]->e)
+} 
+
+fun fun_list_get[
+  l: Int -> univ, 
+  index: Int
+]: univ { 
+  index.l 
+} 
+
+fun fun_list_contains[
+  l: Int -> univ, 
+  e: univ
+]: boolean { 
+  (e in Int.l) => true else false 
+} 
+
+fun fun_list_remove[
+  l: Int -> univ, 
+  index: Int
+]: Int -> univ { 
+  prevs[index]<:(l-(index->univ)) + next.(nexts[index]<:(l-(index->univ))) 
+} 
+
+fun fun_list_size[s: Int -> univ]: Int { #s } 
+
+fun fun_list_equals[
+  s1:Int -> univ, 
+  s2: Int -> univ
+]: boolean { 
+  (s1=s2) => true else false 
+} 
+
+fun fun_list_empty[s: Int -> univ]: boolean { (#s = 0) => true else false } 
+
+pred pred_empty_map[map: univ -> univ] { (no map) } 
+
+fun fun_map_put[
+  map: univ->univ, 
+  k: univ, 
+  v: univ
+]: univ-> univ { 
+  map ++ (k->v) 
+}
+
+fun fun_map_contains_key[
+  map: univ -> univ, 
+  k: univ
+]: boolean { 
+  (some k.map) => true else false 
+}
+
+fun fun_map_remove[
+  map: univ -> univ, 
+  k: univ
+]: univ->univ {
+  map - (k->univ) 
+} 
+
+fun fun_map_get[
+  map: univ -> univ, 
+  k: univ
+]: univ { 
+  (some k.map) => k.map else null 
+} 
+
+fun fun_map_is_empty[
+  map: univ -> univ, 
+]: boolean { 
+  (some map) => false else true 
+}
+
+fun fun_map_clear[
+  mapEntries1: univ -> univ -> univ, 
+  map: univ
+]: univ -> univ -> univ { 
+  mapEntries1 - (map -> univ -> univ)
+}
+
+fun fun_map_size[
+  map: univ -> univ, 
+]: univ {
+  #map 
+} 
+
+pred isEmptyOrNull[u: univ] { u in null } 
+fun fun_closure[
+  rel: univ -> univ 
+]: univ -> univ {
+  ^rel 
+} 
+
+fun fun_reflexive_closure[
+  rel: univ -> univ 
+]: univ -> univ {
+  *rel 
+} 
+
+fun fun_transpose[
+  rel: univ -> univ 
+]: univ -> univ {
+  ~rel 
+} 
+
+pred liftExpression[
+  expr: univ 
+] {
+  expr=true 
+} 
+
+fun rel_override[
+  r:univ->univ,
+  k:univ, 
+  v:univ
+]: univ->univ { 
+  r - (k->univ) + (k->v) 
+} 
+
+fun Not[a: boolean]: boolean {
+    (a=true) => false else true 
+}
+fun Or[a: boolean, b: boolean]: boolean {
+    (a=true or b=true) => true else false
+}
+fun And[a: boolean, b: boolean]: boolean {
+    (a=true and b=true) => true else false
+}
+fun Xor[a: boolean, b: boolean]: boolean {
+    ((a==true and b==false) or (a==false and b==true)) => true else false
+}
+fun AdderCarry[a: boolean, b: boolean, cin: boolean]: boolean {
+    Or[ And[a,b], And[cin, Xor[a,b]]] 
+}
+fun AdderSum[a: boolean, b: boolean, cin: boolean]: boolean {
+    Xor[Xor[a, b], cin]
+}
+pred updateFieldPost[
+  f1:univ->univ,
+  f0:univ->univ,
+  l:univ,
+  r:univ
+]{ 
+  (r=none) => f1=f0-(l->univ) else f1 = f0 ++ (l->r) 
+} 
+
+pred havocVarPost[u:univ]{} 
+pred havocVariable2Post[u:univ->univ]{}
+action havocVariable2[u:univ->univ]{
+ pre{TruePred[]}
+ post{havocVariable2Post[u']}
+}
+
+pred havocVariable3Post[u:univ->(seq univ)]{}
+action havocVariable3[u:univ->(seq univ)]{
+ pre{TruePred[]}
+ post{havocVariable3Post[u']}
+}
+
+pred havocFieldPost[f0,f1: univ->univ, u:univ]{ 
+  u<:f0 = u<:f1 
+  some u.f1  
+} 
+
+pred havocFieldContentsPost[target: univ, 
+                            field_0: univ -> univ, 
+                            field_1: univ -> univ] { 
+  field_1 - (target->univ) = field_0 - (target->univ) 
+}
+
+action havocFieldContents[target: univ, 
+                          field: univ->univ] {
+  pre  { TruePred[] }
+  post { havocFieldContentsPost[target,field,field'] }
+}
+
+pred havocListSeqPost[target: univ,
+                            field_0: univ -> Int -> univ, 
+                            field_1: univ -> Int -> univ] { 
+  field_1 - (target->Int->univ) = field_0 - (target->Int->univ) 
+}
+
+action havocListSeq[target: univ,
+                          field: univ->Int->univ] {
+  pre  { TruePred[] }
+  post { havocListSeqPost[target,field,field'] }
+}
+
+pred pred_in[n: univ, t: set univ] { n in t } 
+
+pred instanceOf[n: univ, t: set univ] { n in t } 
+
+pred isCasteableTo[n: univ, t: set univ] { (n in t) or (n = null) } 
+
+pred getUnusedObjectPost[
+  usedObjects1:set java_lang_Object, 
+  usedObjects0:set java_lang_Object,
+  n1: java_lang_Object+null
+]{ 
+  n1 !in usedObjects0 
+  usedObjects1 = usedObjects0 + (n1)
+} 
+
+action updateField[
+  l:univ,
+  f:univ->univ,
+  r:univ
+]{
+pre {
+   TruePred[]
+}
+post {
+   updateFieldPost[f',
+                  f,
+                  l,
+                  r]
+}
+}
+
+action getUnusedObject[
+  n:java_lang_Object+null,
+  usedObjects:set java_lang_Object
+]{
+pre {
+   TruePred[]
+}
+post {
+   getUnusedObjectPost[usedObjects',
+                      usedObjects,
+                      n']
+}
+}
+
+action havocField[
+  f:univ->univ,
+  u:univ
+]{
+pre {
+   TruePred[]
+}
+post {
+   havocFieldPost[f,
+                 f',
+                 u]
+}
+}
+
+action updateVariable[
+  l:univ,
+  r:univ
+]{
+pre {
+   TruePred[]
+}
+post {
+   equ[l',
+      r]
+}
+}
+
+action havocVariable[
+  v:univ
+]{
+pre {
+   TruePred[]
+}
+post {
+   havocVarPost[v']
+}
+}
+
+//-------------- ar_edu_itba_ayvmc_BinTreeBug--------------//
+sig ar_edu_itba_ayvmc_BinTreeBug extends java_lang_Object {}
+{}
+
+
+
+
+pred ar_edu_itba_ayvmc_BinTreeBug_object_invariant[
+  ar_edu_itba_ayvmc_BinTreeBug_root:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_left:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_right:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_value:univ->univ,
+  n:univ,
+  thiz:univ
+]{
+   (
+     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+       implies 
+               equ[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_left,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
+                  false]
+     
+     }
+   )
+   and 
+   (
+     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+       implies 
+               (
+                 all m:ar_edu_itba_ayvmc_NodeBTBug+null | {
+                   liftExpression[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_left,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],m]]
+                   implies 
+                           lt[m.ar_edu_itba_ayvmc_NodeBTBug_value,
+                             n.ar_edu_itba_ayvmc_NodeBTBug_value]
+                 
+                 }
+               )
+     
+     }
+   )
+   and 
+   (
+     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+       implies 
+               equ[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_right,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
+                  false]
+     
+     }
+   )
+   and 
+   (
+     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+       implies 
+               (
+                 all m:ar_edu_itba_ayvmc_NodeBTBug+null | {
+                   liftExpression[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_right,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],m]]
+                   implies 
+                           gte[m.ar_edu_itba_ayvmc_NodeBTBug_value,
+                              n.ar_edu_itba_ayvmc_NodeBTBug_value]
+                 
+                 }
+               )
+     
+     }
+   )
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition15[
+  ar_edu_itba_ayvmc_NodeBTBug_right:univ->univ,
+  var_9_current:univ
+]{
+   not (
+     isEmptyOrNull[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right]
+     or 
+     isEmptyOrNull[var_9_current]
+   )
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition14[
+  ar_edu_itba_ayvmc_NodeBTBug_right:univ->univ,
+  var_9_current:univ
+]{
+   isEmptyOrNull[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right]
+   or 
+   isEmptyOrNull[var_9_current]
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition21[
+  t_58:univ
+]{
+   t_58=true
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition22[
+  t_58:univ
+]{
+   not (
+     t_58=true)
+
+}
+
+pred precondition_ar_edu_itba_ayvmc_BinTreeBug_add_0[
+  ar_edu_itba_ayvmc_BinTreeBug_root:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_left:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_right:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_value:univ->univ,
+  n:univ,
+  thiz:univ,
+  throw:univ
+]{
+   ar_edu_itba_ayvmc_BinTreeBug_requires[ar_edu_itba_ayvmc_BinTreeBug_root,
+                                        ar_edu_itba_ayvmc_NodeBTBug_left,
+                                        ar_edu_itba_ayvmc_NodeBTBug_right,
+                                        ar_edu_itba_ayvmc_NodeBTBug_value,
+                                        n,
+                                        thiz]
+   and 
+   equ[throw,
+      null]
+   and 
+   (
+     all objx:ar_edu_itba_ayvmc_BinTreeBug | {
+       ar_edu_itba_ayvmc_BinTreeBug_object_invariant[ar_edu_itba_ayvmc_BinTreeBug_root,
+                                                    ar_edu_itba_ayvmc_NodeBTBug_left,
+                                                    ar_edu_itba_ayvmc_NodeBTBug_right,
+                                                    ar_edu_itba_ayvmc_NodeBTBug_value,
+                                                    n,
+                                                    objx]
+     
+     }
+   )
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBug_ensures[
+  throw':univ
+]{
+   (
+     throw'=null)
+   implies 
+           liftExpression[true]
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition20[
+  exit_stmt_reached:univ,
+  throw:univ,
+  var_10_ws_4:univ
+]{
+   liftExpression[var_10_ws_4]
+   and 
+   (
+     throw=null)
+   and 
+   (
+     exit_stmt_reached=false)
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBug_requires[
+  ar_edu_itba_ayvmc_BinTreeBug_root:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_left:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_right:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_value:univ->univ,
+  n:univ,
+  thiz:univ
+]{
+   equ[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
+      false]
+   and 
+   equ[n.ar_edu_itba_ayvmc_NodeBTBug_left,
+      null]
+   and 
+   equ[n.ar_edu_itba_ayvmc_NodeBTBug_right,
+      null]
+   and 
+   equ[n.ar_edu_itba_ayvmc_NodeBTBug_value,
+      0]
+   and 
+   (
+     not (
+       n=null)
+   )
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition8[
+  var_9_current:univ
+]{
+   isEmptyOrNull[var_9_current]
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition9[
+  var_9_current:univ
+]{
+   not (
+     isEmptyOrNull[var_9_current])
+
+}
+
+pred postcondition_ar_edu_itba_ayvmc_BinTreeBug_add_0[
+  ar_edu_itba_ayvmc_BinTreeBug_root':univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_left':univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_right':univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_value':univ->univ,
+  n':univ,
+  throw':univ
+]{
+   ar_edu_itba_ayvmc_BinTreeBug_ensures[throw']
+   and 
+   (
+     not (
+       throw'=AssertionFailureLit)
+   )
+   and 
+   (
+     all objx':ar_edu_itba_ayvmc_BinTreeBug | {
+       ar_edu_itba_ayvmc_BinTreeBug_object_invariant[ar_edu_itba_ayvmc_BinTreeBug_root',
+                                                    ar_edu_itba_ayvmc_NodeBTBug_left',
+                                                    ar_edu_itba_ayvmc_NodeBTBug_right',
+                                                    ar_edu_itba_ayvmc_NodeBTBug_value',
+                                                    n',
+                                                    objx']
+     
+     }
+   )
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition4[
+  ar_edu_itba_ayvmc_BinTreeBug_root:univ->univ,
+  thiz:univ
+]{
+   isEmptyOrNull[thiz.ar_edu_itba_ayvmc_BinTreeBug_root]
+   or 
+   isEmptyOrNull[thiz]
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition11[
+  ar_edu_itba_ayvmc_NodeBTBug_left:univ->univ,
+  var_9_current:univ
+]{
+   not (
+     isEmptyOrNull[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_left]
+     or 
+     isEmptyOrNull[var_9_current]
+   )
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition10[
+  ar_edu_itba_ayvmc_NodeBTBug_left:univ->univ,
+  var_9_current:univ
+]{
+   isEmptyOrNull[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_left]
+   or 
+   isEmptyOrNull[var_9_current]
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition12[
+  t_54:univ
+]{
+   t_54=true
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition13[
+  t_54:univ
+]{
+   not (
+     t_54=true)
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition5[
+  ar_edu_itba_ayvmc_BinTreeBug_root:univ->univ,
+  thiz:univ
+]{
+   not (
+     isEmptyOrNull[thiz.ar_edu_itba_ayvmc_BinTreeBug_root]
+     or 
+     isEmptyOrNull[thiz]
+   )
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition6[
+  thiz:univ
+]{
+   isEmptyOrNull[thiz]
+   or 
+   isEmptyOrNull[thiz]
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition7[
+  thiz:univ
+]{
+   not (
+     isEmptyOrNull[thiz]
+     or 
+     isEmptyOrNull[thiz]
+   )
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition2[
+  thiz:univ
+]{
+   isEmptyOrNull[thiz]
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition16[
+  t_56:univ
+]{
+   t_56=true
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition3[
+  thiz:univ
+]{
+   not (
+     isEmptyOrNull[thiz])
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition17[
+  t_56:univ
+]{
+   not (
+     t_56=true)
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition18[
+  t_57:univ
+]{
+   t_57=true
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition19[
+  t_57:univ
+]{
+   not (
+     t_57=true)
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition1[
+  exit_stmt_reached:univ,
+  throw:univ
+]{
+   not (
+     (
+       throw=null)
+     and 
+     (
+       exit_stmt_reached=false)
+   )
+
+}
+
+pred ar_edu_itba_ayvmc_BinTreeBugCondition0[
+  exit_stmt_reached:univ,
+  throw:univ
+]{
+   (
+     throw=null)
+   and 
+   (
+     exit_stmt_reached=false)
+
+}
+
+program ar_edu_itba_ayvmc_BinTreeBug_add_0[
+  thiz:ar_edu_itba_ayvmc_BinTreeBug,
+  throw:java_lang_Throwable+null,
+  x:Int,
+  n:ar_edu_itba_ayvmc_NodeBTBug+null,
+  ar_edu_itba_ayvmc_NodeBTBug_right:(ar_edu_itba_ayvmc_NodeBTBug)->one(ar_edu_itba_ayvmc_NodeBTBug+null),
+  ar_edu_itba_ayvmc_BinTreeBug_intendedSize:(ar_edu_itba_ayvmc_BinTreeBug)->one(Int),
+  ar_edu_itba_ayvmc_BinTreeBug_root:(ar_edu_itba_ayvmc_BinTreeBug)->one(ar_edu_itba_ayvmc_NodeBTBug+null),
+  ar_edu_itba_ayvmc_NodeBTBug_value:(ar_edu_itba_ayvmc_NodeBTBug)->one(Int),
+  ar_edu_itba_ayvmc_NodeBTBug_left:(ar_edu_itba_ayvmc_NodeBTBug)->one(ar_edu_itba_ayvmc_NodeBTBug+null),
+  usedObjects:set (java_lang_Object)
+] var [
+  t_52:Int,
+  exit_stmt_reached:boolean,
+  param_x_5:Int,
+  param_n_6:ar_edu_itba_ayvmc_NodeBTBug+null,
+  t_57:boolean,
+  t_58:boolean,
+  var_10_ws_4:boolean,
+  t_55:Int,
+  t_56:boolean,
+  t_53:Int,
+  var_9_current:ar_edu_itba_ayvmc_NodeBTBug+null,
+  t_54:boolean
+]{
+   skip;
+   throw:=null;
+   skip;
+   exit_stmt_reached:=false;
+   skip;
+   if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+      param_x_5:=x
+   
+   } else {
+      skip
+   
+   }
+   ;
+   skip;
+   if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+      param_n_6:=n
+   
+   } else {
+      skip
+   
+   }
+   ;
+   skip;
+   skip;
+   if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+      if ar_edu_itba_ayvmc_BinTreeBugCondition2[thiz]  {
+         throw:=java_lang_NullPointerExceptionLit
+      
+      } else {
+         var_9_current:=thiz.ar_edu_itba_ayvmc_BinTreeBug_root
+      
+      }
+   
+   } else {
+      skip
+   
+   }
+   ;
+   if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+      t_58:=(equ[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,null]=>(true)else(false))
+   
+   } else {
+      skip
+   
+   }
+   ;
+   if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+      if ar_edu_itba_ayvmc_BinTreeBugCondition21[t_58]  {
+         skip;
+         if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+            if ar_edu_itba_ayvmc_BinTreeBugCondition2[thiz]  {
+               throw:=java_lang_NullPointerExceptionLit
+            
+            } else {
+               ar_edu_itba_ayvmc_BinTreeBug_root:=(ar_edu_itba_ayvmc_BinTreeBug_root)++((thiz)->(param_n_6))
+            
+            }
+         
+         } else {
+            skip
+         
+         }
+         ;
+         if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+            if ar_edu_itba_ayvmc_BinTreeBugCondition4[ar_edu_itba_ayvmc_BinTreeBug_root,thiz]  {
+               throw:=java_lang_NullPointerExceptionLit
+            
+            } else {
+               ar_edu_itba_ayvmc_NodeBTBug_value:=(ar_edu_itba_ayvmc_NodeBTBug_value)++((thiz.ar_edu_itba_ayvmc_BinTreeBug_root)->(param_x_5))
+            
+            }
+         
+         } else {
+            skip
+         
+         }
+         ;
+         if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+            if ar_edu_itba_ayvmc_BinTreeBugCondition2[thiz]  {
+               throw:=java_lang_NullPointerExceptionLit
+            
+            } else {
+               t_52:=thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize
+            
+            }
+         
+         } else {
+            skip
+         
+         }
+         ;
+         if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+            if ar_edu_itba_ayvmc_BinTreeBugCondition6[thiz]  {
+               throw:=java_lang_NullPointerExceptionLit
+            
+            } else {
+               ar_edu_itba_ayvmc_BinTreeBug_intendedSize:=(ar_edu_itba_ayvmc_BinTreeBug_intendedSize)++((thiz)->(add[thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize,1]))
+            
+            }
+         
+         } else {
+            skip
+         
+         }
+      
+      } else {
+         skip;
+         if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+            var_10_ws_4:=(neq[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_value,param_x_5]=>(true)else(false))
+         
+         } else {
+            skip
+         
+         }
+         ;
+         while ar_edu_itba_ayvmc_BinTreeBugCondition20[exit_stmt_reached,throw,var_10_ws_4]do {
+            skip;
+            if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+               t_57:=(lt[param_x_5,var_9_current.ar_edu_itba_ayvmc_NodeBTBug_value]=>(true)else(false))
+            
+            } else {
+               skip
+            
+            }
+            ;
+            if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+               if ar_edu_itba_ayvmc_BinTreeBugCondition18[t_57]  {
+                  skip;
+                  if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                     t_54:=(equ[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_left,null]=>(true)else(false))
+                  
+                  } else {
+                     skip
+                  
+                  }
+                  ;
+                  if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                     if ar_edu_itba_ayvmc_BinTreeBugCondition12[t_54]  {
+                        skip;
+                        if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                           if ar_edu_itba_ayvmc_BinTreeBugCondition8[var_9_current]  {
+                              throw:=java_lang_NullPointerExceptionLit
+                           
+                           } else {
+                              ar_edu_itba_ayvmc_NodeBTBug_left:=(ar_edu_itba_ayvmc_NodeBTBug_left)++((var_9_current)->(param_n_6))
+                           
+                           }
+                        
+                        } else {
+                           skip
+                        
+                        }
+                        ;
+                        if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                           if ar_edu_itba_ayvmc_BinTreeBugCondition10[ar_edu_itba_ayvmc_NodeBTBug_left,var_9_current]  {
+                              throw:=java_lang_NullPointerExceptionLit
+                           
+                           } else {
+                              ar_edu_itba_ayvmc_NodeBTBug_value:=(ar_edu_itba_ayvmc_NodeBTBug_value)++((var_9_current.ar_edu_itba_ayvmc_NodeBTBug_left)->(param_x_5))
+                           
+                           }
+                        
+                        } else {
+                           skip
+                        
+                        }
+                        ;
+                        if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                           if ar_edu_itba_ayvmc_BinTreeBugCondition2[thiz]  {
+                              throw:=java_lang_NullPointerExceptionLit
+                           
+                           } else {
+                              t_53:=thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize
+                           
+                           }
+                        
+                        } else {
+                           skip
+                        
+                        }
+                        ;
+                        if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                           if ar_edu_itba_ayvmc_BinTreeBugCondition6[thiz]  {
+                              throw:=java_lang_NullPointerExceptionLit
+                           
+                           } else {
+                              ar_edu_itba_ayvmc_BinTreeBug_intendedSize:=(ar_edu_itba_ayvmc_BinTreeBug_intendedSize)++((thiz)->(add[thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize,1]))
+                           
+                           }
+                        
+                        } else {
+                           skip
+                        
+                        }
+                     
+                     } else {
+                        if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                           if ar_edu_itba_ayvmc_BinTreeBugCondition8[var_9_current]  {
+                              throw:=java_lang_NullPointerExceptionLit
+                           
+                           } else {
+                              var_9_current:=var_9_current.ar_edu_itba_ayvmc_NodeBTBug_left
+                           
+                           }
+                        
+                        } else {
+                           skip
+                        
+                        }
+                     
+                     }
+                  
+                  } else {
+                     skip
+                  
+                  }
+               
+               } else {
+                  skip;
+                  if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                     t_56:=(equ[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right,null]=>(true)else(false))
+                  
+                  } else {
+                     skip
+                  
+                  }
+                  ;
+                  if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                     if ar_edu_itba_ayvmc_BinTreeBugCondition16[t_56]  {
+                        skip;
+                        if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                           if ar_edu_itba_ayvmc_BinTreeBugCondition8[var_9_current]  {
+                              throw:=java_lang_NullPointerExceptionLit
+                           
+                           } else {
+                              ar_edu_itba_ayvmc_NodeBTBug_right:=(ar_edu_itba_ayvmc_NodeBTBug_right)++((var_9_current)->(param_n_6))
+                           
+                           }
+                        
+                        } else {
+                           skip
+                        
+                        }
+                        ;
+                        if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                           if ar_edu_itba_ayvmc_BinTreeBugCondition14[ar_edu_itba_ayvmc_NodeBTBug_right,var_9_current]  {
+                              throw:=java_lang_NullPointerExceptionLit
+                           
+                           } else {
+                              ar_edu_itba_ayvmc_NodeBTBug_value:=(ar_edu_itba_ayvmc_NodeBTBug_value)++((var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right)->(param_x_5))
+                           
+                           }
+                        
+                        } else {
+                           skip
+                        
+                        }
+                        ;
+                        if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                           if ar_edu_itba_ayvmc_BinTreeBugCondition2[thiz]  {
+                              throw:=java_lang_NullPointerExceptionLit
+                           
+                           } else {
+                              t_55:=thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize
+                           
+                           }
+                        
+                        } else {
+                           skip
+                        
+                        }
+                        ;
+                        if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                           if ar_edu_itba_ayvmc_BinTreeBugCondition6[thiz]  {
+                              throw:=java_lang_NullPointerExceptionLit
+                           
+                           } else {
+                              ar_edu_itba_ayvmc_BinTreeBug_intendedSize:=(ar_edu_itba_ayvmc_BinTreeBug_intendedSize)++((thiz)->(add[thiz.ar_edu_itba_ayvmc_BinTreeBug_intendedSize,1]))
+                           
+                           }
+                        
+                        } else {
+                           skip
+                        
+                        }
+                     
+                     } else {
+                        if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+                           if ar_edu_itba_ayvmc_BinTreeBugCondition8[var_9_current]  {
+                              throw:=java_lang_NullPointerExceptionLit
+                           
+                           } else {
+                              var_9_current:=var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right
+                           
+                           }
+                        
+                        } else {
+                           skip
+                        
+                        }
+                     
+                     }
+                  
+                  } else {
+                     skip
+                  
+                  }
+               
+               }
+            
+            } else {
+               skip
+            
+            }
+            ;
+            if ar_edu_itba_ayvmc_BinTreeBugCondition0[exit_stmt_reached,throw]  {
+               var_10_ws_4:=(neq[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_value,param_x_5]=>(true)else(false))
+            
+            } else {
+               skip
+            
+            }
+         
+         }
+      
+      }
+   
+   } else {
+      skip
+   
+   }
+   ;
+   skip
+
+}
+
+assertCorrectness check_ar_edu_itba_ayvmc_BinTreeBug_add_0[
+  ar_edu_itba_ayvmc_BinTreeBug_intendedSize:(ar_edu_itba_ayvmc_BinTreeBug)->one(Int),
+  ar_edu_itba_ayvmc_BinTreeBug_root:(ar_edu_itba_ayvmc_BinTreeBug)->one(ar_edu_itba_ayvmc_NodeBTBug+null),
+  ar_edu_itba_ayvmc_NodeBTBug_left:(ar_edu_itba_ayvmc_NodeBTBug)->one(ar_edu_itba_ayvmc_NodeBTBug+null),
+  ar_edu_itba_ayvmc_NodeBTBug_right:(ar_edu_itba_ayvmc_NodeBTBug)->one(ar_edu_itba_ayvmc_NodeBTBug+null),
+  ar_edu_itba_ayvmc_NodeBTBug_value:(ar_edu_itba_ayvmc_NodeBTBug)->one(Int),
+  exit_stmt_reached:boolean,
+  n:ar_edu_itba_ayvmc_NodeBTBug+null,
+  param_n_6:ar_edu_itba_ayvmc_NodeBTBug+null,
+  param_x_5:Int,
+  t_52:Int,
+  t_53:Int,
+  t_54:boolean,
+  t_55:Int,
+  t_56:boolean,
+  t_57:boolean,
+  t_58:boolean,
+  thiz:ar_edu_itba_ayvmc_BinTreeBug,
+  throw:java_lang_Throwable+null,
+  usedObjects:set (java_lang_Object),
+  var_10_ws_4:boolean,
+  var_9_current:ar_edu_itba_ayvmc_NodeBTBug+null,
+  x:Int
+]{
+pre={
+   precondition_ar_edu_itba_ayvmc_BinTreeBug_add_0[ar_edu_itba_ayvmc_BinTreeBug_root,
+                                                  ar_edu_itba_ayvmc_NodeBTBug_left,
+                                                  ar_edu_itba_ayvmc_NodeBTBug_right,
+                                                  ar_edu_itba_ayvmc_NodeBTBug_value,
+                                                  n,
+                                                  thiz,
+                                                  throw]
+
+}
+program={
+   call ar_edu_itba_ayvmc_BinTreeBug_add_0[thiz,throw,x,n,ar_edu_itba_ayvmc_NodeBTBug_right,ar_edu_itba_ayvmc_BinTreeBug_intendedSize,ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug_value,ar_edu_itba_ayvmc_NodeBTBug_left,usedObjects]
+
+}
+post={
+   postcondition_ar_edu_itba_ayvmc_BinTreeBug_add_0[ar_edu_itba_ayvmc_BinTreeBug_root',
+                                                   ar_edu_itba_ayvmc_NodeBTBug_left',
+                                                   ar_edu_itba_ayvmc_NodeBTBug_right',
+                                                   ar_edu_itba_ayvmc_NodeBTBug_value',
+                                                   n',
+                                                   throw']
+
+}
+}
+
+//-------------- ar_edu_itba_ayvmc_NodeBTBug--------------//
+sig ar_edu_itba_ayvmc_NodeBTBug extends java_lang_Object {}
+{}
+
+
+
+
+//-------------- java_lang_Throwable--------------//
+abstract sig java_lang_Throwable extends java_lang_Object {}
+{}
+
+
+
+one sig java_lang_ThrowableLit extends java_lang_Throwable {}
+{}
+
+//-------------- java_lang_RuntimeException--------------//
+abstract sig java_lang_RuntimeException extends java_lang_Exception {}
+{}
+
+
+
+one sig java_lang_RuntimeExceptionLit extends java_lang_RuntimeException {}
+{}
+
+//-------------- java_lang_Object--------------//
+abstract sig java_lang_Object {}
+{}
+
+
+
+
+//-------------- java_lang_Exception--------------//
+abstract sig java_lang_Exception extends java_lang_Throwable {}
+{}
+
+
+
+one sig java_lang_ExceptionLit extends java_lang_Exception {}
+{}
+
+//-------------- java_lang_NullPointerException--------------//
+abstract one sig java_lang_NullPointerException extends java_lang_RuntimeException {}
+{}
+
+
+
+one sig java_lang_NullPointerExceptionLit extends java_lang_NullPointerException {}
+{}
+

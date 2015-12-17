@@ -12,6 +12,7 @@ import java.util.Stack;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTVisitor;
+import org.eclipse.jdt.core.dom.AnnotationTypeDeclaration;
 import org.eclipse.jdt.core.dom.Assignment;
 import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.BlockComment;
@@ -29,6 +30,7 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.NumberLiteral;
 import org.eclipse.jdt.core.dom.SimpleName;
+import org.eclipse.jdt.core.dom.SingleMemberAnnotation;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
 import org.eclipse.jdt.core.dom.Statement;
 import org.eclipse.jdt.core.dom.StringLiteral;
@@ -107,6 +109,17 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         return super.visit(node);
     }
     
+    @Override
+    public boolean visit(SingleMemberAnnotation node){
+        rewrite.replace(node, null, null);
+        return false;
+    }
+    
+    @Override
+    public boolean visit(AnnotationTypeDeclaration node) {
+        rewrite.replace(node.getParent().getParent(), null, null);
+        return false;
+    }
     @Override
     public boolean visit(VariableDeclarationStatement node) {
         

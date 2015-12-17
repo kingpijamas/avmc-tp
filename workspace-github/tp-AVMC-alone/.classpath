@@ -14,5 +14,10 @@
 	<classpathentry kind="lib" path="lib/org.eclipse.osgi_3.8.0.v20120529-1548.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.text_3.5.200.v20120523-1310.jar"/>
 	<classpathentry kind="lib" path="lib/rebound-0.2.jar"/>
+	<classpathentry kind="lib" path="lib/dynalloy4.jar"/>
+	<classpathentry kind="lib" path="lib/jdynalloy.jar"/>
+	<classpathentry kind="lib" path="lib/tacoRunnable.jar"/>
+	<classpathentry kind="src" path="unittest"/>
+	<classpathentry kind="src" path="tests"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

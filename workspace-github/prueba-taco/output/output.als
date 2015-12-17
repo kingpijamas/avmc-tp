@@ -299,6 +299,38 @@ pred getUnusedObjectPost[
 //-------------- ar_edu_itba_ayvmc_BinTreeBug--------------//
 sig ar_edu_itba_ayvmc_BinTreeBug extends java_lang_Object {}
 {}
+pred precondition_ar_edu_itba_ayvmc_BinTreeBug_add_0[
+  ar_edu_itba_ayvmc_BinTreeBug_root:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_left:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_right:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_value:univ->univ,
+  n:univ,
+  thiz:univ,
+  throw:univ
+]{
+   (
+     all objx:ar_edu_itba_ayvmc_BinTreeBug | {
+       ar_edu_itba_ayvmc_BinTreeBug_object_invariant[ar_edu_itba_ayvmc_BinTreeBug_root,
+                                                    ar_edu_itba_ayvmc_NodeBTBug_left,
+                                                    ar_edu_itba_ayvmc_NodeBTBug_right,
+                                                    ar_edu_itba_ayvmc_NodeBTBug_value,
+                                                    n,
+                                                    objx]
+     
+     }
+   )
+   and 
+   ar_edu_itba_ayvmc_BinTreeBug_requires[ar_edu_itba_ayvmc_BinTreeBug_root,
+                                        ar_edu_itba_ayvmc_NodeBTBug_left,
+                                        ar_edu_itba_ayvmc_NodeBTBug_right,
+                                        ar_edu_itba_ayvmc_NodeBTBug_value,
+                                        n,
+                                        thiz]
+   and 
+   equ[throw,
+      null]
+
+}
 pred ar_edu_itba_ayvmc_BinTreeBugCondition15[
   ar_edu_itba_ayvmc_NodeBTBug_right:univ->univ,
   var_9_current:univ
@@ -317,6 +349,34 @@ pred ar_edu_itba_ayvmc_BinTreeBugCondition14[
    isEmptyOrNull[var_9_current.ar_edu_itba_ayvmc_NodeBTBug_right]
    or 
    isEmptyOrNull[var_9_current]
+
+}
+pred postcondition_ar_edu_itba_ayvmc_BinTreeBug_add_0[
+  ar_edu_itba_ayvmc_BinTreeBug_root':univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_left':univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_right':univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_value':univ->univ,
+  n':univ,
+  throw':univ
+]{
+   ar_edu_itba_ayvmc_BinTreeBug_ensures[throw']
+   and 
+   (
+     not (
+       throw'=AssertionFailureLit)
+   )
+   and 
+   (
+     all objx':ar_edu_itba_ayvmc_BinTreeBug | {
+       ar_edu_itba_ayvmc_BinTreeBug_object_invariant[ar_edu_itba_ayvmc_BinTreeBug_root',
+                                                    ar_edu_itba_ayvmc_NodeBTBug_left',
+                                                    ar_edu_itba_ayvmc_NodeBTBug_right',
+                                                    ar_edu_itba_ayvmc_NodeBTBug_value',
+                                                    n',
+                                                    objx']
+     
+     }
+   )
 
 }
 pred ar_edu_itba_ayvmc_BinTreeBugCondition21[
@@ -353,69 +413,6 @@ pred ar_edu_itba_ayvmc_BinTreeBugCondition20[
    and 
    (
      exit_stmt_reached=false)
-
-}
-pred ar_edu_itba_ayvmc_BinTreeBug_object_invariant[
-  ar_edu_itba_ayvmc_BinTreeBug_root:univ->univ,
-  ar_edu_itba_ayvmc_NodeBTBug_left:univ->univ,
-  ar_edu_itba_ayvmc_NodeBTBug_right:univ->univ,
-  ar_edu_itba_ayvmc_NodeBTBug_value:univ->univ,
-  n:univ,
-  thiz:univ
-]{
-   (
-     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
-       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
-       implies 
-               (
-                 all m:ar_edu_itba_ayvmc_NodeBTBug+null | {
-                   liftExpression[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_left,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],m]]
-                   implies 
-                           lt[m.ar_edu_itba_ayvmc_NodeBTBug_value,
-                             n.ar_edu_itba_ayvmc_NodeBTBug_value]
-                 
-                 }
-               )
-     
-     }
-   )
-   and 
-   (
-     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
-       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
-       implies 
-               equ[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_left,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
-                  false]
-     
-     }
-   )
-   and 
-   (
-     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
-       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
-       implies 
-               (
-                 all m:ar_edu_itba_ayvmc_NodeBTBug+null | {
-                   liftExpression[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_right,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],m]]
-                   implies 
-                           gte[m.ar_edu_itba_ayvmc_NodeBTBug_value,
-                              n.ar_edu_itba_ayvmc_NodeBTBug_value]
-                 
-                 }
-               )
-     
-     }
-   )
-   and 
-   (
-     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
-       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
-       implies 
-               equ[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_right,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
-                  false]
-     
-     }
-   )
 
 }
 pred ar_edu_itba_ayvmc_BinTreeBug_requires[
@@ -455,38 +452,6 @@ pred ar_edu_itba_ayvmc_BinTreeBugCondition9[
 ]{
    not (
      isEmptyOrNull[var_9_current])
-
-}
-pred precondition_ar_edu_itba_ayvmc_BinTreeBug_add_0[
-  ar_edu_itba_ayvmc_BinTreeBug_root:univ->univ,
-  ar_edu_itba_ayvmc_NodeBTBug_left:univ->univ,
-  ar_edu_itba_ayvmc_NodeBTBug_right:univ->univ,
-  ar_edu_itba_ayvmc_NodeBTBug_value:univ->univ,
-  n:univ,
-  thiz:univ,
-  throw:univ
-]{
-   ar_edu_itba_ayvmc_BinTreeBug_requires[ar_edu_itba_ayvmc_BinTreeBug_root,
-                                        ar_edu_itba_ayvmc_NodeBTBug_left,
-                                        ar_edu_itba_ayvmc_NodeBTBug_right,
-                                        ar_edu_itba_ayvmc_NodeBTBug_value,
-                                        n,
-                                        thiz]
-   and 
-   equ[throw,
-      null]
-   and 
-   (
-     all objx:ar_edu_itba_ayvmc_BinTreeBug | {
-       ar_edu_itba_ayvmc_BinTreeBug_object_invariant[ar_edu_itba_ayvmc_BinTreeBug_root,
-                                                    ar_edu_itba_ayvmc_NodeBTBug_left,
-                                                    ar_edu_itba_ayvmc_NodeBTBug_right,
-                                                    ar_edu_itba_ayvmc_NodeBTBug_value,
-                                                    n,
-                                                    objx]
-     
-     }
-   )
 
 }
 pred ar_edu_itba_ayvmc_BinTreeBugCondition4[
@@ -579,6 +544,69 @@ pred ar_edu_itba_ayvmc_BinTreeBugCondition3[
      isEmptyOrNull[thiz])
 
 }
+pred ar_edu_itba_ayvmc_BinTreeBug_object_invariant[
+  ar_edu_itba_ayvmc_BinTreeBug_root:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_left:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_right:univ->univ,
+  ar_edu_itba_ayvmc_NodeBTBug_value:univ->univ,
+  n:univ,
+  thiz:univ
+]{
+   (
+     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+       implies 
+               equ[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_left,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
+                  false]
+     
+     }
+   )
+   and 
+   (
+     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+       implies 
+               (
+                 all m:ar_edu_itba_ayvmc_NodeBTBug+null | {
+                   liftExpression[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_left,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],m]]
+                   implies 
+                           lt[m.ar_edu_itba_ayvmc_NodeBTBug_value,
+                             n.ar_edu_itba_ayvmc_NodeBTBug_value]
+                 
+                 }
+               )
+     
+     }
+   )
+   and 
+   (
+     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+       implies 
+               equ[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_right,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n],
+                  false]
+     
+     }
+   )
+   and 
+   (
+     all n:ar_edu_itba_ayvmc_NodeBTBug+null | {
+       liftExpression[fun_set_contains[fun_reach[thiz.ar_edu_itba_ayvmc_BinTreeBug_root,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],n]]
+       implies 
+               (
+                 all m:ar_edu_itba_ayvmc_NodeBTBug+null | {
+                   liftExpression[fun_set_contains[fun_reach[n.ar_edu_itba_ayvmc_NodeBTBug_right,ar_edu_itba_ayvmc_NodeBTBug,ar_edu_itba_ayvmc_NodeBTBug_left+ar_edu_itba_ayvmc_NodeBTBug_right],m]]
+                   implies 
+                           gte[m.ar_edu_itba_ayvmc_NodeBTBug_value,
+                              n.ar_edu_itba_ayvmc_NodeBTBug_value]
+                 
+                 }
+               )
+     
+     }
+   )
+
+}
 pred ar_edu_itba_ayvmc_BinTreeBugCondition17[
   t_56:univ
 ]{
@@ -590,34 +618,6 @@ pred ar_edu_itba_ayvmc_BinTreeBugCondition18[
   t_57:univ
 ]{
    t_57=true
-
-}
-pred postcondition_ar_edu_itba_ayvmc_BinTreeBug_add_0[
-  ar_edu_itba_ayvmc_BinTreeBug_root':univ->univ,
-  ar_edu_itba_ayvmc_NodeBTBug_left':univ->univ,
-  ar_edu_itba_ayvmc_NodeBTBug_right':univ->univ,
-  ar_edu_itba_ayvmc_NodeBTBug_value':univ->univ,
-  n':univ,
-  throw':univ
-]{
-   ar_edu_itba_ayvmc_BinTreeBug_ensures[throw']
-   and 
-   (
-     not (
-       throw'=AssertionFailureLit)
-   )
-   and 
-   (
-     all objx':ar_edu_itba_ayvmc_BinTreeBug | {
-       ar_edu_itba_ayvmc_BinTreeBug_object_invariant[ar_edu_itba_ayvmc_BinTreeBug_root',
-                                                    ar_edu_itba_ayvmc_NodeBTBug_left',
-                                                    ar_edu_itba_ayvmc_NodeBTBug_right',
-                                                    ar_edu_itba_ayvmc_NodeBTBug_value',
-                                                    n',
-                                                    objx']
-     
-     }
-   )
 
 }
 pred ar_edu_itba_ayvmc_BinTreeBugCondition19[

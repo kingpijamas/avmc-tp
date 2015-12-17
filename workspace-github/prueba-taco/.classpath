@@ -7,5 +7,8 @@
 	<classpathentry kind="lib" path="dynalloy4.jar"/>
 	<classpathentry kind="lib" path="jdynalloy.jar"/>
 	<classpathentry kind="lib" path="tacoRunnable.jar"/>
+	<classpathentry kind="lib" path="lib/dynalloy4.jar"/>
+	<classpathentry kind="lib" path="lib/jdynalloy.jar"/>
+	<classpathentry kind="lib" path="lib/tacoRunnable.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
