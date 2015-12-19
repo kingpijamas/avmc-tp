@@ -1,38 +1,40 @@
 package ar.edu.itba.ayvmc;
 
 
+
 public class ejemplooo {
     
-    boolean canary$i = false;
-    static boolean canary$as = false;
-    static boolean canary$bs = false;
-    
-    /*@ ensures canary$i == false; @*/
-	 public void add(String foo){
-        /*boolean canary$i = false;*/ Integer i= null;
+    public static boolean canary$main$bs = false;
+
+    public static boolean canary$main$as = false;
+
+    public static boolean canary$wololoInt$i = false;
+
+    /*@ ensures canary$wololoInt$i == false; @*/
+     public void wololoInt(String foo){
+        Integer i= null;
         if (i == null) {
-			canary$i = true;
-		} else {
-			i.intValue();
-		}
+            canary$wololoInt$i = true;
+        } else {
+            i.intValue();
+        }
         
         return;
     }
     
-    
-    
-	 public static void main(String[] args) {
+    /*@ ensures canary$main$as == false && canary$main$bs == false; @*/
+     public static void main(String[] args) {
         System.out.println("lalal");
-        boolean canary$as = false; double as=1.0;
-        boolean canary$bs = false; double bs=0.0;
-        if(as==10){
+        double as= 1.0;
+        double bs= 0.0;
+        if(as==10.0){
             System.out.println("lala dentro de if");
         }
         if (bs == 0) {
-			canary$bs = true;
-		} else {
-			as = as / bs;
-		}
+            canary$main$bs = true;
+        } else {
+            as = as / bs;
+        }
         System.out.println(as);
     }
 }

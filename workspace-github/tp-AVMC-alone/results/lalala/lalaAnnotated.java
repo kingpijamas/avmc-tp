@@ -1,7 +1,5 @@
 package lalala;
 
-import ar.edu.itba.avmc.tp.annotations.Check;
-
 public class lalaAnnotated {
     
     public void foo(String myParam) {

@@ -14,6 +14,7 @@ import org.eclipse.jdt.core.dom.AbstractTypeDeclaration;
 import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.BodyDeclaration;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.Statement;
@@ -72,6 +73,7 @@ public class ParserAPIImpl implements ParserAPI {
 
         //StrykerASTVisitor visitor = new StrykerASTVisitor(wrapper, unit, source, ast, seqFileName, lastMutatedLines, mutableLines);
         // to iterate through methods
+       
         final List<AbstractTypeDeclaration> types = unit.types();
         for (final AbstractTypeDeclaration type : types) {
             if (type.getNodeType() == ASTNode.TYPE_DECLARATION) {
@@ -108,6 +110,10 @@ public class ParserAPIImpl implements ParserAPI {
             }
         }
         
+        List<ImportDeclaration> imports = unit.imports();
+        for(ImportDeclaration imp: imports){
+            imp.accept(visitor);
+        }
         
       //Reescribimos el archivo fuente con su instrumentacion
         TextEdit edits = rewrite.rewriteAST(document, null);

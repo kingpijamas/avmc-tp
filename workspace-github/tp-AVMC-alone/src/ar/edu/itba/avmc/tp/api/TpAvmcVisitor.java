@@ -23,6 +23,7 @@ import org.eclipse.jdt.core.dom.ConditionalExpression;
 import org.eclipse.jdt.core.dom.Expression;
 import org.eclipse.jdt.core.dom.ExpressionStatement;
 import org.eclipse.jdt.core.dom.IfStatement;
+import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.InfixExpression;
 import org.eclipse.jdt.core.dom.InfixExpression.Operator;
 import org.eclipse.jdt.core.dom.Javadoc;
@@ -91,14 +92,15 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
                 + unit.getLineNumber(node.getStartPosition()));
         
         //MethodDeclaration newNode =(MethodDeclaration)ASTNode.copySubtree(ast, node);
-        String currentMethod = methodsNames.pop();
+        
+        String currentMethod = methodsNames.peek();        
         BlockComment jml_block = createJMLComment(currentMethod);
         if(jml_block!=null){
             ListRewrite listRewrite = rewrite.getListRewrite(node, MethodDeclaration.MODIFIERS2_PROPERTY);
             //listRewrite.replace(node, newNode, null);
             listRewrite.insertAt(jml_block,1, null);
         }
-        
+        methodsNames.pop();
         
     } 
     
@@ -171,6 +173,18 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         
         return false;
     }
+    
+    public boolean visit(ImportDeclaration node) {
+        System.out.println("DECLARATION");
+        System.out.println(node.getName());
+        String name = node.getName().toString();
+        if(name.equals("ar.edu.itba.avmc.tp.annotations.Check")){
+            rewrite.replace(node, null, null);            
+        }
+
+        return false;
+    }
+    
     private VariableDeclarationStatement createDeclarationStatement(AST ast, Type type, String variableName, boolean isStatic){
         
         List<Modifier> modifiers = new ArrayList<Modifier>();
@@ -228,7 +242,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
             if(!first){
                 jml_buffer.append(" && ");               
             }
-            String canaryName = "canary$"+it.next();
+            String canaryName = "canary$"+methodsNames.peek()+"$"+it.next();
             jml_buffer.append(canaryName+" == false");
             first = false;
         }
@@ -274,7 +288,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         Block block_else = ast.newBlock();
         
         block_then.setStructuralProperty(then_stat.getLocationInParent(), then_stat);
-        SimpleName canaryName = ast.newSimpleName("canary$"+variables.get(0));
+        SimpleName canaryName = ast.newSimpleName("canary$"+methodsNames.peek()+"$"+variables.get(0));
         Assignment as = createAssignment(canaryName, ast.newBooleanLiteral(true));
         
         ifs.setExpression(condition);

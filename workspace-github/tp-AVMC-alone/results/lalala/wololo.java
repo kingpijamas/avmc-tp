@@ -1,7 +1,5 @@
 package lalala;
 
-import ar.edu.itba.avmc.tp.annotations.Check;
-
 public class wololo {
     public static int wololoInt(String foo){
         System.out.println("pase por wololoInt con "+foo);

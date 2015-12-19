@@ -1,5 +1,6 @@
 
 import ar.edu.itba.avmc.tp.annotations.Check;
+import java.lang.String;
 
 public class ejemplo2 {
     
