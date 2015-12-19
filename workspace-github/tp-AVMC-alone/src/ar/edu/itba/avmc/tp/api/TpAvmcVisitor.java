@@ -28,6 +28,8 @@ import org.eclipse.jdt.core.dom.InfixExpression.Operator;
 import org.eclipse.jdt.core.dom.Javadoc;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
+import org.eclipse.jdt.core.dom.Modifier;
+import org.eclipse.jdt.core.dom.Modifier.ModifierKeyword;
 import org.eclipse.jdt.core.dom.NumberLiteral;
 import org.eclipse.jdt.core.dom.PrimitiveType;
 import org.eclipse.jdt.core.dom.SimpleName;
@@ -159,7 +161,8 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
             String method = it.next();
             for(String s: methodsNamesMap.get(method)){
                 PrimitiveType type = ast.newPrimitiveType(PrimitiveType.BOOLEAN);
-                VariableDeclarationStatement statement = createDeclarationStatement(ast, type, "canary$"+method+"$"+s);
+                boolean isStatic = true;
+                VariableDeclarationStatement statement = createDeclarationStatement(ast, type, "canary$"+method+"$"+s,isStatic);
                 listRewrite.insertAt(statement, 0, null);    
             }
             
@@ -168,17 +171,22 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         
         return false;
     }
-    private VariableDeclarationStatement createDeclarationStatement(AST ast, SimpleName typeSimpleName, String variableName){
-        Type type = ast.newSimpleType(typeSimpleName);
-        return createDeclarationStatement(ast,type,variableName);
+    private VariableDeclarationStatement createDeclarationStatement(AST ast, Type type, String variableName, boolean isStatic){
+        
+        List<Modifier> modifiers = new ArrayList<Modifier>();
+        modifiers.add(ast.newModifier(ModifierKeyword.PUBLIC_KEYWORD));
+        if(isStatic){
+            modifiers.add(ast.newModifier(ModifierKeyword.STATIC_KEYWORD));
+        }
+        return createDeclarationStatement(ast,type,variableName,modifiers);
         
     }
     
-    private VariableDeclarationStatement createDeclarationStatement(AST ast, Type type, String variableName){
+    private VariableDeclarationStatement createDeclarationStatement(AST ast, Type type, String variableName, List<Modifier> modifiers){
         // create an empty variable declaration fragment
            VariableDeclarationFragment canaryFragment = ast
                    .newVariableDeclarationFragment();
-
+           
            // set the initializer
            canaryFragment.setInitializer(ast.newBooleanLiteral(false));
 
@@ -188,12 +196,16 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
            // create a statement for the fragment
            VariableDeclarationStatement statement = ast
                    .newVariableDeclarationStatement(canaryFragment);
-
+           
            // set the type of the variable declaration statement
            
            
            //Type type = ((VariableDeclarationStatement) fragment.getParent()).getType();
            statement.setType((Type) ASTNode.copySubtree(ast, type));
+           if(modifiers != null){
+               List<ASTNode> mods=statement.modifiers();
+               mods.addAll(modifiers);
+           }
            return statement;
        }
     

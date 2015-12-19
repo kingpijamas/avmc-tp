@@ -3,15 +3,15 @@ import ar.edu.itba.avmc.tp.annotations.Check;
 
 public class ejemplo {
     
-    boolean canary$main$bs = false;
+    public static boolean canary$main$bs = false;
 
-	boolean canary$main$as = false;
+	public static boolean canary$main$as = false;
 
-	boolean canary$wololoInt$d = false;
+	public static boolean canary$wololoInt$d = false;
 
-	boolean canary$wololoInt$c = false;
+	public static boolean canary$wololoInt$c = false;
 
-	boolean canary$wololoInt$a = false;
+	public static boolean canary$wololoInt$a = false;
 
 	/*@ ensures canary$a == false && canary$c == false && canary$d == false; @*/
 	 public static int wololoInt(String foo){

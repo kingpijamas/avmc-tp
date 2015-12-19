@@ -3,11 +3,11 @@ import ar.edu.itba.avmc.tp.annotations.Check;
 
 public class ejemplo2 {
     
-    boolean canary$main$bs = false;
+    public static boolean canary$main$bs = false;
 
-	boolean canary$main$as = false;
+	public static boolean canary$main$as = false;
 
-	boolean canary$wololoInt$i = false;
+	public static boolean canary$wololoInt$i = false;
 
 	/*@ ensures canary$i == false; @*/
 	 public void wololoInt(String foo){
