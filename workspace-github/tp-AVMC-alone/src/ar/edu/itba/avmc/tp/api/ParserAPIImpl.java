@@ -93,10 +93,7 @@ public class ParserAPIImpl implements ParserAPI {
                             //To do this, we will implement an ASTVisitor that does everything we want, and we will
                             //give it the AST Tree to visit starting at this method.
                             
-                            //astv.setMethodName(method.getName().toString());
-                            //astv.setNextMutID(0);
                             method.accept(visitor);
-                            
                             
                             /*Block block= ((TypeDeclaration) unit.types().get(0)).getMethods()[0].getBody();
                             Block block= method.getBody();
@@ -107,6 +104,7 @@ public class ParserAPIImpl implements ParserAPI {
                         }
                     }
                 }
+                type.accept(visitor);
             }
         }
         

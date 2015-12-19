@@ -37,6 +37,7 @@ import org.eclipse.jdt.core.dom.Statement;
 import org.eclipse.jdt.core.dom.StringLiteral;
 import org.eclipse.jdt.core.dom.TryStatement;
 import org.eclipse.jdt.core.dom.Type;
+import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
@@ -140,13 +141,6 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
                 
                 System.out.println("Declaration of '" + name +" with type "+ node.getType() + "' at line"
                         + unit.getLineNumber(name.getStartPosition()));
-                PrimitiveType type = ast.newPrimitiveType(PrimitiveType.BOOLEAN);
-                VariableDeclarationStatement statement = createDeclarationStatement(ast, type, "canary$"+canaryName);
-                //ListRewrite listRewrite= rewrite.getListRewrite(node.getParent(), Block.STATEMENTS_PROPERTY);
-                ListRewrite listRewrite= rewrite.getListRewrite(node, VariableDeclarationStatement.MODIFIERS2_PROPERTY);
-                //Statement placeHolder= (Statement) rewrite.createStringPlaceholder("//mycomment", ASTNode.EMPTY_STATEMENT);
-                
-                listRewrite.insertLast(statement, null);
                 
             }
             
@@ -155,7 +149,25 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         return false; // do not continue 
     }
   
-    
+    @Override
+    public boolean visit(TypeDeclaration node) {
+        System.out.println("lalalalla------####");
+        ListRewrite listRewrite = rewrite.getListRewrite(node, TypeDeclaration.BODY_DECLARATIONS_PROPERTY);
+        Set<String> methods=methodsNamesMap.keySet();
+        Iterator<String> it = methods.iterator();
+        while(it.hasNext()){
+            String method = it.next();
+            for(String s: methodsNamesMap.get(method)){
+                PrimitiveType type = ast.newPrimitiveType(PrimitiveType.BOOLEAN);
+                VariableDeclarationStatement statement = createDeclarationStatement(ast, type, "canary$"+method+"$"+s);
+                listRewrite.insertAt(statement, 0, null);    
+            }
+            
+        }
+        
+        
+        return false;
+    }
     private VariableDeclarationStatement createDeclarationStatement(AST ast, SimpleName typeSimpleName, String variableName){
         Type type = ast.newSimpleType(typeSimpleName);
         return createDeclarationStatement(ast,type,variableName);
@@ -184,6 +196,8 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
            statement.setType((Type) ASTNode.copySubtree(ast, type));
            return statement;
        }
+    
+    
     
     /*
      * Creates the jml contract to use later with TACO

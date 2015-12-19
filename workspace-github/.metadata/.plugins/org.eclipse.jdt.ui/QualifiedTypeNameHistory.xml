@@ -17,7 +17,6 @@
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.rewrite.ListRewrite"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.rewrite.ASTRewrite"/>
-<fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.TypeDeclaration"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.VariableDeclarationFragment"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.VariableDeclarationStatement"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="ar.edu.itba.avmc.tp.annotations.Check"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.SingleMemberAnnotation"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.PrimitiveType"/>
+<fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.TypeDeclaration"/>
 </qualifiedTypeNameHistroy>
