@@ -336,22 +336,37 @@ sig java_lang_ExceptionLit extends java_lang_Exception {}
 //-------------- ar_edu_itba_ayvmc_ejemplooo--------------//
 sig ar_edu_itba_ayvmc_ejemplooo extends java_lang_Object {}
 {}
-pred ar_edu_itba_ayvmc_ejemplooo_requires[
+pred ar_edu_itba_ayvmc_ejemploooCondition4[
+  t_4:univ
 ]{
-   true=true
+   t_4=true
 
 }
-pred ar_edu_itba_ayvmc_ejemploooCondition4[
-  t_2:univ
+pred ar_edu_itba_ayvmc_ejemplooo_requires[
+  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:univ->univ,
+  thiz:univ
 ]{
-   t_2=true
+   equ[thiz.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti,
+      false]
+
+}
+pred precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
+  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:univ->univ,
+  thiz:univ,
+  throw:univ
+]{
+   ar_edu_itba_ayvmc_ejemplooo_requires[ar_edu_itba_ayvmc_ejemplooo_canarywololoInti,
+                                       thiz]
+   and 
+   equ[throw,
+      null]
 
 }
 pred ar_edu_itba_ayvmc_ejemploooCondition5[
-  t_2:univ
+  t_4:univ
 ]{
    not (
-     t_2=true)
+     t_4=true)
 
 }
 pred ar_edu_itba_ayvmc_ejemploooCondition0[
@@ -401,15 +416,6 @@ pred ar_edu_itba_ayvmc_ejemploooCondition2[
   thiz:univ
 ]{
    isEmptyOrNull[thiz]
-
-}
-pred precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
-  throw:univ
-]{
-   equ[throw,
-      null]
-   and 
-   ar_edu_itba_ayvmc_ejemplooo_requires[]
 
 }
 pred postcondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
@@ -551,12 +557,12 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
   throw_2: java_lang_Throwable + null,
   ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0: ( ar_edu_itba_ayvmc_ejemplooo ) -> one ( boolean ),
   ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1: ( ar_edu_itba_ayvmc_ejemplooo ) -> one ( boolean ),
-  var_2_i_0: Int,
-  var_2_i_1: Int,
-  var_2_i_2: Int,
+  var_4_i_0: Int,
+  var_4_i_1: Int,
+  var_4_i_2: Int,
   exit_stmt_reached_1: boolean,
-  t_2_0: boolean,
-  t_2_1: boolean
+  t_4_0: boolean,
+  t_4_1: boolean
 ]{
   TruePred[]
   and 
@@ -578,7 +584,7 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
                                            throw_1]
       and 
       (
-        var_2_i_1=0)
+        var_4_i_1=0)
     )
     or 
     (
@@ -592,7 +598,7 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
       TruePred[]
       and 
       (
-        var_2_i_0=var_2_i_1)
+        var_4_i_0=var_4_i_1)
     )
   )
   and 
@@ -602,7 +608,7 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
                                            throw_1]
       and 
       (
-        t_2_1=(equ[var_2_i_1,
+        t_4_1=(equ[var_4_i_1,
            0]=>(true)else(false))
       )
     )
@@ -618,7 +624,7 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
       TruePred[]
       and 
       (
-        t_2_0=t_2_1)
+        t_4_0=t_4_1)
     )
   )
   and 
@@ -629,7 +635,7 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
       and 
       (
         (
-          ar_edu_itba_ayvmc_ejemploooCondition4[t_2_1]
+          ar_edu_itba_ayvmc_ejemploooCondition4[t_4_1]
           and 
           (
             (
@@ -681,13 +687,13 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
           )
           and 
           (
-            var_2_i_1=var_2_i_2)
+            var_4_i_1=var_4_i_2)
         )
         or 
         (
           (
             not (
-              ar_edu_itba_ayvmc_ejemploooCondition4[t_2_1])
+              ar_edu_itba_ayvmc_ejemploooCondition4[t_4_1])
           )
           and 
           (
@@ -696,7 +702,7 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
                                                    throw_1]
               and 
               (
-                var_2_i_2=1)
+                var_4_i_2=1)
             )
             or 
             (
@@ -710,7 +716,7 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
               TruePred[]
               and 
               (
-                var_2_i_1=var_2_i_2)
+                var_4_i_1=var_4_i_2)
             )
           )
           and 
@@ -734,7 +740,7 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
       TruePred[]
       and 
       (
-        var_2_i_1=var_2_i_2)
+        var_4_i_1=var_4_i_2)
       and 
       (
         ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0=ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1)
@@ -752,11 +758,11 @@ one sig QF {
   ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0: ( ar_edu_itba_ayvmc_ejemplooo ) -> one ( boolean ),
   ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1: ( ar_edu_itba_ayvmc_ejemplooo ) -> one ( boolean ),
   l0_exit_stmt_reached_1: boolean,
-  l0_t_2_0: boolean,
-  l0_t_2_1: boolean,
-  l0_var_2_i_0: Int,
-  l0_var_2_i_1: Int,
-  l0_var_2_i_2: Int,
+  l0_t_4_0: boolean,
+  l0_t_4_1: boolean,
+  l0_var_4_i_0: Int,
+  l0_var_4_i_1: Int,
+  l0_var_4_i_2: Int,
   thiz_0: ar_edu_itba_ayvmc_ejemplooo,
   throw_0: java_lang_Throwable + null,
   throw_1: java_lang_Throwable + null,
@@ -765,7 +771,10 @@ one sig QF {
 
 
 fact {
-  precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[QF.throw_0]
+  precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[QF.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0,
+                                                      QF.thiz_0,
+                                                      QF.throw_0]
+
 }
 
 fact {
@@ -774,12 +783,12 @@ fact {
                                          QF.throw_2,
                                          QF.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0,
                                          QF.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1,
-                                         QF.l0_var_2_i_0,
-                                         QF.l0_var_2_i_1,
-                                         QF.l0_var_2_i_2,
+                                         QF.l0_var_4_i_0,
+                                         QF.l0_var_4_i_1,
+                                         QF.l0_var_4_i_2,
                                          QF.l0_exit_stmt_reached_1,
-                                         QF.l0_t_2_0,
-                                         QF.l0_t_2_1]
+                                         QF.l0_t_4_0,
+                                         QF.l0_t_4_1]
 
 }
 

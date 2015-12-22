@@ -19,14 +19,48 @@
  */
 package ar.edu.itba.ayvmc;
 
+import java.util.Collection;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+
+import java.util.Arrays;
+
 import ar.edu.taco.regresion.CollectionTestBase;
 import ar.uba.dc.rfm.dynalloy.visualization.VizException;
 
+@RunWith(Parameterized.class)
 public class ejemploooTest extends CollectionTestBase {
-
+    private String className;
+    private String methodName;
+    
+    
+    @Parameters
+    public static Collection<Object[]> configs() {
+ 
+        return Arrays.asList(new Object[][] {
+                { "ar.edu.itba.ayvmc.ejemplooo","wololoInt"},
+                { "ar.edu.itba.ayvmc.ejemplooo","wololoInt" }});
+    }
+    
+    public ejemploooTest(String className, String methodName) {
+        this.className = className;
+        this.methodName = methodName;
+    }
+    
+    @Before
+    @Override
+    public void setUp() {
+        super.setUp();
+        
+    }
+    
 	@Override
 	protected String getClassToCheck() {
-		return "ar.edu.itba.ayvmc.ejemplooo";
+		return className;
 	}
 
 	/*public void test_sizeTest() throws VizException {
@@ -44,8 +78,9 @@ public class ejemploooTest extends CollectionTestBase {
         runAndCheck(GENERIC_PROPERTIES,"getSize_0",false);
 	}*/
 
+	@Test
 	public void test_addTest() throws VizException {
-		setConfigKeyRelevantClasses("ar.edu.itba.ayvmc.ejemplooo");
+		setConfigKeyRelevantClasses(className);
         setConfigKeyRelevancyAnalysis(true);
         setConfigKeyCheckNullDereference(true);
         setConfigKeyUseJavaArithmetic(false);
@@ -54,9 +89,9 @@ public class ejemploooTest extends CollectionTestBase {
         setConfigKeySkolemizeInstanceInvariant(false);
         setConfigKeySkolemizeInstanceAbstraction(false);
         setConfigKeyGenerateUnitTestCase(true);
-		setConfigKeyTypeScopes("ar.edu.itba.ayvmc.ejemplooo:1"); //te dice cuantas instancias podes tener como maximo (arboles de hasta cinco nodos)
+		setConfigKeyTypeScopes(className+":1"); //te dice cuantas instancias podes tener como maximo (arboles de hasta cinco nodos)
 		setConfigKeyLoopUnroll(1); 
-        runAndCheck(GENERIC_PROPERTIES,"wololoInt_0",false);
+        runAndCheck(GENERIC_PROPERTIES,methodName+"_0",false);
 	} 
 	
 	/*public void test_removeTest() throws VizException {

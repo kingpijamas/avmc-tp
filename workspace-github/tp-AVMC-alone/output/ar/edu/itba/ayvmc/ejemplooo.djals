@@ -11,7 +11,8 @@ Specification
 {
   SpecCase #0 {
    requires {
-      true=true
+      equ[thiz.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti,
+         false]
    }
    
    ensures {
@@ -35,14 +36,14 @@ Implementation
          var exit_stmt_reached:boolean;
          exit_stmt_reached:=false;
          {
-            var t_2:boolean;
-            var var_2_i:Int;
+            var t_4:boolean;
+            var var_4_i:Int;
             if (
               throw=null)
             and 
             (
               exit_stmt_reached=false){
-               var_2_i:=0;
+               var_4_i:=0;
             } else {
                skip;
             };
@@ -51,7 +52,7 @@ Implementation
             and 
             (
               exit_stmt_reached=false){
-               t_2:=(equ[var_2_i,
+               t_4:=(equ[var_4_i,
                   0]=>(true)else(false));
             } else {
                skip;
@@ -61,7 +62,7 @@ Implementation
             and 
             (
               exit_stmt_reached=false){
-               if t_2=true{
+               if t_4=true{
                   if (
                     throw=null)
                   and 
@@ -81,7 +82,7 @@ Implementation
                   and 
                   (
                     exit_stmt_reached=false){
-                     var_2_i:=1;
+                     var_4_i:=1;
                   } else {
                      skip;
                   };

@@ -22,9 +22,12 @@ public class MainTP {
              e.printStackTrace();
          }
       }
-      
-      org.junit.runner.JUnitCore.main("ar.edu.itba.ayvmc.ejemploooTest");
-
+      try{
+          org.junit.runner.JUnitCore.main("ar.edu.itba.ayvmc.ejemploooTest");
+      }
+      catch(Exception e){
+          e.printStackTrace();
+      }
 
 
    }

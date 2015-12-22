@@ -442,24 +442,40 @@ sig ar_edu_itba_ayvmc_ejemplooo extends java_lang_Object {}
 
 
 
-pred ar_edu_itba_ayvmc_ejemplooo_requires[
+pred ar_edu_itba_ayvmc_ejemploooCondition4[
+  t_4:univ
 ]{
-   true=true
+   t_4=true
 
 }
 
-pred ar_edu_itba_ayvmc_ejemploooCondition4[
-  t_2:univ
+pred ar_edu_itba_ayvmc_ejemplooo_requires[
+  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:univ->univ,
+  thiz:univ
 ]{
-   t_2=true
+   equ[thiz.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti,
+      false]
+
+}
+
+pred precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
+  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:univ->univ,
+  thiz:univ,
+  throw:univ
+]{
+   ar_edu_itba_ayvmc_ejemplooo_requires[ar_edu_itba_ayvmc_ejemplooo_canarywololoInti,
+                                       thiz]
+   and 
+   equ[throw,
+      null]
 
 }
 
 pred ar_edu_itba_ayvmc_ejemploooCondition5[
-  t_2:univ
+  t_4:univ
 ]{
    not (
-     t_2=true)
+     t_4=true)
 
 }
 
@@ -517,16 +533,6 @@ pred ar_edu_itba_ayvmc_ejemploooCondition2[
 
 }
 
-pred precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
-  throw:univ
-]{
-   equ[throw,
-      null]
-   and 
-   ar_edu_itba_ayvmc_ejemplooo_requires[]
-
-}
-
 pred postcondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
   ar_edu_itba_ayvmc_ejemplooo_canarywololoInti':univ->univ,
   thiz':univ,
@@ -549,9 +555,9 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
   ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:(ar_edu_itba_ayvmc_ejemplooo)->one(boolean),
   usedObjects:set (java_lang_Object)
 ] var [
-  var_2_i:Int,
+  var_4_i:Int,
   exit_stmt_reached:boolean,
-  t_2:boolean
+  t_4:boolean
 ]{
    skip;
    throw:=null;
@@ -560,7 +566,7 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
    skip;
    skip;
    if ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached,throw]  {
-      var_2_i:=0
+      var_4_i:=0
    
    } else {
       skip
@@ -568,7 +574,7 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
    }
    ;
    if ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached,throw]  {
-      t_2:=(equ[var_2_i,0]=>(true)else(false))
+      t_4:=(equ[var_4_i,0]=>(true)else(false))
    
    } else {
       skip
@@ -576,7 +582,7 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
    }
    ;
    if ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached,throw]  {
-      if ar_edu_itba_ayvmc_ejemploooCondition4[t_2]  {
+      if ar_edu_itba_ayvmc_ejemploooCondition4[t_4]  {
          if ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached,throw]  {
             if ar_edu_itba_ayvmc_ejemploooCondition2[thiz]  {
                throw:=java_lang_NullPointerExceptionLit
@@ -593,7 +599,7 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
       
       } else {
          if ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached,throw]  {
-            var_2_i:=1
+            var_4_i:=1
          
          } else {
             skip
@@ -614,14 +620,16 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
 assertCorrectness check_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
   ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:(ar_edu_itba_ayvmc_ejemplooo)->one(boolean),
   exit_stmt_reached:boolean,
-  t_2:boolean,
+  t_4:boolean,
   thiz:ar_edu_itba_ayvmc_ejemplooo,
   throw:java_lang_Throwable+null,
   usedObjects:set (java_lang_Object),
-  var_2_i:Int
+  var_4_i:Int
 ]{
 pre={
-   precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[throw]
+   precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[ar_edu_itba_ayvmc_ejemplooo_canarywololoInti,
+                                                       thiz,
+                                                       throw]
 
 }
 program={

@@ -8,16 +8,16 @@ public class ejemplooo extends java.lang.Object {
   public boolean ar_edu_itba_ayvmc_ejemplooo_canarywololoInti;
 
   /*@ 
-    @ requires true;
+    @ requires this.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti  ==  false;
     @ ensures this.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti  ==  false;
     @*/
   public void wololoInt() {
     {
-      boolean t_2;
-      int var_2_i = 0;
+      boolean t_4;
+      int var_4_i = 0;
 
-      t_2 = var_2_i  ==  0;
-      if (t_2) {
+      t_4 = var_4_i  ==  0;
+      if (t_4) {
         {
           {
             {
@@ -35,7 +35,7 @@ public class ejemplooo extends java.lang.Object {
             {
               {
                 {
-                  var_2_i = 1;
+                  var_4_i = 1;
                 }
               }
             }
