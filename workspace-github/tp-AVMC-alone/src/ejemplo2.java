@@ -4,7 +4,7 @@ import java.lang.String;
 
 public class ejemplo2 {
     
-    @Check("NullPointer")
+    @Check("Arithmetic")
     public void wololoInt(String foo){
         Integer i= null;
         i.intValue();
@@ -12,7 +12,7 @@ public class ejemplo2 {
         return;
     }
     
-    @Check("NullPointer")
+    @Check("Arithmetic")
     public static void main(String[] args) {
         System.out.println("lalal");
         Double as=1.0;

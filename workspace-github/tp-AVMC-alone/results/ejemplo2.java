@@ -7,16 +7,9 @@ public class ejemplo2 {
 
 	public static boolean canary$main$as = false;
 
-	public static boolean canary$wololoInt$i = false;
-
-	/*@ ensures canary$wololoInt$i == false; @*/
-	 public void wololoInt(String foo){
+	public void wololoInt(String foo){
         Integer i= null;
-        if (i == null) {
-			canary$wololoInt$i = true;
-		} else {
-			i.intValue();
-		}
+        i.intValue();
         
         return;
     }
@@ -29,7 +22,7 @@ public class ejemplo2 {
         if(as==10){
             System.out.println("lala dentro de if");
         }
-        if (bs == null) {
+        if (bs == 0) {
 			canary$main$bs = true;
 		} else {
 			as = as / bs;

@@ -1,0 +1,132 @@
+//-------------- ar_edu_itba_ayvmc_ejemplooo --------------//
+module ar_edu_itba_ayvmc_ejemplooo
+sig ar_edu_itba_ayvmc_ejemplooo extends java_lang_Object {}
+{}
+field ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:(ar_edu_itba_ayvmc_ejemplooo)->one(boolean) {}
+
+program ar_edu_itba_ayvmc_ejemplooo::wololoInt[
+  var thiz:ar_edu_itba_ayvmc_ejemplooo,
+  var throw:java_lang_Throwable+null] 
+Specification 
+{
+  SpecCase #0 {
+   requires {
+      true=true
+   }
+   
+   ensures {
+      (
+        throw'=null)
+      implies 
+              equ[thiz'.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti',
+                 false]
+   }
+   
+   modifies {
+   EVERYTHING}
+  }
+}
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var t_2:boolean;
+            var var_2_i:JavaPrimitiveIntegerValue;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               var_2_i:=JavaPrimitiveIntegerLiteral0;
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_2:=(equ[var_2_i,
+                  JavaPrimitiveIntegerLiteral0]=>(true)else(false));
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if t_2=true{
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     if isEmptyOrNull[thiz]{
+                        throw:=java_lang_NullPointerExceptionLit;
+                     } else {
+                        thiz.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:=true;
+                     };
+                  } else {
+                     skip;
+                  };
+               } else {
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     var_2_i:=JavaPrimitiveIntegerLiteral1;
+                  } else {
+                     skip;
+                  };
+               };
+            } else {
+               skip;
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+program ar_edu_itba_ayvmc_ejemplooo::ejemplooo[
+  var thiz:ar_edu_itba_ayvmc_ejemplooo,
+  var throw:java_lang_Throwable+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         if (
+           throw=null)
+         and 
+         (
+           exit_stmt_reached=false){
+            if isEmptyOrNull[thiz]{
+               throw:=java_lang_NullPointerExceptionLit;
+            } else {
+               thiz.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:=false;
+            };
+         } else {
+            skip;
+         };
+      
+      }
+      skip;
+   
+   }
+
+
+

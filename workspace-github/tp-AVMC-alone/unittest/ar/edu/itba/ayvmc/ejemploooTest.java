@@ -44,19 +44,19 @@ public class ejemploooTest extends CollectionTestBase {
         runAndCheck(GENERIC_PROPERTIES,"getSize_0",false);
 	}*/
 
-	public void test_addTest() throws VizException {
+	public void test_wololoIntTest() throws VizException {
 		setConfigKeyRelevantClasses("ar.edu.itba.ayvmc.ejemplooo");
         setConfigKeyRelevancyAnalysis(true);
         setConfigKeyCheckNullDereference(true);
-        setConfigKeyUseJavaArithmetic(false);
-        setConfigKeyObjectScope(3);
+        setConfigKeyUseJavaArithmetic(true);
+        setConfigKeyObjectScope(1);
         setConfigKeyInferScope(true);
         setConfigKeySkolemizeInstanceInvariant(false);
         setConfigKeySkolemizeInstanceAbstraction(false);
         setConfigKeyGenerateUnitTestCase(true);
 		setConfigKeyTypeScopes("ar.edu.itba.ayvmc.ejemplooo:1"); //te dice cuantas instancias podes tener como maximo (arboles de hasta cinco nodos)
 		setConfigKeyLoopUnroll(1); 
-        runAndCheck(GENERIC_PROPERTIES,"add_0",false);
+        runAndCheck(GENERIC_PROPERTIES,"wololoInt_0",false);
 	} 
 	
 	/*public void test_removeTest() throws VizException {
