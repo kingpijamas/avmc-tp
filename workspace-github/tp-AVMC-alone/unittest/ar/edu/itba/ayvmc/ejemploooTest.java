@@ -44,12 +44,12 @@ public class ejemploooTest extends CollectionTestBase {
         runAndCheck(GENERIC_PROPERTIES,"getSize_0",false);
 	}*/
 
-	public void test_wololoIntTest() throws VizException {
+	public void test_addTest() throws VizException {
 		setConfigKeyRelevantClasses("ar.edu.itba.ayvmc.ejemplooo");
         setConfigKeyRelevancyAnalysis(true);
         setConfigKeyCheckNullDereference(true);
-        setConfigKeyUseJavaArithmetic(true);
-        setConfigKeyObjectScope(1);
+        setConfigKeyUseJavaArithmetic(false);
+        setConfigKeyObjectScope(3);
         setConfigKeyInferScope(true);
         setConfigKeySkolemizeInstanceInvariant(false);
         setConfigKeySkolemizeInstanceAbstraction(false);

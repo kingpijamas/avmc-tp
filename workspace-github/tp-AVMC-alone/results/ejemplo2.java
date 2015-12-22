@@ -3,9 +3,9 @@ import java.lang.String;
 
 public class ejemplo2 {
     
-    public static boolean canary$main$bs = false;
+    public static boolean canarymainbs = false;
 
-	public static boolean canary$main$as = false;
+	public static boolean canarymainas = false;
 
 	public void wololoInt(String foo){
         Integer i= null;
@@ -14,7 +14,7 @@ public class ejemplo2 {
         return;
     }
     
-    /*@ ensures canary$main$as == false && canary$main$bs == false; @*/
+    /*@ ensures canarymainas == false && canarymainbs == false; @*/
 	 public static void main(String[] args) {
         System.out.println("lalal");
         Double as=1.0;
@@ -23,7 +23,7 @@ public class ejemplo2 {
             System.out.println("lala dentro de if");
         }
         if (bs == 0) {
-			canary$main$bs = true;
+			canarymainbs = true;
 		} else {
 			as = as / bs;
 		}

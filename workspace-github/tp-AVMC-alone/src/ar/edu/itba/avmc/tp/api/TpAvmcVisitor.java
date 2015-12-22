@@ -164,7 +164,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
             for(String s: methodsNamesMap.get(method)){
                 PrimitiveType type = ast.newPrimitiveType(PrimitiveType.BOOLEAN);
                 boolean isStatic = true;
-                VariableDeclarationStatement statement = createDeclarationStatement(ast, type, "canary$"+method+"$"+s,isStatic);
+                VariableDeclarationStatement statement = createDeclarationStatement(ast, type, "canary"+method+s,isStatic);
                 listRewrite.insertAt(statement, 0, null);    
             }
             
@@ -242,7 +242,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
             if(!first){
                 jml_buffer.append(" && ");               
             }
-            String canaryName = "canary$"+methodsNames.peek()+"$"+it.next();
+            String canaryName = "canary"+methodsNames.peek()+it.next();
             jml_buffer.append(canaryName+" == false");
             first = false;
         }
@@ -288,7 +288,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         Block block_else = ast.newBlock();
         
         block_then.setStructuralProperty(then_stat.getLocationInParent(), then_stat);
-        SimpleName canaryName = ast.newSimpleName("canary$"+methodsNames.peek()+"$"+variables.get(0));
+        SimpleName canaryName = ast.newSimpleName("canary"+methodsNames.peek()+variables.get(0));
         Assignment as = createAssignment(canaryName, ast.newBooleanLiteral(true));
         
         ifs.setExpression(condition);

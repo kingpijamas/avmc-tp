@@ -22,6 +22,8 @@ public class MainTP {
              e.printStackTrace();
          }
       }
+      
+      org.junit.runner.JUnitCore.main("ar.edu.itba.ayvmc.ejemploooTest");
 
 
 

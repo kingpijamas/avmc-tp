@@ -111,7 +111,7 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
   ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:(ar_edu_itba_ayvmc_ejemplooo)->one(boolean),
   usedObjects:set (java_lang_Object)
 ] var [
-  var_2_i:JavaPrimitiveIntegerValue,
+  var_2_i:Int,
   exit_stmt_reached:boolean,
   t_2:boolean
 ]{
@@ -122,7 +122,7 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
    skip;
    skip;
    if ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached,throw]  {
-      var_2_i:=JavaPrimitiveIntegerLiteral0
+      var_2_i:=0
    
    } else {
       skip
@@ -130,7 +130,7 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
    }
    ;
    if ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached,throw]  {
-      t_2:=(equ[var_2_i,JavaPrimitiveIntegerLiteral0]=>(true)else(false))
+      t_2:=(equ[var_2_i,0]=>(true)else(false))
    
    } else {
       skip
@@ -155,7 +155,7 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
       
       } else {
          if ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached,throw]  {
-            var_2_i:=JavaPrimitiveIntegerLiteral1
+            var_2_i:=1
          
          } else {
             skip
@@ -180,7 +180,7 @@ assertCorrectness check_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
   thiz:ar_edu_itba_ayvmc_ejemplooo,
   throw:java_lang_Throwable+null,
   usedObjects:set (java_lang_Object),
-  var_2_i:JavaPrimitiveIntegerValue
+  var_2_i:Int
 ]{
 pre={
    precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[throw]

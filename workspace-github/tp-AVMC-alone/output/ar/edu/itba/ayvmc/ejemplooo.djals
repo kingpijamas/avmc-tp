@@ -36,13 +36,13 @@ Implementation
          exit_stmt_reached:=false;
          {
             var t_2:boolean;
-            var var_2_i:JavaPrimitiveIntegerValue;
+            var var_2_i:Int;
             if (
               throw=null)
             and 
             (
               exit_stmt_reached=false){
-               var_2_i:=JavaPrimitiveIntegerLiteral0;
+               var_2_i:=0;
             } else {
                skip;
             };
@@ -52,7 +52,7 @@ Implementation
             (
               exit_stmt_reached=false){
                t_2:=(equ[var_2_i,
-                  JavaPrimitiveIntegerLiteral0]=>(true)else(false));
+                  0]=>(true)else(false));
             } else {
                skip;
             };
@@ -81,7 +81,7 @@ Implementation
                   and 
                   (
                     exit_stmt_reached=false){
-                     var_2_i:=JavaPrimitiveIntegerLiteral1;
+                     var_2_i:=1;
                   } else {
                      skip;
                   };

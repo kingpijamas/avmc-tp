@@ -2,17 +2,17 @@
 
 public class ejemplo {
     
-    public static boolean canary$main$bs = false;
+    public static boolean canarymainbs = false;
 
-	public static boolean canary$main$as = false;
+	public static boolean canarymainas = false;
 
-	public static boolean canary$wololoInt$d = false;
+	public static boolean canarywololoIntd = false;
 
-	public static boolean canary$wololoInt$c = false;
+	public static boolean canarywololoIntc = false;
 
-	public static boolean canary$wololoInt$a = false;
+	public static boolean canarywololoInta = false;
 
-	/*@ ensures canary$wololoInt$a == false && canary$wololoInt$c == false && canary$wololoInt$d == false; @*/
+	/*@ ensures canarywololoInta == false && canarywololoIntc == false && canarywololoIntd == false; @*/
 	 public static int wololoInt(String foo){
         Double a=1.0;
         Double c=0.0;
@@ -20,7 +20,7 @@ public class ejemplo {
         String lola="lola";
         
         if (c == 0) {
-			canary$wololoInt$c = true;
+			canarywololoIntc = true;
 		} else {
 			a = a / c;
 		}
@@ -29,7 +29,7 @@ public class ejemplo {
         return 1;
     }
     
-    /*@ ensures canary$main$as == false && canary$main$bs == false; @*/
+    /*@ ensures canarymainas == false && canarymainbs == false; @*/
 	 public static void main(String[] args) {
         System.out.println("lalal");
         Double as=1.0;
@@ -38,7 +38,7 @@ public class ejemplo {
             System.out.println("lala dentro de if");
         }
         if (bs == 0) {
-			canary$main$bs = true;
+			canarymainbs = true;
 		} else {
 			as = as / bs;
 		}
