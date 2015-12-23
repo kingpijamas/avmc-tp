@@ -43,7 +43,7 @@ Implementation
             and 
             (
               exit_stmt_reached=false){
-               var_4_i:=1;
+               var_4_i:=0;
             } else {
                skip;
             };

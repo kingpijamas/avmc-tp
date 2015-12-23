@@ -20,6 +20,7 @@
 package ar.edu.itba.ayvmc;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +31,10 @@ import org.junit.runners.Parameterized.Parameters;
 import java.util.Arrays;
 
 import ar.edu.taco.regresion.CollectionTestBase;
+import ar.edu.taco.utils.FileUtils;
 import ar.uba.dc.rfm.dynalloy.visualization.VizException;
+import lalala.MainTP;
+import roops.core.objects.junit.ArrayList;
 
 @RunWith(Parameterized.class)
 public class ejemploooTest extends CollectionTestBase {
@@ -41,10 +45,17 @@ public class ejemploooTest extends CollectionTestBase {
     @Parameters
     public static Collection<Object[]> configs() {
  
-        return Arrays.asList(new Object[][] {
-                { "ar.edu.itba.ayvmc.ejemplooo","wololoInt"},
-                { "ar.edu.itba.ayvmc.ejemplooo","wololoInt" }});
+        FileUtils.readPropertiesFile(MainTP.propertiesFileName);
+        
+        List<Object[]> lala = new java.util.ArrayList<Object[]>();
+        Object[] lalo = {"ar.edu.itba.ayvmc.ejemplooo","wololoInt"};
+        
+        lala.add(lalo);
+        lala.add(lalo);
+        
+        return FileUtils.readPropertiesFile(MainTP.propertiesFileName);      
     }
+    
     
     public ejemploooTest(String className, String methodName) {
         this.className = className;

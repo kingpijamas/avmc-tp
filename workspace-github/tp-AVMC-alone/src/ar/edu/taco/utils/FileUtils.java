@@ -21,9 +21,16 @@ package ar.edu.taco.utils;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Properties;
 
 public class FileUtils {
 	static final private String NORMALIZATED_FILE_SEPARATOR = "/";
@@ -87,5 +94,55 @@ public class FileUtils {
 	public static String normalizatePackageName(String path){
 	    String normalizatedFileName = path.replaceAll("\\.", NORMALIZATED_FILE_SEPARATOR);
 	    return normalizatedFileName;
+	}
+	
+	/*
+	 * */
+	public static void storeInPropertiesFile(String fileName, String comment, Properties properties){
+	    try {
+	          
+	          File file = new File(fileName);
+	          FileOutputStream fileOut = new FileOutputStream(file);
+	          properties.store(fileOut, comment);
+	          fileOut.close();
+	          
+	      } catch (FileNotFoundException e) {
+	          // do something??
+	          
+	      } catch (IOException e) {
+	          // do something??
+	          
+	      }
+	}
+	
+	public static Collection<Object[]> readPropertiesFile(String fileName){
+	    List<Object[]> lala = new java.util.ArrayList<Object[]>();
+	    try {
+            File file = new File(fileName);
+            FileInputStream fileInput = new FileInputStream(file);
+            Properties properties = new Properties();
+            properties.load(fileInput);
+            fileInput.close();
+            
+            Enumeration enuKeys = properties.keys();
+            while (enuKeys.hasMoreElements()) {
+                
+                
+                String key = (String) enuKeys.nextElement();
+                String value = properties.getProperty(key);
+                Object[] lalo = {key,value};
+                lala.add(lalo);
+//                System.out.println(key + ": " + value);
+            }
+            
+        } catch (FileNotFoundException e) {
+            // do something??
+            
+        } catch (IOException e) {
+            // do something??
+        
+        }
+	    
+	    return lala;
 	}
 }

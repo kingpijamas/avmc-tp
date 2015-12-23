@@ -1,0 +1,74 @@
+//-------------- lalala_lalaAnnotated --------------//
+module lalala_lalaAnnotated
+sig lalala_lalaAnnotated extends java_lang_Object {}
+{}
+program lalala_lalaAnnotated::lalaAnnotated[
+  var thiz:lalala_lalaAnnotated,
+  var throw:java_lang_Throwable+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         skip;
+      
+      }
+      skip;
+   
+   }
+
+
+program lalala_lalaAnnotated::foo[
+  var thiz:lalala_lalaAnnotated,
+  var throw:java_lang_Throwable+null,
+  var myParam:java_lang_String+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var param_myParam_0:java_lang_String+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               param_myParam_0:=myParam;
+            } else {
+               skip;
+            };
+            var t_1:java_lang_String+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_1:=add[0,param_myParam_0];
+            } else {
+               skip;
+            };
+            if isEmptyOrNull[ClassFields]
+            or 
+            isEmptyOrNull[ClassFields.java_lang_System_out]
+            {
+               throw:=java_lang_NullPointerExceptionLit;
+            } else {
+               call println[ClassFields.java_lang_System_out,throw,t_1];
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+

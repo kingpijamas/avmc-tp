@@ -14,7 +14,7 @@ public class ejemplooo extends java.lang.Object {
   public void wololoInt() {
     {
       boolean t_4;
-      int var_4_i = 1;
+      int var_4_i = 0;
 
       t_4 = var_4_i  ==  0;
       if (t_4) {

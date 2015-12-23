@@ -4,6 +4,7 @@ package ar.edu.itba.avmc.tp.api;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
  
 import org.eclipse.jdt.core.dom.AST;
@@ -61,17 +62,14 @@ public class ParserAPIImpl implements ParserAPI {
     }
     
     //use ASTParse to parse string
-    public void parse(List<String> methodNames, String newFileName, TpAvmcVisitor visitor) {
+    public void parse(String canonicalClassName, List<String> methodNames, String newFileName, TpAvmcVisitor visitor, Properties propertiesFile) {
        System.out.println("parse with "+ methodNames + "method");
        if(methodNames.isEmpty()){
            return;
        }
 
-        //ASTVisitor astv = new ArithmeticTpAvmcVisitor(unit, ast);
-        //ASTRewrite rewrite = ((TpAvmcVisitor)astv).getRewrite();
        ASTRewrite rewrite = visitor.getRewrite();
 
-        //StrykerASTVisitor visitor = new StrykerASTVisitor(wrapper, unit, source, ast, seqFileName, lastMutatedLines, mutableLines);
         // to iterate through methods
        
         final List<AbstractTypeDeclaration> types = unit.types();
@@ -97,12 +95,9 @@ public class ParserAPIImpl implements ParserAPI {
                             
                             method.accept(visitor);
                             
-                            /*Block block= ((TypeDeclaration) unit.types().get(0)).getMethods()[0].getBody();
-                            Block block= method.getBody();
-                            ListRewrite listRewrite= rewrite.getListRewrite(block, Block.STATEMENTS_PROPERTY);
-                            Statement placeHolder= (Statement) rewrite.createStringPlaceholder("//mycomment", ASTNode.EMPTY_STATEMENT);
-                            listRewrite.insertFirst(placeHolder, null); */
-
+                            propertiesFile.setProperty(canonicalClassName, method.getName().toString());
+                            
+                            
                         }
                     }
                 }

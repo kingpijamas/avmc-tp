@@ -1,9 +1,13 @@
 package ar.edu.itba.avmc.tp.annotations;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.CompilationUnit;
@@ -19,7 +23,7 @@ public class CheckAnnotationParser {
     public static String ARITHMETIC_STRING = "Arithmetic";
     public static String NULLPOINTER_STRING = "NullPointer";
     
-    public void parse(Class<?> clazz) throws Exception {
+    public void parse(Class<?> clazz, Properties properties) throws Exception {
        
        
        Method[] methods = clazz.getMethods();
@@ -57,14 +61,15 @@ public class CheckAnnotationParser {
        }
        
        if(!methodNames.isEmpty()){
-       File dirs = new File(".");
-       String dirPath = dirs.getCanonicalPath() + File.separator+"src"+File.separator+className+".java";
-       String newDirPath = dirs.getCanonicalPath() + File.separator+"results"+File.separator+className+".java";             
-       String str=FileUtils.readFile(dirPath);
-       ParserAPI parser = new ParserAPIImpl(str);
+           File dirs = new File(".");
+           String dirPath = dirs.getCanonicalPath() + File.separator+"src"+File.separator+className+".java";
+           String newDirPath = dirs.getCanonicalPath() + File.separator+"tests"+File.separator+className+".java";             
+           String str=FileUtils.readFile(dirPath);
+           ParserAPI parser = new ParserAPIImpl(str);
        
-       TpAvmcVisitor visitor = getTpAvmcVisitor(check_type, parser.getUnit(), parser.getAST());
-       parser.parse(methodNames,newDirPath,visitor);
+           TpAvmcVisitor visitor = getTpAvmcVisitor(check_type, parser.getUnit(), parser.getAST());
+           parser.parse(clazz.getCanonicalName(),methodNames,newDirPath,visitor, properties);
+       
        }
     }
     

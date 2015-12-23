@@ -584,7 +584,7 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
                                            throw_1]
       and 
       (
-        var_4_i_1=1)
+        var_4_i_1=0)
     )
     or 
     (

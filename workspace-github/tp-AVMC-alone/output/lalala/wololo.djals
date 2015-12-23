@@ -1,0 +1,162 @@
+//-------------- lalala_wololo --------------//
+module lalala_wololo
+sig lalala_wololo extends java_lang_Object {}
+{}
+program lalala_wololo::wololoInt[
+  var throw:java_lang_Throwable+null,
+  var return:Int,
+  var foo:java_lang_String+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var param_foo_1:java_lang_String+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               param_foo_1:=foo;
+            } else {
+               skip;
+            };
+            var t_2:java_lang_String+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_2:=add[1,param_foo_1];
+            } else {
+               skip;
+            };
+            if isEmptyOrNull[ClassFields]
+            or 
+            isEmptyOrNull[ClassFields.java_lang_System_out]
+            {
+               throw:=java_lang_NullPointerExceptionLit;
+            } else {
+               call println[ClassFields.java_lang_System_out,throw,t_2];
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false)   {
+                  return:=1;
+                  exit_stmt_reached:=true;
+               
+               }
+             else {
+               skip;
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+program lalala_wololo::wololo[
+  var thiz:lalala_wololo,
+  var throw:java_lang_Throwable+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         skip;
+      
+      }
+      skip;
+   
+   }
+
+
+program lalala_wololo::main[
+  var throw:java_lang_Throwable+null,
+  var args:java_lang_ObjectArray+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var param_args_2:java_lang_ObjectArray+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               param_args_2:=args;
+            } else {
+               skip;
+            };
+            if isEmptyOrNull[ClassFields]
+            or 
+            isEmptyOrNull[ClassFields.java_lang_System_out]
+            {
+               throw:=java_lang_NullPointerExceptionLit;
+            } else {
+               call println[ClassFields.java_lang_System_out,throw,2];
+            };
+            var var_1_a:java_lang_Double+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               var_1_a:=JavaPrimitiveFloatLiteral3F800000;
+            } else {
+               skip;
+            };
+            var var_2_b:java_lang_Double+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               var_2_b:=JavaPrimitiveFloatLiteral0;
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               var_1_a:=div[var_1_a,var_2_b];
+            } else {
+               skip;
+            };
+            if isEmptyOrNull[ClassFields]
+            or 
+            isEmptyOrNull[ClassFields.java_lang_System_out]
+            {
+               throw:=java_lang_NullPointerExceptionLit;
+            } else {
+               call println[ClassFields.java_lang_System_out,throw,var_1_a];
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+
