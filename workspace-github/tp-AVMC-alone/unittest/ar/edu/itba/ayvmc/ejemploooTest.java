@@ -33,7 +33,7 @@ import java.util.Arrays;
 import ar.edu.taco.regresion.CollectionTestBase;
 import ar.edu.taco.utils.FileUtils;
 import ar.uba.dc.rfm.dynalloy.visualization.VizException;
-import lalala.MainTP;
+import lalala.lololo.MainTP;
 import roops.core.objects.junit.ArrayList;
 
 @RunWith(Parameterized.class)

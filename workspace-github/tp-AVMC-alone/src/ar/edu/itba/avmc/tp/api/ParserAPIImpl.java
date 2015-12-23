@@ -109,8 +109,9 @@ public class ParserAPIImpl implements ParserAPI {
         for(ImportDeclaration imp: imports){
             imp.accept(visitor);
         }
-        
-      //Reescribimos el archivo fuente con su instrumentacion
+        unit.getPackage().accept(visitor);
+      
+        //Reescribimos el archivo fuente con su instrumentacion
         TextEdit edits = rewrite.rewriteAST(document, null);
         try {
             edits.apply(document);

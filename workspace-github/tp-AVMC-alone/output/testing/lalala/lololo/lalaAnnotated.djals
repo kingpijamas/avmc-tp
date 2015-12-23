@@ -1,0 +1,74 @@
+//-------------- testing_lalala_lololo_lalaAnnotated --------------//
+module testing_lalala_lololo_lalaAnnotated
+sig testing_lalala_lololo_lalaAnnotated extends java_lang_Object {}
+{}
+program testing_lalala_lololo_lalaAnnotated::foo[
+  var thiz:testing_lalala_lololo_lalaAnnotated,
+  var throw:java_lang_Throwable+null,
+  var myParam:java_lang_String+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var param_myParam_4:java_lang_String+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               param_myParam_4:=myParam;
+            } else {
+               skip;
+            };
+            var t_4:java_lang_String+null;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_4:=add[0,param_myParam_4];
+            } else {
+               skip;
+            };
+            if isEmptyOrNull[ClassFields]
+            or 
+            isEmptyOrNull[ClassFields.java_lang_System_out]
+            {
+               throw:=java_lang_NullPointerExceptionLit;
+            } else {
+               call println[ClassFields.java_lang_System_out,throw,t_4];
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+program testing_lalala_lololo_lalaAnnotated::lalaAnnotated[
+  var thiz:testing_lalala_lololo_lalaAnnotated,
+  var throw:java_lang_Throwable+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         skip;
+      
+      }
+      skip;
+   
+   }
+
+
+

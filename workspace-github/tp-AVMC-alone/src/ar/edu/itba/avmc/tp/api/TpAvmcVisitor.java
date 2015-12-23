@@ -31,7 +31,9 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.Modifier;
 import org.eclipse.jdt.core.dom.Modifier.ModifierKeyword;
+import org.eclipse.jdt.core.dom.Name;
 import org.eclipse.jdt.core.dom.NumberLiteral;
+import org.eclipse.jdt.core.dom.PackageDeclaration;
 import org.eclipse.jdt.core.dom.PrimitiveType;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.SingleMemberAnnotation;
@@ -185,6 +187,14 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         return false;
     }
     
+    @Override
+    public boolean visit(PackageDeclaration node) {
+        PackageDeclaration pd =ast.newPackageDeclaration();
+        pd.setName(ast.newName("testing."+node.getName().getFullyQualifiedName()));
+        rewrite.replace(node, pd, null);
+        return false;
+    }
+    
     private VariableDeclarationStatement createDeclarationStatement(AST ast, Type type, String variableName, boolean isStatic){
         
         List<Modifier> modifiers = new ArrayList<Modifier>();
@@ -233,24 +243,12 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         if(canaryNames.isEmpty()){
             return null;
         }
-        //Iterator <String> it =canaryNames.iterator();
         
         StringBuffer jml_buffer = new StringBuffer("/*");
         jml_buffer.append(conditions(true, canaryNames));
         jml_buffer.append("\n");
         jml_buffer.append(conditions(false, canaryNames));
         jml_buffer.append("@*/\n");
-        /*boolean first = true;
-        
-        while(it.hasNext()){
-            if(!first){
-                jml_buffer.append(" && ");               
-            }
-            String canaryName = "canary"+methodsNames.peek()+it.next();
-            jml_buffer.append(canaryName+" == false");
-            first = false;
-        }*/
-//        jml_buffer.append("; @*/\n");
         
         BlockComment javadoc= (BlockComment) rewrite.createStringPlaceholder(jml_buffer.toString(), ASTNode.BLOCK_COMMENT);
         

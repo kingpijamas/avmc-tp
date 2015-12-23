@@ -63,12 +63,12 @@ public class CheckAnnotationParser {
        if(!methodNames.isEmpty()){
            File dirs = new File(".");
            String dirPath = dirs.getCanonicalPath() + File.separator+"src"+File.separator+className+".java";
-           String newDirPath = dirs.getCanonicalPath() + File.separator+"tests"+File.separator+className+".java";             
+           String newDirPath = dirs.getCanonicalPath() + File.separator+"tests"+File.separator+ "testing"+ File.separator+className+".java";             
            String str=FileUtils.readFile(dirPath);
            ParserAPI parser = new ParserAPIImpl(str);
        
            TpAvmcVisitor visitor = getTpAvmcVisitor(check_type, parser.getUnit(), parser.getAST());
-           parser.parse(clazz.getCanonicalName(),methodNames,newDirPath,visitor, properties);
+           parser.parse("testing."+clazz.getCanonicalName(),methodNames,newDirPath,visitor, properties);
        
        }
     }

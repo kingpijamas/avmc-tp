@@ -1,4 +1,4 @@
-package examples;
+package testing.examples;
 
 import java.lang.String;
 

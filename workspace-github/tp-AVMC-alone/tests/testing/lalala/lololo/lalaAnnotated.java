@@ -1,10 +1,7 @@
-package lalala;
-
-import ar.edu.itba.avmc.tp.annotations.Check;
+package testing.lalala.lololo;
 
 public class lalaAnnotated {
     
-    @Check("Arithmetic")
     public void foo(String myParam) {
        System.out.println("This is " + myParam);
     }
