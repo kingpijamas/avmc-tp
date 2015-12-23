@@ -11,8 +11,9 @@ public class ejemplooo {
 
     public boolean canarywololoInti = false;
 
-    /*@ requires true && canarywololoInti == false; 
-      @ ensures canarywololoInti == false; @*/
+    
+    /*@ requires true && canarywololoInti == false;
+    @ ensures canarywololoInti == false;@*/
      public void wololoInt(){
         int i= 0;
         if (i == 0) {

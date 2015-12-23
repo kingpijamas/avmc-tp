@@ -5,18 +5,16 @@ public class ejemplo {
     
     @Check("Arithmetic")
     public static int wololoInt(String foo){
-        Double a=1.0;
-        Double c=0.0;
+        float a=1.0f;
+        float c=0.0f;
         int d=0;
-        String lola="lola";
         
         a=a / c;
         
-        System.out.println("pase por wololoInt del package lalo con "+foo);
         return 1;
     }
     
-    @Check("Arithmetic")
+/*    @Check("Arithmetic")
     public static void main(String[] args) {
         System.out.println("lalal");
         Double as=1.0;
@@ -27,4 +25,5 @@ public class ejemplo {
         as=as / bs;
         System.out.println(as);
     }
+*/
 }

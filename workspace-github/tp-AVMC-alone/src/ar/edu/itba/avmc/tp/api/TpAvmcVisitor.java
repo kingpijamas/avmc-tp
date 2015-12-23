@@ -233,10 +233,35 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         if(canaryNames.isEmpty()){
             return null;
         }
-        Iterator <String> it =canaryNames.iterator();
+        //Iterator <String> it =canaryNames.iterator();
         
-        StringBuffer jml_buffer = new StringBuffer("/*@ ensures ");
+        StringBuffer jml_buffer = new StringBuffer("/*");
+        jml_buffer.append(conditions(true, canaryNames));
+        jml_buffer.append("\n");
+        jml_buffer.append(conditions(false, canaryNames));
+        jml_buffer.append("@*/\n");
+        /*boolean first = true;
+        
+        while(it.hasNext()){
+            if(!first){
+                jml_buffer.append(" && ");               
+            }
+            String canaryName = "canary"+methodsNames.peek()+it.next();
+            jml_buffer.append(canaryName+" == false");
+            first = false;
+        }*/
+//        jml_buffer.append("; @*/\n");
+        
+        BlockComment javadoc= (BlockComment) rewrite.createStringPlaceholder(jml_buffer.toString(), ASTNode.BLOCK_COMMENT);
+        
+        return javadoc;
+    }
+    
+    private StringBuffer conditions(boolean preConditions, List<String> canaryNames){
+        String conditionPrefix=(preConditions)?"@ requires true && ": "@ ensures ";
+        StringBuffer jml_buffer = new StringBuffer(conditionPrefix);
         boolean first = true;
+        Iterator <String> it =canaryNames.iterator();
         
         while(it.hasNext()){
             if(!first){
@@ -246,13 +271,9 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
             jml_buffer.append(canaryName+" == false");
             first = false;
         }
-        jml_buffer.append("; @*/\n");
-        
-        BlockComment javadoc= (BlockComment) rewrite.createStringPlaceholder(jml_buffer.toString(), ASTNode.BLOCK_COMMENT);
-        
-        return javadoc;
+        jml_buffer.append(";");
+        return jml_buffer;
     }
-    
     
     protected List<String> denominatorVariables(String expression){
         List<String> answers = new ArrayList<String>();

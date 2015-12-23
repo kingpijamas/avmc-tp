@@ -128,7 +128,7 @@ program ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
    skip;
    skip;
    if ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached,throw]  {
-      var_4_i:=0
+      var_4_i:=1
    
    } else {
       skip

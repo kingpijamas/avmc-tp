@@ -5,22 +5,19 @@ import java.lang.String;
 public class ejemplo2 {
     
     @Check("Arithmetic")
-    public void wololoInt(String foo){
+    public void wololoInt(){
         Integer i= null;
         i.intValue();
         
-        return;
     }
     
     @Check("Arithmetic")
     public static void main(String[] args) {
-        System.out.println("lalal");
-        Double as=1.0;
-        Double bs=0.0;
+        float as=1.0f;
+        float bs=0.0f;
         if(as==10){
-            System.out.println("lala dentro de if");
+            as++;
         }
         as=as / bs;
-        System.out.println(as);
     }
 }
