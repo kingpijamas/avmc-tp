@@ -1,0 +1,284 @@
+sig testing_examples_ejemplo2 extends java_lang_Object {}
+{}
+
+
+
+
+pred precondition_testing_examples_ejemplo2_wololoInt_0[
+  testing_examples_ejemplo2_canarywololoIntas:univ->univ,
+  testing_examples_ejemplo2_canarywololoIntbs:univ->univ,
+  throw:univ
+]{
+   testing_examples_ejemplo2_requires[testing_examples_ejemplo2_canarywololoIntas,
+                                     testing_examples_ejemplo2_canarywololoIntbs]
+   and 
+   equ[throw,
+      null]
+
+}
+
+pred testing_examples_ejemplo2Condition5[
+]{
+   not (
+     isEmptyOrNull[ClassFields])
+
+}
+
+pred testing_examples_ejemplo2Condition4[
+]{
+   isEmptyOrNull[ClassFields]
+
+}
+
+pred testing_examples_ejemplo2_requires[
+  testing_examples_ejemplo2_canarywololoIntas:univ->univ,
+  testing_examples_ejemplo2_canarywololoIntbs:univ->univ
+]{
+   equ[ClassFields.testing_examples_ejemplo2_canarywololoIntas,
+      false]
+   and 
+   equ[ClassFields.testing_examples_ejemplo2_canarywololoIntbs,
+      false]
+
+}
+
+pred testing_examples_ejemplo2Condition1[
+  exit_stmt_reached:univ,
+  throw:univ
+]{
+   not (
+     (
+       throw=null)
+     and 
+     (
+       exit_stmt_reached=false)
+   )
+
+}
+
+pred testing_examples_ejemplo2Condition0[
+  exit_stmt_reached:univ,
+  throw:univ
+]{
+   (
+     throw=null)
+   and 
+   (
+     exit_stmt_reached=false)
+
+}
+
+pred testing_examples_ejemplo2Condition3[
+  t_5:univ
+]{
+   not (
+     t_5=true)
+
+}
+
+pred postcondition_testing_examples_ejemplo2_wololoInt_0[
+  testing_examples_ejemplo2_canarywololoIntas':univ->univ,
+  testing_examples_ejemplo2_canarywololoIntbs':univ->univ,
+  throw':univ
+]{
+   testing_examples_ejemplo2_ensures[testing_examples_ejemplo2_canarywololoIntas',
+                                    testing_examples_ejemplo2_canarywololoIntbs',
+                                    throw']
+   and 
+   (
+     not (
+       throw'=AssertionFailureLit)
+   )
+
+}
+
+pred testing_examples_ejemplo2Condition2[
+  t_5:univ
+]{
+   t_5=true
+
+}
+
+pred testing_examples_ejemplo2_ensures[
+  testing_examples_ejemplo2_canarywololoIntas':univ->univ,
+  testing_examples_ejemplo2_canarywololoIntbs':univ->univ,
+  throw':univ
+]{
+   (
+     throw'=null)
+   implies 
+           (
+             equ[ClassFields.testing_examples_ejemplo2_canarywololoIntas',
+                false]
+             and 
+             equ[ClassFields.testing_examples_ejemplo2_canarywololoIntbs',
+                false]
+           )
+
+}
+
+pred testing_examples_ejemplo2Condition6[
+  t_6:univ
+]{
+   t_6=true
+
+}
+
+pred testing_examples_ejemplo2Condition7[
+  t_6:univ
+]{
+   not (
+     t_6=true)
+
+}
+
+program testing_examples_ejemplo2_wololoInt_0[
+  thiz:testing_examples_ejemplo2,
+  throw:java_lang_Throwable+null,
+  testing_examples_ejemplo2_canarywololoIntas:(ClassFields)->one(boolean),
+  testing_examples_ejemplo2_canarywololoIntbs:(ClassFields)->one(boolean),
+  usedObjects:set (java_lang_Object)
+] var [
+  var_4_bs:Int,
+  exit_stmt_reached:boolean,
+  var_3_as:Int,
+  t_5:boolean,
+  t_4:Int,
+  t_6:boolean
+]{
+   skip;
+   throw:=null;
+   skip;
+   exit_stmt_reached:=false;
+   skip;
+   skip;
+   skip;
+   if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
+      var_3_as:=1
+   
+   } else {
+      skip
+   
+   }
+   ;
+   skip;
+   if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
+      var_4_bs:=1
+   
+   } else {
+      skip
+   
+   }
+   ;
+   if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
+      t_5:=(equ[var_3_as,7]=>(true)else(false))
+   
+   } else {
+      skip
+   
+   }
+   ;
+   if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
+      if testing_examples_ejemplo2Condition2[t_5]  {
+         skip;
+         if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
+            t_4:=var_3_as
+         
+         } else {
+            skip
+         
+         }
+         ;
+         if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
+            var_3_as:=add[var_3_as,1]
+         
+         } else {
+            skip
+         
+         }
+      
+      } else {
+         skip
+      
+      }
+   
+   } else {
+      skip
+   
+   }
+   ;
+   if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
+      t_6:=(equ[var_4_bs,0]=>(true)else(false))
+   
+   } else {
+      skip
+   
+   }
+   ;
+   if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
+      if testing_examples_ejemplo2Condition6[t_6]  {
+         if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
+            if testing_examples_ejemplo2Condition4[]  {
+               throw:=java_lang_NullPointerExceptionLit
+            
+            } else {
+               testing_examples_ejemplo2_canarywololoIntbs:=(testing_examples_ejemplo2_canarywololoIntbs)++((ClassFields)->(true))
+            
+            }
+         
+         } else {
+            skip
+         
+         }
+      
+      } else {
+         if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
+            var_3_as:=div[var_3_as,var_4_bs]
+         
+         } else {
+            skip
+         
+         }
+      
+      }
+   
+   } else {
+      skip
+   
+   }
+   ;
+   skip
+
+}
+
+assertCorrectness check_testing_examples_ejemplo2_wololoInt_0[
+  exit_stmt_reached:boolean,
+  t_4:Int,
+  t_5:boolean,
+  t_6:boolean,
+  testing_examples_ejemplo2_canarywololoIntas:(ClassFields)->one(boolean),
+  testing_examples_ejemplo2_canarywololoIntbs:(ClassFields)->one(boolean),
+  thiz:testing_examples_ejemplo2,
+  throw:java_lang_Throwable+null,
+  usedObjects:set (java_lang_Object),
+  var_3_as:Int,
+  var_4_bs:Int
+]{
+pre={
+   precondition_testing_examples_ejemplo2_wololoInt_0[testing_examples_ejemplo2_canarywololoIntas,
+                                                     testing_examples_ejemplo2_canarywololoIntbs,
+                                                     throw]
+
+}
+program={
+   call testing_examples_ejemplo2_wololoInt_0[thiz,throw,testing_examples_ejemplo2_canarywololoIntas,testing_examples_ejemplo2_canarywololoIntbs,usedObjects]
+
+}
+post={
+   postcondition_testing_examples_ejemplo2_wololoInt_0[testing_examples_ejemplo2_canarywololoIntas',
+                                                      testing_examples_ejemplo2_canarywololoIntbs',
+                                                      throw']
+
+}
+}
+

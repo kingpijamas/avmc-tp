@@ -6,21 +6,46 @@ package testing.examples;
 public class ejemplo extends java.lang.Object {
 
   public static boolean canarywololoIntd = false;
+  public static boolean canarywololoIntc = false;
+  public static boolean canarywololoInta = false;
 
   /*@ 
-    @ requires testing.examples.ejemplo.canarywololoIntd  ==  false;
-    @ ensures testing.examples.ejemplo.canarywololoIntd  ==  false;
+    @ requires testing.examples.ejemplo.canarywololoInta  ==  false && testing.examples.ejemplo.canarywololoIntc  ==  false && testing.examples.ejemplo.canarywololoIntd  ==  false;
+    @ ensures testing.examples.ejemplo.canarywololoInta  ==  false && testing.examples.ejemplo.canarywololoIntc  ==  false && testing.examples.ejemplo.canarywololoIntd  ==  false;
     @*/
-  public static int wololoInt(java.lang.String foo) {
-    java.lang.String param_foo_3;
-
-    param_foo_3 = foo;
+  public static int wololoInt() {
     {
-      float var_6_a = 1.0F;
-      float var_7_c = +0.0F;
-      int var_8_d = 0;
+      boolean t_8;
+      int var_8_a = 1;
+      int var_9_c = 1;
+      int var_10_d = 0;
 
-      var_6_a = var_6_a / var_7_c;
+      t_8 = var_9_c  ==  0;
+      if (t_8) {
+        {
+          {
+            {
+              {
+                {
+                  testing.examples.ejemplo.canarywololoIntc = true;
+                }
+              }
+            }
+          }
+        }
+      } else {
+        {
+          {
+            {
+              {
+                {
+                  var_8_a = var_8_a / var_9_c;
+                }
+              }
+            }
+          }
+        }
+      }
 
       return 1;
     }

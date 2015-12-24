@@ -1,0 +1,165 @@
+//-------------- testing_examples_ejemplo --------------//
+module testing_examples_ejemplo
+sig testing_examples_ejemplo extends java_lang_Object {}
+{}
+program testing_examples_ejemplo::ejemplo[
+  var thiz:testing_examples_ejemplo,
+  var throw:java_lang_Throwable+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         skip;
+      
+      }
+      skip;
+   
+   }
+
+
+program testing_examples_ejemplo::wololoInt[
+  var throw:java_lang_Throwable+null,
+  var return:Int] 
+Specification 
+{
+  SpecCase #0 {
+   requires {
+      equ[ClassFields.testing_examples_ejemplo_canarywololoInta,
+         false]
+      and 
+      equ[ClassFields.testing_examples_ejemplo_canarywololoIntc,
+         false]
+      and 
+      equ[ClassFields.testing_examples_ejemplo_canarywololoIntd,
+         false]
+   }
+   
+   ensures {
+      (
+        throw'=null)
+      implies 
+              (
+                equ[ClassFields.testing_examples_ejemplo_canarywololoInta',
+                   false]
+                and 
+                equ[ClassFields.testing_examples_ejemplo_canarywololoIntc',
+                   false]
+                and 
+                equ[ClassFields.testing_examples_ejemplo_canarywololoIntd',
+                   false]
+              )
+   }
+   
+   modifies {
+   EVERYTHING}
+  }
+}
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var t_8:boolean;
+            var var_8_a:Int;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               var_8_a:=1;
+            } else {
+               skip;
+            };
+            var var_9_c:Int;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               var_9_c:=1;
+            } else {
+               skip;
+            };
+            var var_10_d:Int;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               var_10_d:=0;
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               t_8:=(equ[var_9_c,
+                  0]=>(true)else(false));
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if t_8=true{
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     if isEmptyOrNull[ClassFields]{
+                        throw:=java_lang_NullPointerExceptionLit;
+                     } else {
+                        ClassFields.testing_examples_ejemplo_canarywololoIntc:=true;
+                     };
+                  } else {
+                     skip;
+                  };
+               } else {
+                  if (
+                    throw=null)
+                  and 
+                  (
+                    exit_stmt_reached=false){
+                     var_8_a:=div[var_8_a,var_9_c];
+                  } else {
+                     skip;
+                  };
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false)   {
+                  return:=1;
+                  exit_stmt_reached:=true;
+               
+               }
+             else {
+               skip;
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+

@@ -5,9 +5,9 @@ import ar.edu.itba.avmc.tp.annotations.Check;
 public class ejemplo {
     
     @Check("Arithmetic")
-    public static int wololoInt(String foo){
-        float a=1.0f;
-        float c=0.0f;
+    public static int wololoInt(){
+        int a=1;
+        int c=1;
         int d=0;
         
         a=a / c;

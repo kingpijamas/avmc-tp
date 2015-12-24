@@ -1,7 +1,7 @@
 /* 
  * DynAlloy translator options 
  * --------------------------- 
- * assertionId= check_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0
+ * assertionId= check_testing_examples_ejemplo_wololoInt_0
  * loopUnroll= 1
  * removeQuantifiers= true
  * strictUnrolling= false
@@ -296,6 +296,14 @@ pred getUnusedObjectPost[
   n1 !in usedObjects0 
   usedObjects1 = usedObjects0 + (n1)
 }
+//-------------- ClassFields--------------//
+one
+sig ClassFields {}
+{}
+
+
+
+
 //-------------- java_lang_Throwable--------------//
 abstract sig java_lang_Throwable extends java_lang_Object {}
 {}
@@ -306,6 +314,124 @@ one
 sig java_lang_ThrowableLit extends java_lang_Throwable {}
 {}
 
+//-------------- testing_examples_ejemplo--------------//
+sig testing_examples_ejemplo extends java_lang_Object {}
+{}
+pred testing_examples_ejemploCondition2[
+]{
+   isEmptyOrNull[ClassFields]
+
+}
+pred testing_examples_ejemploCondition3[
+]{
+   not (
+     isEmptyOrNull[ClassFields])
+
+}
+pred testing_examples_ejemplo_requires[
+  testing_examples_ejemplo_canarywololoInta:univ->univ,
+  testing_examples_ejemplo_canarywololoIntc:univ->univ,
+  testing_examples_ejemplo_canarywololoIntd:univ->univ
+]{
+   equ[ClassFields.testing_examples_ejemplo_canarywololoInta,
+      false]
+   and 
+   equ[ClassFields.testing_examples_ejemplo_canarywololoIntc,
+      false]
+   and 
+   equ[ClassFields.testing_examples_ejemplo_canarywololoIntd,
+      false]
+
+}
+pred postcondition_testing_examples_ejemplo_wololoInt_0[
+  testing_examples_ejemplo_canarywololoInta':univ->univ,
+  testing_examples_ejemplo_canarywololoIntc':univ->univ,
+  testing_examples_ejemplo_canarywololoIntd':univ->univ,
+  throw':univ
+]{
+   testing_examples_ejemplo_ensures[testing_examples_ejemplo_canarywololoInta',
+                                   testing_examples_ejemplo_canarywololoIntc',
+                                   testing_examples_ejemplo_canarywololoIntd',
+                                   throw']
+   and 
+   (
+     not (
+       throw'=AssertionFailureLit)
+   )
+
+}
+pred testing_examples_ejemploCondition0[
+  exit_stmt_reached:univ,
+  throw:univ
+]{
+   (
+     throw=null)
+   and 
+   (
+     exit_stmt_reached=false)
+
+}
+pred testing_examples_ejemploCondition1[
+  exit_stmt_reached:univ,
+  throw:univ
+]{
+   not (
+     (
+       throw=null)
+     and 
+     (
+       exit_stmt_reached=false)
+   )
+
+}
+pred precondition_testing_examples_ejemplo_wololoInt_0[
+  testing_examples_ejemplo_canarywololoInta:univ->univ,
+  testing_examples_ejemplo_canarywololoIntc:univ->univ,
+  testing_examples_ejemplo_canarywololoIntd:univ->univ,
+  throw:univ
+]{
+   equ[throw,
+      null]
+   and 
+   testing_examples_ejemplo_requires[testing_examples_ejemplo_canarywololoInta,
+                                    testing_examples_ejemplo_canarywololoIntc,
+                                    testing_examples_ejemplo_canarywololoIntd]
+
+}
+pred testing_examples_ejemploCondition5[
+  t_8:univ
+]{
+   not (
+     t_8=true)
+
+}
+pred testing_examples_ejemploCondition4[
+  t_8:univ
+]{
+   t_8=true
+
+}
+pred testing_examples_ejemplo_ensures[
+  testing_examples_ejemplo_canarywololoInta':univ->univ,
+  testing_examples_ejemplo_canarywololoIntc':univ->univ,
+  testing_examples_ejemplo_canarywololoIntd':univ->univ,
+  throw':univ
+]{
+   (
+     throw'=null)
+   implies 
+           (
+             equ[ClassFields.testing_examples_ejemplo_canarywololoInta',
+                false]
+             and 
+             equ[ClassFields.testing_examples_ejemplo_canarywololoIntc',
+                false]
+             and 
+             equ[ClassFields.testing_examples_ejemplo_canarywololoIntd',
+                false]
+           )
+
+}
 //-------------- java_lang_RuntimeException--------------//
 abstract sig java_lang_RuntimeException extends java_lang_Exception {}
 {}
@@ -333,106 +459,6 @@ one
 sig java_lang_ExceptionLit extends java_lang_Exception {}
 {}
 
-//-------------- ar_edu_itba_ayvmc_ejemplooo--------------//
-sig ar_edu_itba_ayvmc_ejemplooo extends java_lang_Object {}
-{}
-pred ar_edu_itba_ayvmc_ejemploooCondition4[
-  t_4:univ
-]{
-   t_4=true
-
-}
-pred ar_edu_itba_ayvmc_ejemplooo_requires[
-  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:univ->univ,
-  thiz:univ
-]{
-   equ[thiz.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti,
-      false]
-
-}
-pred precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
-  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti:univ->univ,
-  thiz:univ,
-  throw:univ
-]{
-   ar_edu_itba_ayvmc_ejemplooo_requires[ar_edu_itba_ayvmc_ejemplooo_canarywololoInti,
-                                       thiz]
-   and 
-   equ[throw,
-      null]
-
-}
-pred ar_edu_itba_ayvmc_ejemploooCondition5[
-  t_4:univ
-]{
-   not (
-     t_4=true)
-
-}
-pred ar_edu_itba_ayvmc_ejemploooCondition0[
-  exit_stmt_reached:univ,
-  throw:univ
-]{
-   (
-     throw=null)
-   and 
-   (
-     exit_stmt_reached=false)
-
-}
-pred ar_edu_itba_ayvmc_ejemploooCondition3[
-  thiz:univ
-]{
-   not (
-     isEmptyOrNull[thiz])
-
-}
-pred ar_edu_itba_ayvmc_ejemploooCondition1[
-  exit_stmt_reached:univ,
-  throw:univ
-]{
-   not (
-     (
-       throw=null)
-     and 
-     (
-       exit_stmt_reached=false)
-   )
-
-}
-pred ar_edu_itba_ayvmc_ejemplooo_ensures[
-  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti':univ->univ,
-  thiz':univ,
-  throw':univ
-]{
-   (
-     throw'=null)
-   implies 
-           equ[thiz'.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti',
-              false]
-
-}
-pred ar_edu_itba_ayvmc_ejemploooCondition2[
-  thiz:univ
-]{
-   isEmptyOrNull[thiz]
-
-}
-pred postcondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
-  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti':univ->univ,
-  thiz':univ,
-  throw':univ
-]{
-   ar_edu_itba_ayvmc_ejemplooo_ensures[ar_edu_itba_ayvmc_ejemplooo_canarywololoInti',
-                                      thiz',
-                                      throw']
-   and 
-   (
-     not (
-       throw'=AssertionFailureLit)
-   )
-
-}
 //-------------- java_lang_NullPointerException--------------//
 abstract one sig java_lang_NullPointerException extends java_lang_RuntimeException {}
 {}
@@ -442,7 +468,7 @@ abstract one sig java_lang_NullPointerException extends java_lang_RuntimeExcepti
 one
 sig java_lang_NullPointerExceptionLit extends java_lang_NullPointerException {}
 {}
-check check_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0  for 0 but  1 java_lang_Object, exactly 1 ar_edu_itba_ayvmc_ejemplooo,4 int
+check check_testing_examples_ejemplo_wololoInt_0  for 0 but  exactly 1 testing_examples_ejemplo, 0 java_lang_Object,4 int
 
 
 
@@ -551,18 +577,24 @@ pred havocVariable[
 }
 
 
-pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
-  thiz_0: ar_edu_itba_ayvmc_ejemplooo,
+pred testing_examples_ejemplo_wololoInt_0[
   throw_1: java_lang_Throwable + null,
   throw_2: java_lang_Throwable + null,
-  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0: ( ar_edu_itba_ayvmc_ejemplooo ) -> one ( boolean ),
-  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1: ( ar_edu_itba_ayvmc_ejemplooo ) -> one ( boolean ),
-  var_4_i_0: Int,
-  var_4_i_1: Int,
-  var_4_i_2: Int,
+  return_0: Int,
+  return_1: Int,
+  testing_examples_ejemplo_canarywololoIntc_0: ( ClassFields ) -> one ( boolean ),
+  testing_examples_ejemplo_canarywololoIntc_1: ( ClassFields ) -> one ( boolean ),
+  var_9_c_0: Int,
+  var_9_c_1: Int,
+  var_8_a_0: Int,
+  var_8_a_1: Int,
+  var_8_a_2: Int,
   exit_stmt_reached_1: boolean,
-  t_4_0: boolean,
-  t_4_1: boolean
+  exit_stmt_reached_2: boolean,
+  var_10_d_0: Int,
+  var_10_d_1: Int,
+  t_8_0: boolean,
+  t_8_1: boolean
 ]{
   TruePred[]
   and 
@@ -580,35 +612,87 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
   and 
   (
     (
-      ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached_1,
-                                           throw_1]
+      testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                        throw_1]
       and 
       (
-        var_4_i_1=0)
+        var_8_a_1=1)
     )
     or 
     (
       (
         not (
-          ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached_1,
-                                               throw_1]
+          testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                            throw_1]
         )
       )
       and 
       TruePred[]
       and 
       (
-        var_4_i_0=var_4_i_1)
+        var_8_a_0=var_8_a_1)
+    )
+  )
+  and 
+  TruePred[]
+  and 
+  (
+    (
+      testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                        throw_1]
+      and 
+      (
+        var_9_c_1=1)
+    )
+    or 
+    (
+      (
+        not (
+          testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                            throw_1]
+        )
+      )
+      and 
+      TruePred[]
+      and 
+      (
+        var_9_c_0=var_9_c_1)
+    )
+  )
+  and 
+  TruePred[]
+  and 
+  (
+    (
+      testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                        throw_1]
+      and 
+      (
+        var_10_d_1=0)
+    )
+    or 
+    (
+      (
+        not (
+          testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                            throw_1]
+        )
+      )
+      and 
+      TruePred[]
+      and 
+      (
+        var_10_d_0=var_10_d_1)
     )
   )
   and 
   (
     (
-      ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached_1,
-                                           throw_1]
+      testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                        throw_1]
       and 
       (
-        t_4_1=(equ[var_4_i_1,
+        t_8_1=(equ[var_9_c_1,
            0]=>(true)else(false))
       )
     )
@@ -616,51 +700,51 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
     (
       (
         not (
-          ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached_1,
-                                               throw_1]
+          testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                            throw_1]
         )
       )
       and 
       TruePred[]
       and 
       (
-        t_4_0=t_4_1)
+        t_8_0=t_8_1)
     )
   )
   and 
   (
     (
-      ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached_1,
-                                           throw_1]
+      testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                        throw_1]
       and 
       (
         (
-          ar_edu_itba_ayvmc_ejemploooCondition4[t_4_1]
+          testing_examples_ejemploCondition4[t_8_1]
           and 
           (
             (
-              ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached_1,
-                                                   throw_1]
+              testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                                throw_1]
               and 
               (
                 (
-                  ar_edu_itba_ayvmc_ejemploooCondition2[thiz_0]
+                  testing_examples_ejemploCondition2[]
                   and 
                   (
                     throw_2=java_lang_NullPointerExceptionLit)
                   and 
                   (
-                    ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0=ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1)
+                    testing_examples_ejemplo_canarywololoIntc_0=testing_examples_ejemplo_canarywololoIntc_1)
                 )
                 or 
                 (
                   (
                     not (
-                      ar_edu_itba_ayvmc_ejemploooCondition2[thiz_0])
+                      testing_examples_ejemploCondition2[])
                   )
                   and 
                   (
-                    ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1=(ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0)++((thiz_0)->(true)))
+                    testing_examples_ejemplo_canarywololoIntc_1=(testing_examples_ejemplo_canarywololoIntc_0)++((ClassFields)->(true)))
                   and 
                   (
                     throw_1=throw_2)
@@ -671,15 +755,15 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
             (
               (
                 not (
-                  ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached_1,
-                                                       throw_1]
+                  testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                                    throw_1]
                 )
               )
               and 
               TruePred[]
               and 
               (
-                ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0=ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1)
+                testing_examples_ejemplo_canarywololoIntc_0=testing_examples_ejemplo_canarywololoIntc_1)
               and 
               (
                 throw_1=throw_2)
@@ -687,41 +771,41 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
           )
           and 
           (
-            var_4_i_1=var_4_i_2)
+            var_8_a_1=var_8_a_2)
         )
         or 
         (
           (
             not (
-              ar_edu_itba_ayvmc_ejemploooCondition4[t_4_1])
+              testing_examples_ejemploCondition4[t_8_1])
           )
           and 
           (
             (
-              ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached_1,
-                                                   throw_1]
+              testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                                throw_1]
               and 
               (
-                var_4_i_2=1)
+                var_8_a_2=div[var_8_a_1,var_9_c_1])
             )
             or 
             (
               (
                 not (
-                  ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached_1,
-                                                       throw_1]
+                  testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                                    throw_1]
                 )
               )
               and 
               TruePred[]
               and 
               (
-                var_4_i_1=var_4_i_2)
+                var_8_a_1=var_8_a_2)
             )
           )
           and 
           (
-            ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0=ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1)
+            testing_examples_ejemplo_canarywololoIntc_0=testing_examples_ejemplo_canarywololoIntc_1)
           and 
           (
             throw_1=throw_2)
@@ -732,21 +816,51 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
     (
       (
         not (
-          ar_edu_itba_ayvmc_ejemploooCondition0[exit_stmt_reached_1,
-                                               throw_1]
+          testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                            throw_1]
         )
       )
       and 
       TruePred[]
       and 
       (
-        var_4_i_1=var_4_i_2)
+        var_8_a_1=var_8_a_2)
       and 
       (
-        ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0=ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1)
+        testing_examples_ejemplo_canarywololoIntc_0=testing_examples_ejemplo_canarywololoIntc_1)
       and 
       (
         throw_1=throw_2)
+    )
+  )
+  and 
+  (
+    (
+      testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                        throw_2]
+      and 
+      (
+        return_1=1)
+      and 
+      (
+        exit_stmt_reached_2=true)
+    )
+    or 
+    (
+      (
+        not (
+          testing_examples_ejemploCondition0[exit_stmt_reached_1,
+                                            throw_2]
+        )
+      )
+      and 
+      TruePred[]
+      and 
+      (
+        return_0=return_1)
+      and 
+      (
+        exit_stmt_reached_1=exit_stmt_reached_2)
     )
   )
   and 
@@ -755,15 +869,23 @@ pred ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[
 }
 
 one sig QF {
-  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0: ( ar_edu_itba_ayvmc_ejemplooo ) -> one ( boolean ),
-  ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1: ( ar_edu_itba_ayvmc_ejemplooo ) -> one ( boolean ),
   l0_exit_stmt_reached_1: boolean,
-  l0_t_4_0: boolean,
-  l0_t_4_1: boolean,
-  l0_var_4_i_0: Int,
-  l0_var_4_i_1: Int,
-  l0_var_4_i_2: Int,
-  thiz_0: ar_edu_itba_ayvmc_ejemplooo,
+  l0_exit_stmt_reached_2: boolean,
+  l0_t_8_0: boolean,
+  l0_t_8_1: boolean,
+  l0_var_10_d_0: Int,
+  l0_var_10_d_1: Int,
+  l0_var_8_a_0: Int,
+  l0_var_8_a_1: Int,
+  l0_var_8_a_2: Int,
+  l0_var_9_c_0: Int,
+  l0_var_9_c_1: Int,
+  return_0: Int,
+  return_1: Int,
+  testing_examples_ejemplo_canarywololoInta_0: ( ClassFields ) -> one ( boolean ),
+  testing_examples_ejemplo_canarywololoIntc_0: ( ClassFields ) -> one ( boolean ),
+  testing_examples_ejemplo_canarywololoIntc_1: ( ClassFields ) -> one ( boolean ),
+  testing_examples_ejemplo_canarywololoIntd_0: ( ClassFields ) -> one ( boolean ),
   throw_0: java_lang_Throwable + null,
   throw_1: java_lang_Throwable + null,
   throw_2: java_lang_Throwable + null
@@ -771,29 +893,37 @@ one sig QF {
 
 
 fact {
-  precondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[QF.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0,
-                                                      QF.thiz_0,
-                                                      QF.throw_0]
+  precondition_testing_examples_ejemplo_wololoInt_0[QF.testing_examples_ejemplo_canarywololoInta_0,
+                                                   QF.testing_examples_ejemplo_canarywololoIntc_0,
+                                                   QF.testing_examples_ejemplo_canarywololoIntd_0,
+                                                   QF.throw_0]
 
 }
 
 fact {
-  ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[QF.thiz_0,
-                                         QF.throw_1,
-                                         QF.throw_2,
-                                         QF.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_0,
-                                         QF.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1,
-                                         QF.l0_var_4_i_0,
-                                         QF.l0_var_4_i_1,
-                                         QF.l0_var_4_i_2,
-                                         QF.l0_exit_stmt_reached_1,
-                                         QF.l0_t_4_0,
-                                         QF.l0_t_4_1]
+  testing_examples_ejemplo_wololoInt_0[QF.throw_1,
+                                      QF.throw_2,
+                                      QF.return_0,
+                                      QF.return_1,
+                                      QF.testing_examples_ejemplo_canarywololoIntc_0,
+                                      QF.testing_examples_ejemplo_canarywololoIntc_1,
+                                      QF.l0_var_9_c_0,
+                                      QF.l0_var_9_c_1,
+                                      QF.l0_var_8_a_0,
+                                      QF.l0_var_8_a_1,
+                                      QF.l0_var_8_a_2,
+                                      QF.l0_exit_stmt_reached_1,
+                                      QF.l0_exit_stmt_reached_2,
+                                      QF.l0_var_10_d_0,
+                                      QF.l0_var_10_d_1,
+                                      QF.l0_t_8_0,
+                                      QF.l0_t_8_1]
 
 }
 
-assert check_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0{
-  postcondition_ar_edu_itba_ayvmc_ejemplooo_wololoInt_0[QF.ar_edu_itba_ayvmc_ejemplooo_canarywololoInti_1,
-                                                       QF.thiz_0,
-                                                       QF.throw_2]
+assert check_testing_examples_ejemplo_wololoInt_0{
+  postcondition_testing_examples_ejemplo_wololoInt_0[QF.testing_examples_ejemplo_canarywololoInta_0,
+                                                    QF.testing_examples_ejemplo_canarywololoIntc_1,
+                                                    QF.testing_examples_ejemplo_canarywololoIntd_0,
+                                                    QF.throw_2]
 }

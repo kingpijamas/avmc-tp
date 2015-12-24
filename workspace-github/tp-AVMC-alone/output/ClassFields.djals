@@ -2,6 +2,9 @@
 module ClassFields
 one sig ClassFields {}
 {}
-field java_lang_Boolean_TRUE:(ClassFields)->one(java_lang_Boolean) {}
-field java_lang_Boolean_FALSE:(ClassFields)->one(java_lang_Boolean) {}
+field testing_examples_ejemplo2_canarywololoIntas:(ClassFields)->one(boolean) {}
+field testing_examples_ejemplo2_canarywololoIntbs:(ClassFields)->one(boolean) {}
+field testing_examples_ejemplo_canarywololoIntd:(ClassFields)->one(boolean) {}
+field testing_examples_ejemplo_canarywololoIntc:(ClassFields)->one(boolean) {}
+field testing_examples_ejemplo_canarywololoInta:(ClassFields)->one(boolean) {}
 

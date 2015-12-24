@@ -7,18 +7,14 @@ public class ejemplo2 {
     
     @Check("Arithmetic")
     public void wololoInt(){
-        Integer i= null;
-        i.intValue();
+        int as=1;
+        int bs=1;
+        if(as==7){
+            as++;
+        }
+        as=as / bs;        
         
     }
     
-    @Check("Arithmetic")
-    public static void main(String[] args) {
-        float as=1.0f;
-        float bs=0.0f;
-        if(as==10){
-            as++;
-        }
-        as=as / bs;
-    }
+   
 }

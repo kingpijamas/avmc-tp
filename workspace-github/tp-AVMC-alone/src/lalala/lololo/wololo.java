@@ -3,7 +3,7 @@ package lalala.lololo;
 import ar.edu.itba.avmc.tp.annotations.Check;
 
 public class wololo {
-    @Check("Arithmetic")
+   
     public static int wololoInt(String foo){
         return 1;
     }

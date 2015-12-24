@@ -5,45 +5,64 @@ package testing.examples;
 
 public class ejemplo2 extends java.lang.Object {
 
+  public static boolean canarywololoIntbs = false;
+  public static boolean canarywololoIntas = false;
 
+  /*@ 
+    @ requires testing.examples.ejemplo2.canarywololoIntas  ==  false && testing.examples.ejemplo2.canarywololoIntbs  ==  false;
+    @ ensures testing.examples.ejemplo2.canarywololoIntas  ==  false && testing.examples.ejemplo2.canarywololoIntbs  ==  false;
+    @*/
   public void wololoInt() {
     {
-      int t_1;
-      java.lang.Integer var_1_i = ((java.lang.Integer)(null));
+      boolean t_5;
+      boolean t_6;
+      int var_3_as = 1;
+      int var_4_bs = 1;
 
-      t_1 = var_1_i.intValue();
-    }
-  }
+      t_5 = var_3_as  ==  7;
 
-
-  public static void main(java.lang.String[] args) {
-    java.lang.String[] param_args_0;
-
-    param_args_0 = args;
-    {
-      boolean t_3;
-      float var_2_as = 1.0F;
-      float var_3_bs = +0.0F;
-
-      t_3 = var_2_as  ==  10.0F;
-
-      if (t_3) {
+      if (t_5) {
         {
           {
             {
               {
                 {
-                  float t_2;
+                  int t_4;
 
-                  t_2 = var_2_as;
-                  var_2_as = var_2_as + (byte)1;
+                  t_4 = var_3_as;
+                  var_3_as = var_3_as + (byte)1;
                 }
               }
             }
           }
         }
       }
-      var_2_as = var_2_as / var_3_bs;
+      t_6 = var_4_bs  ==  0;
+      if (t_6) {
+        {
+          {
+            {
+              {
+                {
+                  testing.examples.ejemplo2.canarywololoIntbs = true;
+                }
+              }
+            }
+          }
+        }
+      } else {
+        {
+          {
+            {
+              {
+                {
+                  var_3_as = var_3_as / var_4_bs;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 

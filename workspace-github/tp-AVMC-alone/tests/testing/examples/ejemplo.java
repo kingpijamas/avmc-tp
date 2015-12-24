@@ -4,14 +4,22 @@ public class ejemplo {
     
     public static boolean canarywololoIntd = false;
 
-	/*@ requires true && canarywololoIntd == false;
-	@ ensures canarywololoIntd == false;@*/
-	 public static int wololoInt(String foo){
-        float a=1.0f;
-        float c=0.0f;
+	public static boolean canarywololoIntc = false;
+
+	public static boolean canarywololoInta = false;
+
+	/*@ requires true && canarywololoInta == false && canarywololoIntc == false && canarywololoIntd == false;
+	@ ensures canarywololoInta == false && canarywololoIntc == false && canarywololoIntd == false;@*/
+	 public static int wololoInt(){
+        int a=1;
+        int c=1;
         int d=0;
         
-        a=a / c;
+        if (c == 0) {
+			canarywololoIntc = true;
+		} else {
+			a = a / c;
+		}
         
         return 1;
     }
