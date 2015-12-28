@@ -33,6 +33,7 @@ import java.util.Arrays;
 import ar.edu.taco.regresion.CollectionTestBase;
 import ar.edu.taco.utils.FileUtils;
 import ar.uba.dc.rfm.dynalloy.visualization.VizException;
+import junit.framework.AssertionFailedError;
 import lalala.lololo.MainTP;
 import roops.core.objects.junit.ArrayList;
 
@@ -91,8 +92,9 @@ public class ejemploooTest extends CollectionTestBase {
 
 	@Test
 	public void test_addTest() throws VizException {
+	    startTestInformation();
 		setConfigKeyRelevantClasses(className);
-        setConfigKeyRelevancyAnalysis(true);
+		setConfigKeyRelevancyAnalysis(true);
         setConfigKeyCheckNullDereference(true);
         setConfigKeyUseJavaArithmetic(false);
         setConfigKeyObjectScope(3);
@@ -102,7 +104,20 @@ public class ejemploooTest extends CollectionTestBase {
         setConfigKeyGenerateUnitTestCase(true);
 		setConfigKeyTypeScopes(className+":1"); //te dice cuantas instancias podes tener como maximo (arboles de hasta cinco nodos)
 		setConfigKeyLoopUnroll(1); 
-        runAndCheck(GENERIC_PROPERTIES,methodName+"_0",false);
+		boolean ok= false;
+		try{
+		    runAndCheck(GENERIC_PROPERTIES,methodName+"_0",false);
+		    ok = true;
+		}
+		catch(AssertionFailedError failed){
+		    failedTestInformation();
+		}
+		finally{
+		    if(ok){
+		        passedTestInformation();
+		    }
+		}
+
 	} 
 	
 	/*public void test_removeTest() throws VizException {
@@ -134,4 +149,25 @@ public class ejemploooTest extends CollectionTestBase {
         runAndCheck(GENERIC_PROPERTIES,"lookup_0",false);
     }
     */
+	
+	private void startTestInformation(){
+	    
+	    System.out.println("\n-------------------------");
+	    System.out.println("NEW CHECK");
+	    System.out.println("CLASS NAME: "+className+" \t METHOD NAME: "+methodName);
+	}
+	
+	private void failedTestInformation(){
+	    System.out.println();
+	    System.out.println("POSSIBILITY OF ERROR IN ");
+        System.out.println("CLASS NAME: "+className+" \t METHOD NAME: "+methodName);
+        System.out.println("\n-------------------------");
+	}
+	
+private void passedTestInformation(){
+        System.out.println();
+        System.out.println("NO ERROR IN ");
+        System.out.println("CLASS NAME: "+className+" \t METHOD NAME: "+methodName);
+        System.out.println("\n-------------------------");
+    }
 }

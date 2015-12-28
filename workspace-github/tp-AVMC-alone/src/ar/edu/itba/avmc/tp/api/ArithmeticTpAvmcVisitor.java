@@ -40,8 +40,7 @@ public class ArithmeticTpAvmcVisitor extends TpAvmcVisitor{
     
     @Override
     public boolean visit(InfixExpression node) {
-        System.out.println("--------");
-        System.out.println("Usage of expresion '" + node.toString() + "' at line " + unit.getLineNumber(node.getStartPosition()));
+        //System.out.println("Usage of expresion '" + node.toString() + "' at line " + unit.getLineNumber(node.getStartPosition()));
         List<String> canariesNames = denominatorVariables(node.toString());
         if(!canariesNames.isEmpty()){
                

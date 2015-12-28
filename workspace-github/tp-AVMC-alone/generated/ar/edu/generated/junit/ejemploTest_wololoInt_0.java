@@ -125,11 +125,14 @@ public class ejemploTest_wololoInt_0 {
     @Test
     public void testwololoInt_0() {
         testing.examples.ejemplo instance = null;
+        int c = 0;
+        int d = 5;
+        // Parameter Initialization
         
         // Method Invocation
         Method method = getAccessibleMethod("testing.examples.ejemplo", "wololoInt", true);
         try {
-            method.invoke(instance, null);
+            method.invoke(instance, new Object[]{c, d});
         } catch (Exception e) {
             e.printStackTrace();
         } 

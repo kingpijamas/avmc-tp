@@ -43,12 +43,16 @@ public class MainTP {
       
       
       try{
+          
           org.junit.runner.JUnitCore.main("ar.edu.itba.ayvmc.ejemploooTest");
       }
       catch(Exception e){
           e.printStackTrace();
       }
-
+      catch(Error error){
+          System.out.println("Hubo un error!!!");
+    
+      }
 
    }
     

@@ -89,9 +89,9 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     @Override
     public void endVisit(MethodDeclaration node) {
         
-        System.out.println("------------");
-        System.out.println("EndVisit de method"+ node.getName() + "with body '" + node.getBody() + "' at line"
-                + unit.getLineNumber(node.getStartPosition()));
+        
+        //System.out.println("EndVisit de method"+ node.getName() + "with body '" + node.getBody() + "' at line"
+        //        + unit.getLineNumber(node.getStartPosition()));
         
         //MethodDeclaration newNode =(MethodDeclaration)ASTNode.copySubtree(ast, node);
         
@@ -145,8 +145,8 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
                 List<String> methodCanaries =this.methodsNamesMap.get(methodsNames.peek());
                 methodCanaries.add(canaryName);
                 
-                System.out.println("Declaration of '" + name +" with type "+ node.getType() + "' at line"
-                        + unit.getLineNumber(name.getStartPosition()));
+                //System.out.println("Declaration of '" + name +" with type "+ node.getType() + "' at line"
+                //        + unit.getLineNumber(name.getStartPosition()));
                 
             }
             
@@ -155,9 +155,25 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
         return false; // do not continue 
     }
   
+    public boolean visit(SingleVariableDeclaration node){
+        System.out.println("parameter: "+node.toString());
+        if(isInScope(node.getType())){
+           SimpleName name = node.getName();
+           String canaryName = name.getIdentifier();
+                
+                // como antes pasa por el visit de MethodDeclaration, seguro methodCanaries no va a ser null 
+                List<String> methodCanaries =this.methodsNamesMap.get(methodsNames.peek());
+                methodCanaries.add(canaryName);
+                
+                
+        }    
+        
+        
+        return false;
+    }
+    
     @Override
     public boolean visit(TypeDeclaration node) {
-        System.out.println("lalalalla------####");
         ListRewrite listRewrite = rewrite.getListRewrite(node, TypeDeclaration.BODY_DECLARATIONS_PROPERTY);
         Set<String> methods=methodsNamesMap.keySet();
         Iterator<String> it = methods.iterator();
@@ -177,8 +193,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     }
     
     public boolean visit(ImportDeclaration node) {
-        System.out.println("DECLARATION");
-        System.out.println(node.getName());
+        
         String name = node.getName().toString();
         if(name.equals("ar.edu.itba.avmc.tp.annotations.Check")){
             rewrite.replace(node, null, null);            

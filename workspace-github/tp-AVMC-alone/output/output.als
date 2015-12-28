@@ -333,13 +333,13 @@ pred testing_examples_ejemplo_requires[
   testing_examples_ejemplo_canarywololoIntc:univ->univ,
   testing_examples_ejemplo_canarywololoIntd:univ->univ
 ]{
-   equ[ClassFields.testing_examples_ejemplo_canarywololoInta,
-      false]
-   and 
    equ[ClassFields.testing_examples_ejemplo_canarywololoIntc,
       false]
    and 
    equ[ClassFields.testing_examples_ejemplo_canarywololoIntd,
+      false]
+   and 
+   equ[ClassFields.testing_examples_ejemplo_canarywololoInta,
       false]
 
 }
@@ -421,13 +421,13 @@ pred testing_examples_ejemplo_ensures[
      throw'=null)
    implies 
            (
-             equ[ClassFields.testing_examples_ejemplo_canarywololoInta',
-                false]
-             and 
              equ[ClassFields.testing_examples_ejemplo_canarywololoIntc',
                 false]
              and 
              equ[ClassFields.testing_examples_ejemplo_canarywololoIntd',
+                false]
+             and 
+             equ[ClassFields.testing_examples_ejemplo_canarywololoInta',
                 false]
            )
 
@@ -582,19 +582,21 @@ pred testing_examples_ejemplo_wololoInt_0[
   throw_2: java_lang_Throwable + null,
   return_0: Int,
   return_1: Int,
+  c_0: Int,
+  d_0: Int,
   testing_examples_ejemplo_canarywololoIntc_0: ( ClassFields ) -> one ( boolean ),
   testing_examples_ejemplo_canarywololoIntc_1: ( ClassFields ) -> one ( boolean ),
-  var_9_c_0: Int,
-  var_9_c_1: Int,
-  var_8_a_0: Int,
-  var_8_a_1: Int,
-  var_8_a_2: Int,
   exit_stmt_reached_1: boolean,
   exit_stmt_reached_2: boolean,
-  var_10_d_0: Int,
-  var_10_d_1: Int,
+  param_c_2_0: Int,
+  param_c_2_1: Int,
+  var_6_a_0: Int,
+  var_6_a_1: Int,
   t_8_0: boolean,
-  t_8_1: boolean
+  t_8_1: boolean,
+  param_d_3_0: Int,
+  param_d_3_1: Int,
+  param_d_3_2: Int
 ]{
   TruePred[]
   and 
@@ -608,15 +610,13 @@ pred testing_examples_ejemplo_wololoInt_0[
   and 
   TruePred[]
   and 
-  TruePred[]
-  and 
   (
     (
       testing_examples_ejemploCondition0[exit_stmt_reached_1,
                                         throw_1]
       and 
       (
-        var_8_a_1=1)
+        param_c_2_1=c_0)
     )
     or 
     (
@@ -630,7 +630,7 @@ pred testing_examples_ejemplo_wololoInt_0[
       TruePred[]
       and 
       (
-        var_8_a_0=var_8_a_1)
+        param_c_2_0=param_c_2_1)
     )
   )
   and 
@@ -642,7 +642,7 @@ pred testing_examples_ejemplo_wololoInt_0[
                                         throw_1]
       and 
       (
-        var_9_c_1=1)
+        param_d_3_1=d_0)
     )
     or 
     (
@@ -656,9 +656,11 @@ pred testing_examples_ejemplo_wololoInt_0[
       TruePred[]
       and 
       (
-        var_9_c_0=var_9_c_1)
+        param_d_3_0=param_d_3_1)
     )
   )
+  and 
+  TruePred[]
   and 
   TruePred[]
   and 
@@ -668,7 +670,7 @@ pred testing_examples_ejemplo_wololoInt_0[
                                         throw_1]
       and 
       (
-        var_10_d_1=0)
+        var_6_a_1=1)
     )
     or 
     (
@@ -682,7 +684,7 @@ pred testing_examples_ejemplo_wololoInt_0[
       TruePred[]
       and 
       (
-        var_10_d_0=var_10_d_1)
+        var_6_a_0=var_6_a_1)
     )
   )
   and 
@@ -692,7 +694,7 @@ pred testing_examples_ejemplo_wololoInt_0[
                                         throw_1]
       and 
       (
-        t_8_1=(equ[var_9_c_1,
+        t_8_1=(equ[param_c_2_1,
            0]=>(true)else(false))
       )
     )
@@ -771,7 +773,7 @@ pred testing_examples_ejemplo_wololoInt_0[
           )
           and 
           (
-            var_8_a_1=var_8_a_2)
+            param_d_3_1=param_d_3_2)
         )
         or 
         (
@@ -786,7 +788,7 @@ pred testing_examples_ejemplo_wololoInt_0[
                                                 throw_1]
               and 
               (
-                var_8_a_2=div[var_8_a_1,var_9_c_1])
+                param_d_3_2=div[param_d_3_1,param_c_2_1])
             )
             or 
             (
@@ -800,7 +802,7 @@ pred testing_examples_ejemplo_wololoInt_0[
               TruePred[]
               and 
               (
-                var_8_a_1=var_8_a_2)
+                param_d_3_1=param_d_3_2)
             )
           )
           and 
@@ -824,10 +826,10 @@ pred testing_examples_ejemplo_wololoInt_0[
       TruePred[]
       and 
       (
-        var_8_a_1=var_8_a_2)
+        testing_examples_ejemplo_canarywololoIntc_0=testing_examples_ejemplo_canarywololoIntc_1)
       and 
       (
-        testing_examples_ejemplo_canarywololoIntc_0=testing_examples_ejemplo_canarywololoIntc_1)
+        param_d_3_1=param_d_3_2)
       and 
       (
         throw_1=throw_2)
@@ -869,17 +871,19 @@ pred testing_examples_ejemplo_wololoInt_0[
 }
 
 one sig QF {
+  c_0: Int,
+  d_0: Int,
   l0_exit_stmt_reached_1: boolean,
   l0_exit_stmt_reached_2: boolean,
+  l0_param_c_2_0: Int,
+  l0_param_c_2_1: Int,
+  l0_param_d_3_0: Int,
+  l0_param_d_3_1: Int,
+  l0_param_d_3_2: Int,
   l0_t_8_0: boolean,
   l0_t_8_1: boolean,
-  l0_var_10_d_0: Int,
-  l0_var_10_d_1: Int,
-  l0_var_8_a_0: Int,
-  l0_var_8_a_1: Int,
-  l0_var_8_a_2: Int,
-  l0_var_9_c_0: Int,
-  l0_var_9_c_1: Int,
+  l0_var_6_a_0: Int,
+  l0_var_6_a_1: Int,
   return_0: Int,
   return_1: Int,
   testing_examples_ejemplo_canarywololoInta_0: ( ClassFields ) -> one ( boolean ),
@@ -905,19 +909,21 @@ fact {
                                       QF.throw_2,
                                       QF.return_0,
                                       QF.return_1,
+                                      QF.c_0,
+                                      QF.d_0,
                                       QF.testing_examples_ejemplo_canarywololoIntc_0,
                                       QF.testing_examples_ejemplo_canarywololoIntc_1,
-                                      QF.l0_var_9_c_0,
-                                      QF.l0_var_9_c_1,
-                                      QF.l0_var_8_a_0,
-                                      QF.l0_var_8_a_1,
-                                      QF.l0_var_8_a_2,
                                       QF.l0_exit_stmt_reached_1,
                                       QF.l0_exit_stmt_reached_2,
-                                      QF.l0_var_10_d_0,
-                                      QF.l0_var_10_d_1,
+                                      QF.l0_param_c_2_0,
+                                      QF.l0_param_c_2_1,
+                                      QF.l0_var_6_a_0,
+                                      QF.l0_var_6_a_1,
                                       QF.l0_t_8_0,
-                                      QF.l0_t_8_1]
+                                      QF.l0_t_8_1,
+                                      QF.l0_param_d_3_0,
+                                      QF.l0_param_d_3_1,
+                                      QF.l0_param_d_3_2]
 
 }
 

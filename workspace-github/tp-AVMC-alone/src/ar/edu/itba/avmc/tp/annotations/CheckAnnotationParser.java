@@ -37,7 +37,7 @@ public class CheckAnnotationParser {
              String info = annotation.value();
                   
              if (ARITHMETIC_STRING.equals(info)) {
-                 System.out.println("annotation arithmetic exception");
+                 //System.out.println("annotation arithmetic exception");
                  if(check_type==null){
                      check_type = CheckAnnotationValues.ARITHMETIC;
                  }
@@ -46,7 +46,7 @@ public class CheckAnnotationParser {
                  }
              }
              else if (NULLPOINTER_STRING.equals(info)){
-                 System.out.println("annotation nullpointer exception");
+                 //System.out.println("annotation nullpointer exception");
                  if(check_type==null){
                      check_type = CheckAnnotationValues.NULL_POINTER;
                  }

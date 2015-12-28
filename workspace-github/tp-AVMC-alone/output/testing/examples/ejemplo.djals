@@ -23,18 +23,20 @@ Implementation
 
 program testing_examples_ejemplo::wololoInt[
   var throw:java_lang_Throwable+null,
-  var return:Int] 
+  var return:Int,
+  var c:Int,
+  var d:Int] 
 Specification 
 {
   SpecCase #0 {
    requires {
-      equ[ClassFields.testing_examples_ejemplo_canarywololoInta,
-         false]
-      and 
       equ[ClassFields.testing_examples_ejemplo_canarywololoIntc,
          false]
       and 
       equ[ClassFields.testing_examples_ejemplo_canarywololoIntd,
+         false]
+      and 
+      equ[ClassFields.testing_examples_ejemplo_canarywololoInta,
          false]
    }
    
@@ -43,13 +45,13 @@ Specification
         throw'=null)
       implies 
               (
-                equ[ClassFields.testing_examples_ejemplo_canarywololoInta',
-                   false]
-                and 
                 equ[ClassFields.testing_examples_ejemplo_canarywololoIntc',
                    false]
                 and 
                 equ[ClassFields.testing_examples_ejemplo_canarywololoIntd',
+                   false]
+                and 
+                equ[ClassFields.testing_examples_ejemplo_canarywololoInta',
                    false]
               )
    }
@@ -67,34 +69,34 @@ Implementation
          var exit_stmt_reached:boolean;
          exit_stmt_reached:=false;
          {
+            var param_c_2:Int;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               param_c_2:=c;
+            } else {
+               skip;
+            };
+            var param_d_3:Int;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               param_d_3:=d;
+            } else {
+               skip;
+            };
             var t_8:boolean;
-            var var_8_a:Int;
+            var var_6_a:Int;
             if (
               throw=null)
             and 
             (
               exit_stmt_reached=false){
-               var_8_a:=1;
-            } else {
-               skip;
-            };
-            var var_9_c:Int;
-            if (
-              throw=null)
-            and 
-            (
-              exit_stmt_reached=false){
-               var_9_c:=1;
-            } else {
-               skip;
-            };
-            var var_10_d:Int;
-            if (
-              throw=null)
-            and 
-            (
-              exit_stmt_reached=false){
-               var_10_d:=0;
+               var_6_a:=1;
             } else {
                skip;
             };
@@ -103,7 +105,7 @@ Implementation
             and 
             (
               exit_stmt_reached=false){
-               t_8:=(equ[var_9_c,
+               t_8:=(equ[param_c_2,
                   0]=>(true)else(false));
             } else {
                skip;
@@ -133,7 +135,7 @@ Implementation
                   and 
                   (
                     exit_stmt_reached=false){
-                     var_8_a:=div[var_8_a,var_9_c];
+                     param_d_3:=div[param_d_3,param_c_2];
                   } else {
                      skip;
                   };

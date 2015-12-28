@@ -5,22 +5,26 @@ package testing.examples;
 
 public class ejemplo extends java.lang.Object {
 
+  public static boolean canarywololoInta = false;
   public static boolean canarywololoIntd = false;
   public static boolean canarywololoIntc = false;
-  public static boolean canarywololoInta = false;
 
   /*@ 
-    @ requires testing.examples.ejemplo.canarywololoInta  ==  false && testing.examples.ejemplo.canarywololoIntc  ==  false && testing.examples.ejemplo.canarywololoIntd  ==  false;
-    @ ensures testing.examples.ejemplo.canarywololoInta  ==  false && testing.examples.ejemplo.canarywololoIntc  ==  false && testing.examples.ejemplo.canarywololoIntd  ==  false;
+    @ requires testing.examples.ejemplo.canarywololoIntc  ==  false && testing.examples.ejemplo.canarywololoIntd  ==  false && testing.examples.ejemplo.canarywololoInta  ==  false;
+    @ ensures testing.examples.ejemplo.canarywololoIntc  ==  false && testing.examples.ejemplo.canarywololoIntd  ==  false && testing.examples.ejemplo.canarywololoInta  ==  false;
     @*/
-  public static int wololoInt() {
+  public static int wololoInt(int c, int d) {
+    int param_c_2;
+
+    param_c_2 = c;
+    int param_d_3;
+
+    param_d_3 = d;
     {
       boolean t_8;
-      int var_8_a = 1;
-      int var_9_c = 1;
-      int var_10_d = 0;
+      int var_6_a = 1;
 
-      t_8 = var_9_c  ==  0;
+      t_8 = param_c_2  ==  0;
       if (t_8) {
         {
           {
@@ -39,7 +43,7 @@ public class ejemplo extends java.lang.Object {
             {
               {
                 {
-                  var_8_a = var_8_a / var_9_c;
+                  param_d_3 = param_d_3 / param_c_2;
                 }
               }
             }

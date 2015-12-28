@@ -5,12 +5,12 @@ import ar.edu.itba.avmc.tp.annotations.Check;
 public class ejemplo {
     
     @Check("Arithmetic")
-    public static int wololoInt(){
+    public static int wololoInt(int c, int d){
         int a=1;
-        int c=1;
-        int d=0;
+        //int c=0;
+        //int d=0;
         
-        a=a / c;
+        d=d / c;
         
         return 1;
     }

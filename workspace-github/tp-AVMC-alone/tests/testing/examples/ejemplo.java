@@ -2,23 +2,23 @@ package testing.examples;
 
 public class ejemplo {
     
-    public static boolean canarywololoIntd = false;
+    public static boolean canarywololoInta = false;
+
+	public static boolean canarywololoIntd = false;
 
 	public static boolean canarywololoIntc = false;
 
-	public static boolean canarywololoInta = false;
-
-	/*@ requires true && canarywololoInta == false && canarywololoIntc == false && canarywololoIntd == false;
-	@ ensures canarywololoInta == false && canarywololoIntc == false && canarywololoIntd == false;@*/
-	 public static int wololoInt(){
+	/*@ requires true && canarywololoIntc == false && canarywololoIntd == false && canarywololoInta == false;
+	@ ensures canarywololoIntc == false && canarywololoIntd == false && canarywololoInta == false;@*/
+	 public static int wololoInt(int c, int d){
         int a=1;
-        int c=1;
-        int d=0;
+        //int c=0;
+        //int d=0;
         
         if (c == 0) {
 			canarywololoIntc = true;
 		} else {
-			a = a / c;
+			d = d / c;
 		}
         
         return 1;

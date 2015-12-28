@@ -31,7 +31,6 @@ INDEX VERSION 1.127+/Users/teresa/Documents/AVMC/avmc-tp/workspace-github/.metad
 3302703152.index
 2176056017.index
 3928392581.index
-95572776.index
 1833648217.index
 3424231407.index
 30837572.index
