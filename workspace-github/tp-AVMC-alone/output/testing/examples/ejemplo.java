@@ -14,18 +14,18 @@ public class ejemplo extends java.lang.Object {
     @ ensures testing.examples.ejemplo.canarywololoIntc  ==  false && testing.examples.ejemplo.canarywololoIntd  ==  false && testing.examples.ejemplo.canarywololoInta  ==  false;
     @*/
   public static int wololoInt(int c, int d) {
-    int param_c_2;
+    int param_c_4;
 
-    param_c_2 = c;
-    int param_d_3;
+    param_c_4 = c;
+    int param_d_5;
 
-    param_d_3 = d;
+    param_d_5 = d;
     {
-      boolean t_8;
-      int var_6_a = 1;
+      boolean t_6;
+      int var_2_a = 1;
 
-      t_8 = param_c_2  ==  0;
-      if (t_8) {
+      t_6 = param_c_4  ==  0;
+      if (t_6) {
         {
           {
             {
@@ -43,7 +43,7 @@ public class ejemplo extends java.lang.Object {
             {
               {
                 {
-                  param_d_3 = param_d_3 / param_c_2;
+                  param_d_5 = param_d_5 / param_c_4;
                 }
               }
             }

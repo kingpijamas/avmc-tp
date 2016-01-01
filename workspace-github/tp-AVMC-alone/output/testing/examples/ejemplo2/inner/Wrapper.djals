@@ -1,0 +1,90 @@
+//-------------- testing_examples_ejemplo2_inner_Wrapper --------------//
+module testing_examples_ejemplo2_inner_Wrapper
+sig testing_examples_ejemplo2_inner_Wrapper extends java_lang_Object {}
+{}
+field testing_examples_ejemplo2_Wrapper_value:(testing_examples_ejemplo2_inner_Wrapper)->one(Int) {}
+
+program testing_examples_ejemplo2_inner_Wrapper::printValue[
+  var thiz:testing_examples_ejemplo2_inner_Wrapper,
+  var throw:java_lang_Throwable+null] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         {
+            var t_4:Int;
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]{
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  t_4:=thiz.testing_examples_ejemplo2_Wrapper_value;
+               };
+            } else {
+               skip;
+            };
+            if (
+              throw=null)
+            and 
+            (
+              exit_stmt_reached=false){
+               if isEmptyOrNull[thiz]
+               or 
+               isEmptyOrNull[thiz]
+               {
+                  throw:=java_lang_NullPointerExceptionLit;
+               } else {
+                  thiz.testing_examples_ejemplo2_Wrapper_value:=add[thiz.testing_examples_ejemplo2_Wrapper_value,1];
+               };
+            } else {
+               skip;
+            };
+         
+         }
+      
+      }
+      skip;
+   
+   }
+
+
+program testing_examples_ejemplo2_inner_Wrapper::Wrapper[
+  var thiz:testing_examples_ejemplo2_inner_Wrapper,
+  var throw:java_lang_Throwable+null,
+  var this$0:null+testing_examples_ejemplo2] 
+Implementation 
+
+   {
+      skip;
+      {
+         throw:=null;
+         var exit_stmt_reached:boolean;
+         exit_stmt_reached:=false;
+         if (
+           throw=null)
+         and 
+         (
+           exit_stmt_reached=false){
+            if isEmptyOrNull[thiz]{
+               throw:=java_lang_NullPointerExceptionLit;
+            } else {
+               thiz.testing_examples_ejemplo2_Wrapper_value:=10;
+            };
+         } else {
+            skip;
+         };
+      
+      }
+      skip;
+   
+   }
+
+
+

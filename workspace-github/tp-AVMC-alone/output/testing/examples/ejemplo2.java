@@ -5,46 +5,46 @@ package testing.examples;
 
 public class ejemplo2 extends java.lang.Object {
 
-  public static boolean canarywololoIntbs = false;
-  public static boolean canarywololoIntas = false;
+  public static boolean canarywololoIntw = false;
+  public class Wrapper extends java.lang.Object {
+
+    int testing_examples_ejemplo2_Wrapper_value;
+
+    public void printValue() {
+      {
+        int t_4;
+
+        t_4 = this.testing_examples_ejemplo2_Wrapper_value;
+        this.testing_examples_ejemplo2_Wrapper_value = this.testing_examples_ejemplo2_Wrapper_value + (byte)1;
+      }
+    }
+
+
+    public Wrapper() {
+      this.testing_examples_ejemplo2_Wrapper_value = 10;
+    }
+
+  }
 
   /*@ 
-    @ requires testing.examples.ejemplo2.canarywololoIntas  ==  false && testing.examples.ejemplo2.canarywololoIntbs  ==  false;
-    @ ensures testing.examples.ejemplo2.canarywololoIntas  ==  false && testing.examples.ejemplo2.canarywololoIntbs  ==  false;
+    @ requires testing.examples.ejemplo2.canarywololoIntw  ==  false;
+    @ ensures testing.examples.ejemplo2.canarywololoIntw  ==  false;
     @*/
-  public void wololoInt() {
+  public void wololoInt(testing.examples.ejemplo2.Wrapper w) {
+    testing.examples.ejemplo2.Wrapper param_w_1;
+
+    param_w_1 = w;
     {
-      boolean t_5;
-      boolean t_6;
-      int var_3_as = 1;
-      int var_4_bs = 1;
+      boolean t_3;
 
-      t_5 = var_3_as  ==  7;
-
-      if (t_5) {
+      t_3 = param_w_1  ==  null;
+      if (t_3) {
         {
           {
             {
               {
                 {
-                  int t_4;
-
-                  t_4 = var_3_as;
-                  var_3_as = var_3_as + (byte)1;
-                }
-              }
-            }
-          }
-        }
-      }
-      t_6 = var_4_bs  ==  0;
-      if (t_6) {
-        {
-          {
-            {
-              {
-                {
-                  testing.examples.ejemplo2.canarywololoIntbs = true;
+                  testing.examples.ejemplo2.canarywololoIntw = true;
                 }
               }
             }
@@ -56,7 +56,7 @@ public class ejemplo2 extends java.lang.Object {
             {
               {
                 {
-                  var_3_as = var_3_as / var_4_bs;
+                  param_w_1.printValue();
                 }
               }
             }

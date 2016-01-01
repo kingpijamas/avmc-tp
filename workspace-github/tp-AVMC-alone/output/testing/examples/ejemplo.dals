@@ -4,6 +4,21 @@ sig testing_examples_ejemplo extends java_lang_Object {}
 
 
 
+pred testing_examples_ejemploCondition5[
+  t_6:univ
+]{
+   not (
+     t_6=true)
+
+}
+
+pred testing_examples_ejemploCondition4[
+  t_6:univ
+]{
+   t_6=true
+
+}
+
 pred testing_examples_ejemploCondition2[
 ]{
    isEmptyOrNull[ClassFields]
@@ -92,21 +107,6 @@ pred precondition_testing_examples_ejemplo_wololoInt_0[
 
 }
 
-pred testing_examples_ejemploCondition5[
-  t_8:univ
-]{
-   not (
-     t_8=true)
-
-}
-
-pred testing_examples_ejemploCondition4[
-  t_8:univ
-]{
-   t_8=true
-
-}
-
 pred testing_examples_ejemplo_ensures[
   testing_examples_ejemplo_canarywololoInta':univ->univ,
   testing_examples_ejemplo_canarywololoIntc':univ->univ,
@@ -135,17 +135,16 @@ program testing_examples_ejemplo_wololoInt_0[
   c:Int,
   d:Int,
   testing_examples_ejemplo_canarywololoInta:(ClassFields)->one(boolean),
-  testing_examples_ejemplo2_canarywololoIntas:(ClassFields)->one(boolean),
   testing_examples_ejemplo_canarywololoIntd:(ClassFields)->one(boolean),
-  testing_examples_ejemplo2_canarywololoIntbs:(ClassFields)->one(boolean),
+  testing_examples_ejemplo2_canarywololoIntw:(ClassFields)->one(boolean),
   testing_examples_ejemplo_canarywololoIntc:(ClassFields)->one(boolean),
   usedObjects:set (java_lang_Object)
 ] var [
   exit_stmt_reached:boolean,
-  param_c_2:Int,
-  var_6_a:Int,
-  t_8:boolean,
-  param_d_3:Int
+  t_6:boolean,
+  param_d_5:Int,
+  var_2_a:Int,
+  param_c_4:Int
 ]{
    skip;
    throw:=null;
@@ -153,7 +152,7 @@ program testing_examples_ejemplo_wololoInt_0[
    exit_stmt_reached:=false;
    skip;
    if testing_examples_ejemploCondition0[exit_stmt_reached,throw]  {
-      param_c_2:=c
+      param_c_4:=c
    
    } else {
       skip
@@ -162,7 +161,7 @@ program testing_examples_ejemplo_wololoInt_0[
    ;
    skip;
    if testing_examples_ejemploCondition0[exit_stmt_reached,throw]  {
-      param_d_3:=d
+      param_d_5:=d
    
    } else {
       skip
@@ -172,7 +171,7 @@ program testing_examples_ejemplo_wololoInt_0[
    skip;
    skip;
    if testing_examples_ejemploCondition0[exit_stmt_reached,throw]  {
-      var_6_a:=1
+      var_2_a:=1
    
    } else {
       skip
@@ -180,7 +179,7 @@ program testing_examples_ejemplo_wololoInt_0[
    }
    ;
    if testing_examples_ejemploCondition0[exit_stmt_reached,throw]  {
-      t_8:=(equ[param_c_2,0]=>(true)else(false))
+      t_6:=(equ[param_c_4,0]=>(true)else(false))
    
    } else {
       skip
@@ -188,7 +187,7 @@ program testing_examples_ejemplo_wololoInt_0[
    }
    ;
    if testing_examples_ejemploCondition0[exit_stmt_reached,throw]  {
-      if testing_examples_ejemploCondition4[t_8]  {
+      if testing_examples_ejemploCondition4[t_6]  {
          if testing_examples_ejemploCondition0[exit_stmt_reached,throw]  {
             if testing_examples_ejemploCondition2[]  {
                throw:=java_lang_NullPointerExceptionLit
@@ -205,7 +204,7 @@ program testing_examples_ejemplo_wololoInt_0[
       
       } else {
          if testing_examples_ejemploCondition0[exit_stmt_reached,throw]  {
-            param_d_3:=div[param_d_3,param_c_2]
+            param_d_5:=div[param_d_5,param_c_4]
          
          } else {
             skip
@@ -236,18 +235,17 @@ assertCorrectness check_testing_examples_ejemplo_wololoInt_0[
   c:Int,
   d:Int,
   exit_stmt_reached:boolean,
-  param_c_2:Int,
-  param_d_3:Int,
+  param_c_4:Int,
+  param_d_5:Int,
   return:Int,
-  t_8:boolean,
-  testing_examples_ejemplo2_canarywololoIntas:(ClassFields)->one(boolean),
-  testing_examples_ejemplo2_canarywololoIntbs:(ClassFields)->one(boolean),
+  t_6:boolean,
+  testing_examples_ejemplo2_canarywololoIntw:(ClassFields)->one(boolean),
   testing_examples_ejemplo_canarywololoInta:(ClassFields)->one(boolean),
   testing_examples_ejemplo_canarywololoIntc:(ClassFields)->one(boolean),
   testing_examples_ejemplo_canarywololoIntd:(ClassFields)->one(boolean),
   throw:java_lang_Throwable+null,
   usedObjects:set (java_lang_Object),
-  var_6_a:Int
+  var_2_a:Int
 ]{
 pre={
    precondition_testing_examples_ejemplo_wololoInt_0[testing_examples_ejemplo_canarywololoInta,
@@ -257,7 +255,7 @@ pre={
 
 }
 program={
-   call testing_examples_ejemplo_wololoInt_0[throw,return,c,d,testing_examples_ejemplo_canarywololoInta,testing_examples_ejemplo2_canarywololoIntas,testing_examples_ejemplo_canarywololoIntd,testing_examples_ejemplo2_canarywololoIntbs,testing_examples_ejemplo_canarywololoIntc,usedObjects]
+   call testing_examples_ejemplo_wololoInt_0[throw,return,c,d,testing_examples_ejemplo_canarywololoInta,testing_examples_ejemplo_canarywololoIntd,testing_examples_ejemplo2_canarywololoIntw,testing_examples_ejemplo_canarywololoIntc,usedObjects]
 
 }
 post={

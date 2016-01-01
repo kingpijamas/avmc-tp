@@ -69,34 +69,34 @@ Implementation
          var exit_stmt_reached:boolean;
          exit_stmt_reached:=false;
          {
-            var param_c_2:Int;
+            var param_c_4:Int;
             if (
               throw=null)
             and 
             (
               exit_stmt_reached=false){
-               param_c_2:=c;
+               param_c_4:=c;
             } else {
                skip;
             };
-            var param_d_3:Int;
+            var param_d_5:Int;
             if (
               throw=null)
             and 
             (
               exit_stmt_reached=false){
-               param_d_3:=d;
+               param_d_5:=d;
             } else {
                skip;
             };
-            var t_8:boolean;
-            var var_6_a:Int;
+            var t_6:boolean;
+            var var_2_a:Int;
             if (
               throw=null)
             and 
             (
               exit_stmt_reached=false){
-               var_6_a:=1;
+               var_2_a:=1;
             } else {
                skip;
             };
@@ -105,7 +105,7 @@ Implementation
             and 
             (
               exit_stmt_reached=false){
-               t_8:=(equ[param_c_2,
+               t_6:=(equ[param_c_4,
                   0]=>(true)else(false));
             } else {
                skip;
@@ -115,7 +115,7 @@ Implementation
             and 
             (
               exit_stmt_reached=false){
-               if t_8=true{
+               if t_6=true{
                   if (
                     throw=null)
                   and 
@@ -135,7 +135,7 @@ Implementation
                   and 
                   (
                     exit_stmt_reached=false){
-                     param_d_3:=div[param_d_3,param_c_2];
+                     param_d_5:=div[param_d_5,param_c_4];
                   } else {
                      skip;
                   };

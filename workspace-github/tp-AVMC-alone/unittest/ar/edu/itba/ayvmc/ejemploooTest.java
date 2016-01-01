@@ -164,7 +164,7 @@ public class ejemploooTest extends CollectionTestBase {
         System.out.println("\n-------------------------");
 	}
 	
-private void passedTestInformation(){
+	private void passedTestInformation(){
         System.out.println();
         System.out.println("NO ERROR IN ");
         System.out.println("CLASS NAME: "+className+" \t METHOD NAME: "+methodName);

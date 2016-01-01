@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.IfStatement"/>
-<fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.Assignment.Operator"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.NumberLiteral"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.InfixExpression.Operator"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.StringLiteral"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.PackageDeclaration"/>
 <fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.Name"/>
 <fullyQualifiedTypeName name="java.lang.Error"/>
+<fullyQualifiedTypeName name="org.eclipse.jdt.core.dom.SingleVariableDeclaration"/>
+<fullyQualifiedTypeName name="junit.framework.AssertionFailedError"/>
 </qualifiedTypeNameHistroy>

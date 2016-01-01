@@ -2,8 +2,7 @@
 module ClassFields
 one sig ClassFields {}
 {}
-field testing_examples_ejemplo2_canarywololoIntas:(ClassFields)->one(boolean) {}
-field testing_examples_ejemplo2_canarywololoIntbs:(ClassFields)->one(boolean) {}
+field testing_examples_ejemplo2_canarywololoIntw:(ClassFields)->one(boolean) {}
 field testing_examples_ejemplo_canarywololoIntd:(ClassFields)->one(boolean) {}
 field testing_examples_ejemplo_canarywololoIntc:(ClassFields)->one(boolean) {}
 field testing_examples_ejemplo_canarywololoInta:(ClassFields)->one(boolean) {}

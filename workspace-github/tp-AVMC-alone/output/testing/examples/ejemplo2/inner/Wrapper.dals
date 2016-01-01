@@ -1,0 +1,114 @@
+sig testing_examples_ejemplo2_inner_Wrapper extends java_lang_Object {}
+{}
+
+
+
+
+pred testing_examples_ejemplo2_inner_WrapperCondition4[
+  thiz:univ
+]{
+   isEmptyOrNull[thiz]
+   or 
+   isEmptyOrNull[thiz]
+
+}
+
+pred testing_examples_ejemplo2_inner_WrapperCondition5[
+  thiz:univ
+]{
+   not (
+     isEmptyOrNull[thiz]
+     or 
+     isEmptyOrNull[thiz]
+   )
+
+}
+
+pred testing_examples_ejemplo2_inner_WrapperCondition0[
+  thiz:univ
+]{
+   isEmptyOrNull[thiz]
+
+}
+
+pred testing_examples_ejemplo2_inner_WrapperCondition1[
+  thiz:univ
+]{
+   not (
+     isEmptyOrNull[thiz])
+
+}
+
+pred testing_examples_ejemplo2_inner_WrapperCondition3[
+  exit_stmt_reached:univ,
+  throw:univ
+]{
+   not (
+     (
+       throw=null)
+     and 
+     (
+       exit_stmt_reached=false)
+   )
+
+}
+
+pred testing_examples_ejemplo2_inner_WrapperCondition2[
+  exit_stmt_reached:univ,
+  throw:univ
+]{
+   (
+     throw=null)
+   and 
+   (
+     exit_stmt_reached=false)
+
+}
+
+program testing_examples_ejemplo2_inner_Wrapper_printValue_0[
+  thiz:testing_examples_ejemplo2_inner_Wrapper,
+  throw:java_lang_Throwable+null,
+  testing_examples_ejemplo2_canarywololoIntw:(ClassFields)->one(boolean),
+  testing_examples_ejemplo2_Wrapper_value:(testing_examples_ejemplo2_inner_Wrapper)->one(Int),
+  usedObjects:set (java_lang_Object)
+] var [
+  exit_stmt_reached:boolean,
+  t_4:Int
+]{
+   skip;
+   throw:=null;
+   skip;
+   exit_stmt_reached:=false;
+   skip;
+   if testing_examples_ejemplo2_inner_WrapperCondition2[exit_stmt_reached,throw]  {
+      if testing_examples_ejemplo2_inner_WrapperCondition0[thiz]  {
+         throw:=java_lang_NullPointerExceptionLit
+      
+      } else {
+         t_4:=thiz.testing_examples_ejemplo2_Wrapper_value
+      
+      }
+   
+   } else {
+      skip
+   
+   }
+   ;
+   if testing_examples_ejemplo2_inner_WrapperCondition2[exit_stmt_reached,throw]  {
+      if testing_examples_ejemplo2_inner_WrapperCondition4[thiz]  {
+         throw:=java_lang_NullPointerExceptionLit
+      
+      } else {
+         testing_examples_ejemplo2_Wrapper_value:=(testing_examples_ejemplo2_Wrapper_value)++((thiz)->(add[thiz.testing_examples_ejemplo2_Wrapper_value,1]))
+      
+      }
+   
+   } else {
+      skip
+   
+   }
+   ;
+   skip
+
+}
+

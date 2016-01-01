@@ -5,40 +5,35 @@ sig testing_examples_ejemplo2 extends java_lang_Object {}
 
 
 pred precondition_testing_examples_ejemplo2_wololoInt_0[
-  testing_examples_ejemplo2_canarywololoIntas:univ->univ,
-  testing_examples_ejemplo2_canarywololoIntbs:univ->univ,
-  throw:univ
+  testing_examples_ejemplo2_canarywololoIntw:univ->univ,
+  throw:univ,
+  w:univ
 ]{
-   testing_examples_ejemplo2_requires[testing_examples_ejemplo2_canarywololoIntas,
-                                     testing_examples_ejemplo2_canarywololoIntbs]
+   testing_examples_ejemplo2_requires[testing_examples_ejemplo2_canarywololoIntw,
+                                     w]
    and 
    equ[throw,
       null]
 
 }
 
-pred testing_examples_ejemplo2Condition5[
+pred testing_examples_ejemplo2Condition3[
 ]{
    not (
      isEmptyOrNull[ClassFields])
 
 }
 
-pred testing_examples_ejemplo2Condition4[
+pred testing_examples_ejemplo2Condition2[
 ]{
    isEmptyOrNull[ClassFields]
 
 }
 
-pred testing_examples_ejemplo2_requires[
-  testing_examples_ejemplo2_canarywololoIntas:univ->univ,
-  testing_examples_ejemplo2_canarywololoIntbs:univ->univ
+pred testing_examples_ejemplo2Condition6[
+  t_3:univ
 ]{
-   equ[ClassFields.testing_examples_ejemplo2_canarywololoIntas,
-      false]
-   and 
-   equ[ClassFields.testing_examples_ejemplo2_canarywololoIntbs,
-      false]
+   t_3=true
 
 }
 
@@ -56,6 +51,28 @@ pred testing_examples_ejemplo2Condition1[
 
 }
 
+pred postcondition_testing_examples_ejemplo2_wololoInt_0[
+  testing_examples_ejemplo2_canarywololoIntw':univ->univ,
+  throw':univ
+]{
+   testing_examples_ejemplo2_ensures[testing_examples_ejemplo2_canarywololoIntw',
+                                    throw']
+   and 
+   (
+     not (
+       throw'=AssertionFailureLit)
+   )
+
+}
+
+pred testing_examples_ejemplo2Condition7[
+  t_3:univ
+]{
+   not (
+     t_3=true)
+
+}
+
 pred testing_examples_ejemplo2Condition0[
   exit_stmt_reached:univ,
   throw:univ
@@ -68,93 +85,66 @@ pred testing_examples_ejemplo2Condition0[
 
 }
 
-pred testing_examples_ejemplo2Condition3[
-  t_5:univ
-]{
-   not (
-     t_5=true)
-
-}
-
-pred postcondition_testing_examples_ejemplo2_wololoInt_0[
-  testing_examples_ejemplo2_canarywololoIntas':univ->univ,
-  testing_examples_ejemplo2_canarywololoIntbs':univ->univ,
-  throw':univ
-]{
-   testing_examples_ejemplo2_ensures[testing_examples_ejemplo2_canarywololoIntas',
-                                    testing_examples_ejemplo2_canarywololoIntbs',
-                                    throw']
-   and 
-   (
-     not (
-       throw'=AssertionFailureLit)
-   )
-
-}
-
-pred testing_examples_ejemplo2Condition2[
-  t_5:univ
-]{
-   t_5=true
-
-}
-
 pred testing_examples_ejemplo2_ensures[
-  testing_examples_ejemplo2_canarywololoIntas':univ->univ,
-  testing_examples_ejemplo2_canarywololoIntbs':univ->univ,
+  testing_examples_ejemplo2_canarywololoIntw':univ->univ,
   throw':univ
 ]{
    (
      throw'=null)
    implies 
-           (
-             equ[ClassFields.testing_examples_ejemplo2_canarywololoIntas',
-                false]
-             and 
-             equ[ClassFields.testing_examples_ejemplo2_canarywololoIntbs',
-                false]
-           )
+           equ[ClassFields.testing_examples_ejemplo2_canarywololoIntw',
+              false]
 
 }
 
-pred testing_examples_ejemplo2Condition6[
-  t_6:univ
-]{
-   t_6=true
-
-}
-
-pred testing_examples_ejemplo2Condition7[
-  t_6:univ
+pred testing_examples_ejemplo2Condition5[
+  param_w_1:univ
 ]{
    not (
-     t_6=true)
+     isEmptyOrNull[param_w_1])
+
+}
+
+pred testing_examples_ejemplo2_requires[
+  testing_examples_ejemplo2_canarywololoIntw:univ->univ,
+  w:univ
+]{
+   equ[ClassFields.testing_examples_ejemplo2_canarywololoIntw,
+      false]
+   and 
+   (
+     not (
+       w=null)
+   )
+
+}
+
+pred testing_examples_ejemplo2Condition4[
+  param_w_1:univ
+]{
+   isEmptyOrNull[param_w_1]
 
 }
 
 program testing_examples_ejemplo2_wololoInt_0[
   thiz:testing_examples_ejemplo2,
   throw:java_lang_Throwable+null,
-  testing_examples_ejemplo2_canarywololoIntas:(ClassFields)->one(boolean),
-  testing_examples_ejemplo2_canarywololoIntbs:(ClassFields)->one(boolean),
+  w:null+testing_examples_ejemplo2_inner_Wrapper,
+  testing_examples_ejemplo2_canarywololoIntw:(ClassFields)->one(boolean),
+  testing_examples_ejemplo2_Wrapper_value:(testing_examples_ejemplo2_inner_Wrapper)->one(Int),
   usedObjects:set (java_lang_Object)
 ] var [
-  var_4_bs:Int,
+  t_3:boolean,
   exit_stmt_reached:boolean,
-  var_3_as:Int,
-  t_5:boolean,
-  t_4:Int,
-  t_6:boolean
+  param_w_1:null+testing_examples_ejemplo2_inner_Wrapper
 ]{
    skip;
    throw:=null;
    skip;
    exit_stmt_reached:=false;
    skip;
-   skip;
-   skip;
    if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
-      var_3_as:=1
+      param_w_1:=w
    
    } else {
       skip
@@ -163,7 +153,7 @@ program testing_examples_ejemplo2_wololoInt_0[
    ;
    skip;
    if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
-      var_4_bs:=1
+      t_3:=(equ[param_w_1,null]=>(true)else(false))
    
    } else {
       skip
@@ -171,58 +161,13 @@ program testing_examples_ejemplo2_wololoInt_0[
    }
    ;
    if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
-      t_5:=(equ[var_3_as,7]=>(true)else(false))
-   
-   } else {
-      skip
-   
-   }
-   ;
-   if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
-      if testing_examples_ejemplo2Condition2[t_5]  {
-         skip;
+      if testing_examples_ejemplo2Condition6[t_3]  {
          if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
-            t_4:=var_3_as
-         
-         } else {
-            skip
-         
-         }
-         ;
-         if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
-            var_3_as:=add[var_3_as,1]
-         
-         } else {
-            skip
-         
-         }
-      
-      } else {
-         skip
-      
-      }
-   
-   } else {
-      skip
-   
-   }
-   ;
-   if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
-      t_6:=(equ[var_4_bs,0]=>(true)else(false))
-   
-   } else {
-      skip
-   
-   }
-   ;
-   if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
-      if testing_examples_ejemplo2Condition6[t_6]  {
-         if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
-            if testing_examples_ejemplo2Condition4[]  {
+            if testing_examples_ejemplo2Condition2[]  {
                throw:=java_lang_NullPointerExceptionLit
             
             } else {
-               testing_examples_ejemplo2_canarywololoIntbs:=(testing_examples_ejemplo2_canarywololoIntbs)++((ClassFields)->(true))
+               testing_examples_ejemplo2_canarywololoIntw:=(testing_examples_ejemplo2_canarywololoIntw)++((ClassFields)->(true))
             
             }
          
@@ -232,11 +177,11 @@ program testing_examples_ejemplo2_wololoInt_0[
          }
       
       } else {
-         if testing_examples_ejemplo2Condition0[exit_stmt_reached,throw]  {
-            var_3_as:=div[var_3_as,var_4_bs]
+         if testing_examples_ejemplo2Condition4[param_w_1]  {
+            throw:=java_lang_NullPointerExceptionLit
          
          } else {
-            skip
+            call testing_examples_ejemplo2_inner_Wrapper_printValue_0[param_w_1,throw,testing_examples_ejemplo2_canarywololoIntw,testing_examples_ejemplo2_Wrapper_value,usedObjects]
          
          }
       
@@ -253,30 +198,27 @@ program testing_examples_ejemplo2_wololoInt_0[
 
 assertCorrectness check_testing_examples_ejemplo2_wololoInt_0[
   exit_stmt_reached:boolean,
-  t_4:Int,
-  t_5:boolean,
-  t_6:boolean,
-  testing_examples_ejemplo2_canarywololoIntas:(ClassFields)->one(boolean),
-  testing_examples_ejemplo2_canarywololoIntbs:(ClassFields)->one(boolean),
+  param_w_1:null+testing_examples_ejemplo2_inner_Wrapper,
+  t_3:boolean,
+  testing_examples_ejemplo2_Wrapper_value:(testing_examples_ejemplo2_inner_Wrapper)->one(Int),
+  testing_examples_ejemplo2_canarywololoIntw:(ClassFields)->one(boolean),
   thiz:testing_examples_ejemplo2,
   throw:java_lang_Throwable+null,
   usedObjects:set (java_lang_Object),
-  var_3_as:Int,
-  var_4_bs:Int
+  w:null+testing_examples_ejemplo2_inner_Wrapper
 ]{
 pre={
-   precondition_testing_examples_ejemplo2_wololoInt_0[testing_examples_ejemplo2_canarywololoIntas,
-                                                     testing_examples_ejemplo2_canarywololoIntbs,
-                                                     throw]
+   precondition_testing_examples_ejemplo2_wololoInt_0[testing_examples_ejemplo2_canarywololoIntw,
+                                                     throw,
+                                                     w]
 
 }
 program={
-   call testing_examples_ejemplo2_wololoInt_0[thiz,throw,testing_examples_ejemplo2_canarywololoIntas,testing_examples_ejemplo2_canarywololoIntbs,usedObjects]
+   call testing_examples_ejemplo2_wololoInt_0[thiz,throw,w,testing_examples_ejemplo2_canarywololoIntw,testing_examples_ejemplo2_Wrapper_value,usedObjects]
 
 }
 post={
-   postcondition_testing_examples_ejemplo2_wololoInt_0[testing_examples_ejemplo2_canarywololoIntas',
-                                                      testing_examples_ejemplo2_canarywololoIntbs',
+   postcondition_testing_examples_ejemplo2_wololoInt_0[testing_examples_ejemplo2_canarywololoIntw',
                                                       throw']
 
 }

@@ -4,29 +4,27 @@ sig testing_examples_ejemplo2 extends java_lang_Object {}
 {}
 program testing_examples_ejemplo2::wololoInt[
   var thiz:testing_examples_ejemplo2,
-  var throw:java_lang_Throwable+null] 
+  var throw:java_lang_Throwable+null,
+  var w:null+testing_examples_ejemplo2_inner_Wrapper] 
 Specification 
 {
   SpecCase #0 {
    requires {
-      equ[ClassFields.testing_examples_ejemplo2_canarywololoIntas,
+      equ[ClassFields.testing_examples_ejemplo2_canarywololoIntw,
          false]
-      and 
-      equ[ClassFields.testing_examples_ejemplo2_canarywololoIntbs,
-         false]
+   }
+   
+   requires {
+      not (
+        w=null)
    }
    
    ensures {
       (
         throw'=null)
       implies 
-              (
-                equ[ClassFields.testing_examples_ejemplo2_canarywololoIntas',
-                   false]
-                and 
-                equ[ClassFields.testing_examples_ejemplo2_canarywololoIntbs',
-                   false]
-              )
+              equ[ClassFields.testing_examples_ejemplo2_canarywololoIntw',
+                 false]
    }
    
    modifies {
@@ -42,35 +40,24 @@ Implementation
          var exit_stmt_reached:boolean;
          exit_stmt_reached:=false;
          {
-            var t_5:boolean;
-            var t_6:boolean;
-            var var_3_as:Int;
+            var param_w_1:null+testing_examples_ejemplo2_inner_Wrapper;
             if (
               throw=null)
             and 
             (
               exit_stmt_reached=false){
-               var_3_as:=1;
+               param_w_1:=w;
             } else {
                skip;
             };
-            var var_4_bs:Int;
+            var t_3:boolean;
             if (
               throw=null)
             and 
             (
               exit_stmt_reached=false){
-               var_4_bs:=1;
-            } else {
-               skip;
-            };
-            if (
-              throw=null)
-            and 
-            (
-              exit_stmt_reached=false){
-               t_5:=(equ[var_3_as,
-                  7]=>(true)else(false));
+               t_3:=(equ[param_w_1,
+                  null]=>(true)else(false));
             } else {
                skip;
             };
@@ -79,50 +66,7 @@ Implementation
             and 
             (
               exit_stmt_reached=false){
-               if t_5=true   {
-                     var t_4:Int;
-                     if (
-                       throw=null)
-                     and 
-                     (
-                       exit_stmt_reached=false){
-                        t_4:=var_3_as;
-                     } else {
-                        skip;
-                     };
-                     if (
-                       throw=null)
-                     and 
-                     (
-                       exit_stmt_reached=false){
-                        var_3_as:=add[var_3_as,1];
-                     } else {
-                        skip;
-                     };
-                  
-                  }
-                else {
-                  skip;
-               };
-            } else {
-               skip;
-            };
-            if (
-              throw=null)
-            and 
-            (
-              exit_stmt_reached=false){
-               t_6:=(equ[var_4_bs,
-                  0]=>(true)else(false));
-            } else {
-               skip;
-            };
-            if (
-              throw=null)
-            and 
-            (
-              exit_stmt_reached=false){
-               if t_6=true{
+               if t_3=true{
                   if (
                     throw=null)
                   and 
@@ -131,20 +75,16 @@ Implementation
                      if isEmptyOrNull[ClassFields]{
                         throw:=java_lang_NullPointerExceptionLit;
                      } else {
-                        ClassFields.testing_examples_ejemplo2_canarywololoIntbs:=true;
+                        ClassFields.testing_examples_ejemplo2_canarywololoIntw:=true;
                      };
                   } else {
                      skip;
                   };
                } else {
-                  if (
-                    throw=null)
-                  and 
-                  (
-                    exit_stmt_reached=false){
-                     var_3_as:=div[var_3_as,var_4_bs];
+                  if isEmptyOrNull[param_w_1]{
+                     throw:=java_lang_NullPointerExceptionLit;
                   } else {
-                     skip;
+                     call printValue[param_w_1,throw];
                   };
                };
             } else {

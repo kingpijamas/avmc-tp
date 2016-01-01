@@ -27,7 +27,7 @@ public class ArithmeticTpAvmcVisitor extends TpAvmcVisitor{
             return false;
         }
         String typeName=type.toString();
-        return typeName!=null && typeName.contains("int") || typeName.contains("Double");
+        return typeName!=null && typeName.contains("int") /*|| typeName.contains("Double")*/;
     }
 
     @Override
