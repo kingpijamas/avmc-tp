@@ -1,7 +1,5 @@
 package ar.edu.itba.avmc.tp.api;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.jdt.core.dom.AST;
@@ -40,7 +38,6 @@ public class ArithmeticVisitor extends Visitor{
     
     @Override
     public boolean visit(InfixExpression node) {
-        //System.out.println("Usage of expresion '" + node.toString() + "' at line " + unit.getLineNumber(node.getStartPosition()));
         List<String> canariesNames = denominatorVariables(node.toString());
         if(!canariesNames.isEmpty()){
                

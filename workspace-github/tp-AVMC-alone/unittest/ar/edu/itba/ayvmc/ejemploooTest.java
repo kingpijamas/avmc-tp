@@ -75,20 +75,6 @@ public class ejemploooTest extends CollectionTestBase {
 		return className;
 	}
 
-	/*public void test_sizeTest() throws VizException {
-		setConfigKeyRelevantClasses("ar.edu.itba.ayvmc.BinTreeBug,ar.edu.itba.ayvmc.NodeBTBug");
-        setConfigKeyRelevancyAnalysis(true);
-        setConfigKeyCheckNullDereference(true);
-        setConfigKeyUseJavaArithmetic(false);
-        setConfigKeyObjectScope(3);
-        setConfigKeyInferScope(true);
-        setConfigKeySkolemizeInstanceInvariant(false);
-        setConfigKeySkolemizeInstanceAbstraction(false);
-        setConfigKeyGenerateUnitTestCase(true);
-		setConfigKeyTypeScopes("ar.edu.itba.ayvmc.BinTreeBug:1,ar.edu.itba.ayvmc.NodeBTBug:2"); //te dice cuantas instancias podes tener como maximo (arboles de hasta cinco nodos)
-		setConfigKeyLoopUnroll(1); 
-        runAndCheck(GENERIC_PROPERTIES,"getSize_0",false);
-	}*/
 
 	@Test
 	public void test_addTest() throws VizException {
@@ -119,36 +105,7 @@ public class ejemploooTest extends CollectionTestBase {
 		}
 
 	} 
-	
-	/*public void test_removeTest() throws VizException {
-		setConfigKeyRelevantClasses("ar.edu.itba.ayvmc.BinTreeBug,ar.edu.itba.ayvmc.NodeBTBug");
-        setConfigKeyRelevancyAnalysis(true);
-        setConfigKeyCheckNullDereference(true);
-        setConfigKeyUseJavaArithmetic(false);
-        setConfigKeyObjectScope(3);
-        setConfigKeyInferScope(true);
-        setConfigKeySkolemizeInstanceInvariant(false);
-        setConfigKeySkolemizeInstanceAbstraction(false);
-        setConfigKeyGenerateUnitTestCase(true);
-		setConfigKeyTypeScopes("ar.edu.itba.ayvmc.BinTreeBug:1,ar.edu.itba.ayvmc.NodeBTBug:2"); //te dice cuantas instancias podes tener como maximo (arboles de hasta cinco nodos)
-		setConfigKeyLoopUnroll(1);
-        runAndCheck(GENERIC_PROPERTIES,"remove_0",false);
-	}
-	*/
-	
-   /* public void test_lookupTest() throws VizException {
-        setConfigKeyRelevantClasses("ar.edu.itba.alu.crpereyr.impl.rbtree1.RBTree,ar.edu.itba.alu.crpereyr.impl.rbtree1.Node");
-        setConfigKeyRelevancyAnalysis(true);
-        setConfigKeyCheckNullDereference(true);
-        setConfigKeyUseJavaArithmetic(true);
-        setConfigKeyObjectScope(3);
-        setConfigKeyInferScope(true);
-        setConfigKeySkolemizeInstanceInvariant(false);
-        setConfigKeySkolemizeInstanceAbstraction(false);
-        setConfigKeyGenerateUnitTestCase(true);
-        runAndCheck(GENERIC_PROPERTIES,"lookup_0",false);
-    }
-    */
+
 	
 	private void startTestInformation(){
 	    

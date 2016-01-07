@@ -156,7 +156,7 @@ public abstract class Visitor extends ASTVisitor{
     }
   
     public boolean visit(SingleVariableDeclaration node){
-        System.out.println("parameter: "+node.toString());
+        //System.out.println("parameter: "+node.toString());
         if(isInScope(node.getType())){
            SimpleName name = node.getName();
            String canaryName = name.getIdentifier();
