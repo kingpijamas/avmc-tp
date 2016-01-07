@@ -62,7 +62,7 @@ public class ParserAPIImpl implements ParserAPI {
     }
     
     //use ASTParse to parse string
-    public void parse(String canonicalClassName, List<String> methodNames, String newFileName, TpAvmcVisitor visitor, Properties propertiesFile) {
+    public void parse(String canonicalClassName, List<String> methodNames, String newFileName, Visitor visitor, Properties propertiesFile) {
        System.out.println("parse with "+ methodNames + "method");
        if(methodNames.isEmpty()){
            return;

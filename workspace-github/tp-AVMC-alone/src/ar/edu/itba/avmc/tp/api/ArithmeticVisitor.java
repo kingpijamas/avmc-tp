@@ -15,9 +15,9 @@ import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.InfixExpression.Operator;
 
 
-public class ArithmeticTpAvmcVisitor extends TpAvmcVisitor{
+public class ArithmeticVisitor extends Visitor{
 
-    public ArithmeticTpAvmcVisitor(CompilationUnit unit, AST ast) {
+    public ArithmeticVisitor(CompilationUnit unit, AST ast) {
         super(unit, ast);
     }
 

@@ -8,7 +8,7 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 
 public interface ParserAPI {
     
-    public void parse(String canonicalClassName, List<String> methodName, String newFileName, TpAvmcVisitor visitor, Properties propFile);
+    public void parse(String canonicalClassName, List<String> methodName, String newFileName, Visitor visitor, Properties propFile);
     
     public AST getAST();
     

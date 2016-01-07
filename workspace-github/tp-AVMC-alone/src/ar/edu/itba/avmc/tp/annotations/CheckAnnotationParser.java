@@ -12,11 +12,11 @@ import java.util.Properties;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 
-import ar.edu.itba.avmc.tp.api.ArithmeticTpAvmcVisitor;
-import ar.edu.itba.avmc.tp.api.NullTpAvmcVisitor;
+import ar.edu.itba.avmc.tp.api.ArithmeticVisitor;
+import ar.edu.itba.avmc.tp.api.NullVisitor;
 import ar.edu.itba.avmc.tp.api.ParserAPI;
 import ar.edu.itba.avmc.tp.api.ParserAPIImpl;
-import ar.edu.itba.avmc.tp.api.TpAvmcVisitor;
+import ar.edu.itba.avmc.tp.api.Visitor;
 import ar.edu.taco.utils.FileUtils;
 
 public class CheckAnnotationParser {
@@ -67,18 +67,18 @@ public class CheckAnnotationParser {
            String str=FileUtils.readFile(dirPath);
            ParserAPI parser = new ParserAPIImpl(str);
        
-           TpAvmcVisitor visitor = getTpAvmcVisitor(check_type, parser.getUnit(), parser.getAST());
+           Visitor visitor = getTpAvmcVisitor(check_type, parser.getUnit(), parser.getAST());
            parser.parse("testing."+clazz.getCanonicalName(),methodNames,newDirPath,visitor, properties);
        
        }
     }
     
-    private TpAvmcVisitor getTpAvmcVisitor(CheckAnnotationValues type, CompilationUnit unit, AST ast){
+    private Visitor getTpAvmcVisitor(CheckAnnotationValues type, CompilationUnit unit, AST ast){
         if(type == CheckAnnotationValues.ARITHMETIC){
-            return new ArithmeticTpAvmcVisitor(unit, ast);
+            return new ArithmeticVisitor(unit, ast);
         }
         else if (type == CheckAnnotationValues.NULL_POINTER){
-            return new NullTpAvmcVisitor(unit, ast);
+            return new NullVisitor(unit, ast);
         }
         return null;
     }

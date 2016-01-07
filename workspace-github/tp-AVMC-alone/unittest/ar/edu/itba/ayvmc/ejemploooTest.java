@@ -30,11 +30,11 @@ import org.junit.runners.Parameterized.Parameters;
 
 import java.util.Arrays;
 
+import ar.edu.itba.avmc.tp.MainTP;
 import ar.edu.taco.regresion.CollectionTestBase;
 import ar.edu.taco.utils.FileUtils;
 import ar.uba.dc.rfm.dynalloy.visualization.VizException;
 import junit.framework.AssertionFailedError;
-import lalala.lololo.MainTP;
 import roops.core.objects.junit.ArrayList;
 
 @RunWith(Parameterized.class)

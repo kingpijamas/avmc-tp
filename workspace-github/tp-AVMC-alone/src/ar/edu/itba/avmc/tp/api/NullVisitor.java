@@ -13,9 +13,9 @@ import org.eclipse.jdt.core.dom.InfixExpression.Operator;
 import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.NullLiteral;
 
-public class NullTpAvmcVisitor extends TpAvmcVisitor {
+public class NullVisitor extends Visitor {
 
-    public NullTpAvmcVisitor(CompilationUnit unit, AST ast) {
+    public NullVisitor(CompilationUnit unit, AST ast) {
         super(unit, ast);
     }
 

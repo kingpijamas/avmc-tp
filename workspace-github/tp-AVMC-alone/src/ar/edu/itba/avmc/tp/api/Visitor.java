@@ -49,7 +49,7 @@ import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 import org.eclipse.text.edits.TextEditGroup;
 
-public abstract class TpAvmcVisitor extends ASTVisitor{
+public abstract class Visitor extends ASTVisitor{
 
     protected Map<String, List<String>> methodsNamesMap = new HashMap<String,List<String>>();
     
@@ -60,7 +60,7 @@ public abstract class TpAvmcVisitor extends ASTVisitor{
     protected ASTRewrite rewrite;
     
     
-    public TpAvmcVisitor(CompilationUnit unit, AST ast) {
+    public Visitor(CompilationUnit unit, AST ast) {
         super();
         this.unit = unit;
         this.ast = ast;

@@ -12,6 +12,9 @@ public class ejemplo {
 	@ ensures canarywololoIntc == false && canarywololoIntd == false && canarywololoInta == false;@*/
 	 public static int wololoInt(int c, int d){
         int a=1;
+//        if (c == 0 || d == 0) {
+//        	return -1;
+//        }
         //int c=0;
         //int d=0;
         

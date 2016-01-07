@@ -7,10 +7,13 @@ public class ejemplo {
     @Check("Arithmetic")
     public static int wololoInt(int c, int d){
         int a=1;
+//        if (c == 0 || d == 0) {
+//        	return -1;
+//        }
         //int c=0;
         //int d=0;
         
-        d=d / c;
+        d = d / c;
         
         return 1;
     }
